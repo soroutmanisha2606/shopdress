@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { FaUser, FaShoppingBasket, FaSearch } from "react-icons/fa";
 // import { useDisclosure } from "@chakra-ui/react"
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+import Login from "../Login/Login";
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -51,7 +52,8 @@ export default function Navbar() {
           alt=""
         />{" "}
         <span style={{ display: "flex", gap: "16px"}}>
-          <FaUser  /> <FaShoppingBasket />
+          {/* <FaUser  /> <FaShoppingBasket /> */}
+          <Login  /> <FaShoppingBasket />
         </span>
       </Box>
       <Box display="flex" justifyContent="center" id="MenuSpans">
