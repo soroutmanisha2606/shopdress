@@ -14,9 +14,8 @@ import "./Drop.css"
 import { Link } from "react-router-dom";
 import { FaUser, FaShoppingBasket, FaSearch } from "react-icons/fa";
 // import { useDisclosure } from "@chakra-ui/react"
-import { BiSearch ,BiShoppingBag} from "react-icons/bi";
-import { ImUser} from "react-icons/im";
-import { ChevronDownIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+
 export default function Navbar() {
   const [isLargerThan1144] = useMediaQuery('(min-width: 1144px)')
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -56,7 +55,7 @@ export default function Navbar() {
           alt=""
         />{" "}
         <span style={{ display: "flex", gap: "16px"}}>
-          <ImUser  cursor="pointer"   /> <BiShoppingBag  cursor="pointer"/>
+          <FaUser  /> <FaShoppingBasket />
         </span>
       </Box>
       <Box display="flex" justifyContent="center" id="MenuSpans">
