@@ -83,7 +83,7 @@ export default function Login() {
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
         isOpen={temp===true}
-        onClose={onClose}
+        onClose={secModal}
       >
         <ModalOverlay />
         <ModalContent>
