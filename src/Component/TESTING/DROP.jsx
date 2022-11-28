@@ -8,16 +8,17 @@ import {
   Container,
   Box,
 } from "@chakra-ui/react";
-// import { } from '@chakra-ui/react'
-
+import LINEMENU from "./Funcations.Nav/OpenClose";
+import {BiSearch,BiShoppingBag  } from "react-icons/bi";
 import "./Drop.css"
 import { Link } from "react-router-dom";
-import { FaUser, FaShoppingBasket, FaSearch } from "react-icons/fa";
-// import { useDisclosure } from "@chakra-ui/react"
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+import { FaUser} from "react-icons/fa";
+import { FiMenu} from "react-icons/fi";
+import {CiUser} from "react-icons/ci";
+import {BiArrowFromRight} from "react-icons/bi";
 
 export default function Navbar() {
-  const [isLargerThan1144] = useMediaQuery('(min-width: 1144px)')
+  const [isLargerThan1144] = useMediaQuery('(min-width: 1050px)')
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
     isOpen: isOpen2,
@@ -29,6 +30,8 @@ export default function Navbar() {
     onOpen: onOpen3,
     onClose: onClose3,
   } = useDisclosure();
+
+
   const { isOpen: isOpen4,onOpen: onOpen4, onClose: onClose4,} = useDisclosure();
   const { isOpen: isOpen5,onOpen: onOpen5, onClose: onClose5,} = useDisclosure();
   const { isOpen: isOpen6,onOpen: onOpen6, onClose: onClose6,} = useDisclosure();
@@ -38,8 +41,7 @@ export default function Navbar() {
   return (
     <Box position="sticky" bg="white" top="0%">
       <Box bg="green" h="35px">
-        {" "}
-        <h1 id="Nav_heading"> 30% OFF EVERYTING WITH CODE : CYBER30 </h1>
+      <h1 id="Nav_heading"> 30% OFF EVERYTING WITH CODE : CYBER30 </h1>
       </Box>
       <Box
         display="flex"
@@ -47,19 +49,22 @@ export default function Navbar() {
         alignItems="center"
         pt="20px"
         pb="15px"
-        fontSize="26px" 
+        fontSize="23px" 
+        id="LOGODIV"
       >
-        <BiSearch cursor="pointer" />{" "}
+        {isLargerThan1144?"":<FiMenu cursor="pointer" onClick={LINEMENU}/> }
+        <BiSearch cursor="pointer" />
         <img
           src="https://cdn.shopify.com/s/files/1/0339/0901/files/Peach-Black-DU-Logo_160x.png?v=1631144136"
           alt=""
-        />{" "}
+          id="Main_Logo"
+        />
         <span style={{ display: "flex", gap: "16px"}}>
-          <FaUser  /> <FaShoppingBasket />
+          <FaUser cursor="pointer" /> <BiShoppingBag cursor="pointer"  />
         </span>
       </Box>
       <Box display="flex" justifyContent="center" id="MenuSpans">
-      {isLargerThan1144 } <Menu isOpen={isOpen}>
+      {isLargerThan1144 ?<> <Menu isOpen={isOpen}>
         <MenuButton
         ></MenuButton>
           <span     
@@ -153,8 +158,6 @@ export default function Navbar() {
             <Link className="Links" to="/dsgh">Dahlonega</Link>
             <Link className="Links" to="/dsgh">Nashville</Link>
             <Link className="Links" to="/dsgh">Charleston</Link>
-            {/* <Link className="Links" to="/dsgh">Savannah</Link> */}
-   
             </Box>
             <Box display="flex" flexDirection="column"> 
             <h2 fontSize="19px"><b> CUSTOM ACCESSORIES</b></h2>  
@@ -171,7 +174,6 @@ export default function Navbar() {
         <MenuButton
         ></MenuButton>
           <span     
-
             onMouseEnter={onOpen3}
             onMouseLeave={onClose3}
             className="list_Buttons"  >Clothing</span>
@@ -198,7 +200,7 @@ export default function Navbar() {
             <Link className="Links"to="/dsgh">Shirt & Blouses</Link>
             <Link className="Links"to="/dsgh"> Tees</Link>
             <Link className="Links" to="/dsgh"> Sweaters & Knits</Link>
-            {/* <Link className="Links" to="/dsgh">Tanks</Link> */}
+            
             </Box>
             <Box display="flex" flexDirection="column">
             <h2 fontSize="19px"><b>ALL BOTTOMS </b></h2>     
@@ -249,8 +251,7 @@ export default function Navbar() {
             <Link className="Links" to="/dsgh">New Bottoms</Link>
             <Link className="Links"to="/dsgh">New Rompers & Jumpsuits</Link>
             <Link className="Links"to="/dsgh">New Accesories</Link>
-            {/* <Link className="Links"to="/dsgh"> Sale Accessories</Link>
-            <Link className="Links" to="/dsgh"> Last Call Sales</Link> */}
+           
             </Box>
             <Box display="flex" flexDirection="column">
             <h2 fontSize="19px"><b> DU EXCLUSIVE</b></h2>   
@@ -271,7 +272,7 @@ export default function Navbar() {
             <Link className="Links"to="/dsgh">Babydoll Fits</Link>
             <Link className="Links"to="/dsgh">Restocks</Link>
             <Link className="Links"to="/dsgh">The Basic Shop</Link>
-            {/* <Link className="Links"to="/dsgh">Gift Cards</Link> */}
+           
             </Box>
           </Box>
           </MenuList>
@@ -406,21 +407,9 @@ export default function Navbar() {
           </Box>
           </MenuList>
         </Menu>
-      <Menu isOpen={isOpen||isOpen2||isOpen3||isOpen4||isOpen5||isOpen6||isOpen7}  position="absolute" id="ide" ><MenuList  bg="white" width="580%" h="360px"m="auto" mt="160px" zIndex="1" ml="28px" border="none"></MenuList> </Menu> 
-      </Box>:
-      
-      <Menu sOpen={isOpen8}>
-<MenuButton>
-      <ChevronDownIcon fontSize="23px" mt={-1.5}/>
-                  </MenuButton>
-                <MenuList mt={4} onMouseEnter={onOpen8} onMouseLeave={onClose8}>
-                  {/* <NavbarCategory /> */}
-                  "gfhdfhgdf"
-                </MenuList>
- </Menu> 
-
-
-      {/* <Box bg="black" h="60px" display="flex " justifyContent="center" ></Box> */}
+      <Menu isOpen={isOpen||isOpen2||isOpen3||isOpen4||isOpen5||isOpen6||isOpen7}  position="absolute" id="ide" ><MenuList  bg="white" width="580%" h="360px"m="auto" mt="160px" zIndex="1" ml="28px" border="none"></MenuList> </Menu> </>:  <Box id="NavHomeParent" >  <Box id="NavHam" bg="red" h="20px" w="20px"> <BiArrowFromRight id="CLOSEICON" onClick={LINEMENU}/></Box></Box>}
+   
+      </Box>
      
     </Box>
   );

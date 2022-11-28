@@ -36,16 +36,55 @@
  #MenuSpans>span{
     margin-right: 2%;
  }   
+#NavHomeParent{  
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0%;
+  background-color : rgba(68, 66, 66, 0.749);
+}
+#NavHomeParen{
+  display: none;
+}
+#NavHam{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 40%;
+  background-color: rgb(247, 247, 247);
+  height: 100vh;
+  z-index: 4;
+  animation: divincart 0.5s ease-in-out;
+}
+@keyframes divincart {
+  from {
+      right: -20%;
+  }
 
-
+  to {
+      right: 0;
+  }
+}
+#CLOSEICON{
+  font-size: 30px;
+  position:absolute;
+  right: 2%;
+  cursor: pointer;
+}
 @media (max-width:950px) {
-     #MenuSpans{
+     /* #MenuSpans{
         display: none;
      }
     .list_Buttons{
         display: none;
+    } */
+    #Main_Logo{
+      width: 33%;
     }
-}
+    #LOGODIV{
+      font-size: 19px
+    }
+} 
 #Nav_heading{
     text-align: center;
     color: white;
