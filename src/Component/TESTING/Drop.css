@@ -1,16 +1,23 @@
-/* .list_Buttons{
-    position: relative;
-    border-bottom: 6px solid black;
-} */
+
 .Links{
-    width: 80%;
-    color: azure;
+    color: black;
     padding: 10px;
+    padding-left: 0px;
     margin: 2px;
-    /* background-color: aqua; */
+    margin-left: 0%;
+    padding-bottom: 2px;
+   
+}
+.Links:hover{
+    color: black;
+    /* background-color: rgb(245, 245, 245); */
+    padding-bottom: 2px;
+    border-bottom: 2px solid green;
+    /* text-decoration: underline; */
 }
 .list_Buttons{
     padding: 10px;
+    cursor: pointer;
 }
 .list_Buttons:after {
         display      : block;
@@ -31,3 +38,40 @@
  }   
 
 
+@media (max-width:950px) {
+     #MenuSpans{
+        display: none;
+     }
+    .list_Buttons{
+        display: none;
+    }
+}
+#Nav_heading{
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    animation-name: Heading;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 1500ms;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes Heading {
+    0% {
+      bottom: -40px;
+      opacity: 0%;
+    }
+    50% {
+      bottom: -10px;
+      z-index: 0;
+      opacity: 70%;
+    }
+    100% {
+      bottom: 0px;
+      opacity: 100%;
+      z-index: 0;
+    }
+  }
+  
