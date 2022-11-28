@@ -1,4 +1,5 @@
 // import Navbar from "./Component/Navbar/Navbar";
+import Footer from "./Component/Footer/Footer";
 import Navbar from "./Component/TESTING/DROP";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
      {/* <Navbar/> */}
      <Navbar/>
+     <Footer/>
     </div>
   );
 }
