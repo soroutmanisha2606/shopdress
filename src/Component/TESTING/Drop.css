@@ -50,7 +50,7 @@
   position: absolute;
   top: 0%;
   left: 0%;
-  width: 40%;
+  width: 60%;
   background-color: rgb(247, 247, 247);
   height: 100vh;
   z-index: 4;
@@ -67,8 +67,9 @@
 }
 #CLOSEICON{
   font-size: 30px;
-  position:absolute;
-  right: 2%;
+  position:relative;
+  /* right: 2%; */
+  left: 85%;
   cursor: pointer;
 }
 @media (max-width:950px) {
