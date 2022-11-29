@@ -6,7 +6,7 @@ import {
   MenuList,
   useColorModeValue,
   Container,
-  Box,
+  Box,  AccordionButton,Accordion ,AccordionIcon, AccordionItem,AccordionPanel
 } from "@chakra-ui/react";
 import LINEMENU from "./Funcations.Nav/OpenClose";
 import {BiSearch,BiShoppingBag  } from "react-icons/bi";
@@ -409,7 +409,78 @@ export default function Navbar() {
           </Box>
           </MenuList>
         </Menu>
-      <Menu isOpen={isOpen||isOpen2||isOpen3||isOpen4||isOpen5||isOpen6||isOpen7}  position="absolute" id="ide" ><MenuList  bg="white" width="580%" h="360px"m="auto" mt="160px" zIndex="1" ml="28px" border="none"></MenuList> </Menu> </>:  <Box id="NavHomeParent" >  <Box id="NavHam" bg="red" h="20px" w="20px"> <BiArrowFromRight id="CLOSEICON" onClick={LINEMENU}/></Box></Box>}
+      <Menu isOpen={isOpen||isOpen2||isOpen3||isOpen4||isOpen5||isOpen6||isOpen7}  position="absolute" id="ide" ><MenuList  bg="white" width="580%" h="360px"m="auto" mt="160px" zIndex="1" ml="28px" border="none"></MenuList> </Menu> </>:  <Box id="NavHomeParent" > 
+  <Box id="NavHam" bg="red" h="20px" w="20px"> <BiArrowFromRight id="CLOSEICON" onClick={LINEMENU}/>     <Accordion defaultIndex={[0]} allowMultiple>
+  <AccordionItem>
+    <h2>
+      <AccordionButton bg="green.200">
+        <Box flex='1' textAlign='left'>
+          Cyber Monday
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4} display="flex" flexDirection="column"  >
+            <Link className="Links" to="/dsgh">New Markdowns</Link>
+            <Link className="Links" to="/dsgh">Sale Dresses</Link>
+            <Link className="Links" to="/dsgh"> Sale Rompers & Jumpsuits</Link>
+            <Link className="Links"to="/dsgh">Sale Tops</Link>
+            <Link className="Links"to="/dsgh">Sale Bottoms</Link>
+            <Link className="Links"to="/dsgh"> Sale Shoes</Link>
+            <Link className="Links" to="/dsgh"> Sale Accessories</Link>
+    </AccordionPanel>
+  </AccordionItem>
+
+  <AccordionItem>
+    <h2>
+      <AccordionButton  bg="red.200">
+        <Box flex='1' textAlign='left'>
+         Holiday Shop
+        </Box>
+        <AccordionIcon />
+           
+      </AccordionButton>
+    </h2>
+
+    <AccordionPanel pb={4} display="flex" flexDirection="column" >
+     <Link className="Links" to="/dsgh">Under $20</Link>
+            <Link className="Links" to="/dsgh">Under $15</Link>
+            <Link className="Links"to="/dsgh">Under $10</Link>
+            <Link className="Links"to="/dsgh">Under $5 </Link>
+    </AccordionPanel>
+  </AccordionItem>
+  <AccordionItem>
+    <h2>
+      <AccordionButton  bg="blue.200">
+        <Box flex='1' textAlign='left'>
+         EXCLUSIVE
+        </Box>
+        <AccordionIcon />
+           
+      </AccordionButton>
+    </h2>
+
+    <AccordionPanel pb={4} display="flex" flexDirection="column" >
+     <Link className="Links" to="/dsgh">Under $20</Link>
+     <Link className="Links"to="/dsgh">New Accesories</Link>
+           
+      
+           {/* <Box display="flex" flexDirection="column"> */}
+           <h2 fontSize="19px"><b> </b></h2>   
+           <Link className="Links" to="/dsgh">Game DAy</Link>
+           <Link className="Links" to="/dsgh">Nashville</Link>
+           <Link className="Links"to="/dsgh">Charleston</Link>
+           <Link className="Links"to="/dsgh">Savannah</Link>
+           <Link className="Links"to="/dsgh">Greenville</Link>
+           <Link className="Links"to="/dsgh">Dahlonega</Link>
+           <Link className="Links"to="/dsgh">Hats</Link>
+    </AccordionPanel>
+  </AccordionItem>
+</Accordion>
+      </Box>
+
+    
+      </Box>}
    
       </Box>
      
