@@ -12,6 +12,21 @@
 /* .a-list-items{
     width: 100%;
 } */
+.select-box-a{
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px;
+}
+.select-box-a>select{
+    width: 24%;
+    padding: 7px;
+    height: 40px;
+    border: 1px solid black;
+    /* line-height: 50px; */
+}
+
 
 .list-item{
     padding: 1%;
