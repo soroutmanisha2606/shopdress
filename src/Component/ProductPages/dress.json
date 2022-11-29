@@ -1,0 +1,122 @@
+[
+    { "id" : 1,
+      "name": "BHLDN Freya Satin Charmeuse Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_ivory_merry_pullover_c040af8a-e267-41d4-8fd3-9c4c2fcae40d_540x.jpg?v=1669239241",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_ivory_merry_pullover-4_540x.jpg?v=1669239258",
+      "image_3": "image.png",
+      "price": "220.0"
+    },
+    { "id": 2,
+      "name": "Society James Emilia Topper",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_tree_pullover-5_540x.jpg?v=1669239080",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_tree_pullover-3_540x.jpg?v=1669239098",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/66021122_011_c6?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "225.0"
+    },
+    {  "id": 3,
+      "name": "Significant Other Gracie Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_ivory_merry_pullover-2_360x.jpg?v=1669238895",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_ivory_merry_pullover-5_540x.jpg?v=1669238905",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/70036728_014_d6?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "276.0"
+    },
+    {  "id":4,
+      "name": "Logan Velvet Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_merry_pullover-5_360x.jpg?v=1669238752",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_merry_pullover-3_540x.jpg?v=1669238762",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/49999410_040_b4?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "290.0"
+    },
+    { "id":5,
+      "name": "Retrofete Zion Silk Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_merry_bright_pullover-3_360x.jpg?v=1669238592",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_merry_bright_pullover-5_540x.jpg?v=1669238603",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/78007374_001_d6?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "595.0"
+    },
+    { "id":6,
+      "name": "BHLDN Remy Satin Charmeuse Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-2_360x.jpg?v=1669238424",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-5_540x.jpg?v=1669238434",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/69275477_014_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "248.0"
+    },
+    {  "id":7,
+      "name": "BHLDN Miranda Crepe Midi Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_plaid_flannel-7_fd64dce3-7999-4b6c-8681-20ea06ceabb4_540x.jpg?v=1669257370",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_plaid_flannel-4_34a437d1-8988-4c7d-838f-b140f975c61f_540x.jpg?v=1669257383",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/69404945_041_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "168.0"
+    },
+    {  "id":8,
+      "name": "Sleeper Atlanta Linen Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_chenille_sweater-3_19ea7ed8-16e0-4640-96b0-7bb7bcf3c648_540x.jpg?v=1669259154",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_chenille_sweater-7_1759b3f0-4305-4b9b-bd20-dce6d1eabf15_540x.jpg?v=1669259154",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/67397836_263_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "320.0"
+    },
+    {"id":9,
+      "name": "Jenny Yoo Issa Velvet Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_vneck_sweater-8_540x.jpg?v=1669258614",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_vneck_sweater-3_540x.jpg?v=1669258651",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/66215096_030_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "295.0"
+    },
+    {   "id":10,
+      "name": "Jenny Yoo Logan Velvet Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_turtleneck_sweater-3_540x.jpg?v=1669258403",
+      "image_2":
+        "https://images.urbndata.com/is/image/Anthropologie/48154264_027_b2?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/48154264_027_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "290.0"
+    },
+    { "id":11,
+      "name": "Sachin & Babi Sierra Satin Midi Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_rust_turtleneck_sweater-4_540x.jpg?v=1669258165",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_rust_turtleneck_sweater-2_540x.jpg?v=1669258175",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/64734064_011_b4?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "250.0"
+    },
+    { "id": 12,
+      "name": "BHLDN Ruby Satin Charmeuse Dress",
+      "image_1":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_plaid_shacket-2_540x.jpg?v=1669257984",
+      "image_2":
+        "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_plaid_shacket-3_540x.jpg?v=1669258019",
+      "image_3":
+        "https://images.urbndata.com/is/image/Anthropologie/63828255_031_b3?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
+      "price": "220.0"
+    }
+  ]
+  

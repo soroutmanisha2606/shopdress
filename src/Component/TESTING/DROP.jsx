@@ -87,7 +87,7 @@ export default function Navbar() {
             >
          <Box display="flex" flexDirection="column">   
            <h2 fontSize="19px"><b> SHOP BY CATEGORIES</b></h2> 
-            <Link className="Links" to="/dsgh">Luxe Looks Collection</Link>
+            <Link className="Links" to="/blackfriday">Luxe Looks Collection</Link>
             <Link className="Links" to="/dsgh">Christmas Graphics</Link>
             <Link className="Links" to="/dsgh"> Party Shop</Link>
             <Link className="Links"to="/dsgh">Gift Cards</Link>
