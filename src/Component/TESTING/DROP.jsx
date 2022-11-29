@@ -63,7 +63,7 @@ export default function Navbar() {
         />
         <span style={{ display: "flex", gap: "16px"}}>
           {/* <FaUser cursor="pointer" /> <BiShoppingBag cursor="pointer"  /> */}
-          <Login cursor="pointer" /> <BiShoppingBag cursor="pointer"  />
+          <Login cursor="pointer" /> <BiShoppingBag cursor="pointer" onClick={CARTMENU}  />
         </span>
       </Box>
       <Box display="flex" justifyContent="center" id="MenuSpans">

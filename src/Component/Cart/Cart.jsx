@@ -41,11 +41,11 @@ export default function Cart() {
             Array.map((el)=>{
               return <li key={el.id} style={{display:"flex", width:"100%", border:"1px solid black" }}> 
                          
-                         <img src={el.image_1} style={{width:"35%"}} />
+                         <img src={el.image_1} style={{width:"35%",height:"150px"}} />
                          <span style={{display:"flex", flexDirection:"column", justifyContent:"space-between"}}>
-                         <h3 style={{fontSize:"24px", fontFamily:"Poppins, sans-serif"  }}> {el.name}</h3>
+                         <h6 style={{fontSize:"24px", fontFamily:"Poppins, sans-serif"  }}> {el.name}</h6>
                          <h3>$ {el.price}</h3>
-                         <Box display="flex" gap="7px" bg="black" alignItems="center" fontSize="21px" border="2px" w="80px" color="white" ><FiMinus cursor="pointer" onClick={DecreaseQTY}/>1<FiPlus cursor="pointer" onClick={IncreaseQTY}/></Box></span>
+                         <Box display="flex" gap="7px" bg="black" alignItems="center" fontSize="21px" border="2px" w="83px" color="white" ><FiMinus cursor="pointer" onClick={DecreaseQTY}/><span>1 </span> <FiPlus cursor="pointer" onClick={IncreaseQTY}/></Box></span>
                      </li>
             })
            }

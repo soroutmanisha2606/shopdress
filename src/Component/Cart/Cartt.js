@@ -9,12 +9,12 @@ export default function CARTMENU (){
     
 }
 export const DecreaseQTY=(e)=>{
-     let pre= Number(e.target.parentNode.childNodes[1]);
-     e.target.parentNode.childNodes[1]=pre-1;
+    let pre= Number(e.target.parentNode.childNodes[1].innerHTML);
+    e.target.parentNode.childNodes[1].innerHTML=pre-1;
     
 }
 export const IncreaseQTY=(e)=>{
-    // let pre= Number(e.target.parentNode.childNodes[1]);
-    // e.target.parentNode.childNodes[1]=pre+1;
-    console.log( e.target.parentNode.childNodes)
+    let pre= Number(e.target.parentNode.childNodes[1].innerHTML);
+    e.target.parentNode.childNodes[1].innerHTML=pre+1;
+    // console.log( e.target.parentNode.childNodes[1].innerHTML)
 }

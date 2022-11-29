@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 #CARTDIV{
+    z-index: 2;
     position:fixed;
     top: 0%;
     width: 100%;
