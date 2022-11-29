@@ -21,7 +21,7 @@ const settings = {
   infinite: true,
   autoplay: true,
   speed: 500,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -65,7 +65,7 @@ export default function CaptionCarousel() {
   return (
     <Box
       position={'relative'}
-      height={'300px'}
+      height={'500px'}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
       <link
@@ -80,7 +80,7 @@ export default function CaptionCarousel() {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
       {/* Left Icon */}
-      <IconButton
+      {/* <IconButton
         aria-label="left-arrow"
         variant="ghost"
         position="absolute"
@@ -90,9 +90,9 @@ export default function CaptionCarousel() {
         zIndex={2}
         onClick={() => slider?.slickPrev()}>
         <BiLeftArrowAlt size="40px" />
-      </IconButton>
+      </IconButton> */}
       {/* Right Icon */}
-      <IconButton
+      {/* <IconButton
         aria-label="right-arrow"
         variant="ghost"
         position="absolute"
@@ -102,7 +102,7 @@ export default function CaptionCarousel() {
         zIndex={2}
         onClick={() => slider?.slickNext()}>
         <BiRightArrowAlt size="40px" />
-      </IconButton>
+      </IconButton> */}
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((card, index) => (
@@ -115,7 +115,7 @@ export default function CaptionCarousel() {
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}>
             {/* This is the block you need to change, to customize the caption */}
-            <Container size="container.lg" height="600px" position="relative">
+            {/* <Container size="container.lg" height="600px" position="relative">
               <Stack
                 spacing={6}
                 w={'full'}
@@ -130,7 +130,7 @@ export default function CaptionCarousel() {
                   {card.text}
                 </Text>
               </Stack>
-            </Container>
+            </Container> */}
           </Box>
         ))}
       </Slider>

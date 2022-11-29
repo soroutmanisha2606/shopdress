@@ -51,17 +51,19 @@ export default function Login() {
         finalFocusRef={finalRef}
         isOpen={isOpen}
         onClose={onClose}
-        size={'xl'}
+        size={'4xl'}
       >
         <ModalOverlay />
         <ModalContent>
+        <Box bgGradient='linear(to-r, green.200, green.500)'>
           <ModalHeader>Login</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <Flex>
-            <Box
-              bg={useColorModeValue('white', 'gray.700')}
-              p={8}>
+            <Flex justifyContent='space-between'>
+            <Box w={400}
+            shadow='dark-lg'
+            bgGradient='linear(to-r, green.200, green.500)'
+              p={4}>
               <Stack spacing={4}>
                 <FormControl id="email">
                   <FormLabel>Email address</FormLabel>
@@ -99,8 +101,8 @@ export default function Login() {
                 </Stack>
               </Stack>
             </Box>
-            <Box>
-              {/* <CaptionCarousel/> */}
+            <Box className='Carousel__box'>
+              <CaptionCarousel/>
               </Box>
             </Flex>
           </ModalBody>
@@ -114,6 +116,7 @@ export default function Login() {
 
             </Box>
           </ModalFooter>
+        </Box>
         </ModalContent>
       </Modal>
 
@@ -126,6 +129,7 @@ export default function Login() {
           <ModalHeader>Signup</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
+            <Flex>
             <Box>
               <Stack spacing={4}>
                 <HStack>
@@ -184,6 +188,10 @@ export default function Login() {
                 </Stack>
               </Stack>
             </Box>
+            <Box className='Carousel__box'>
+              <CaptionCarousel/>
+              </Box>
+            </Flex>
           </ModalBody>
 
           <ModalFooter>
