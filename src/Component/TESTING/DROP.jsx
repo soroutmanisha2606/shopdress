@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import LINEMENU from "./Funcations.Nav/OpenClose";
 import {BiSearch,BiShoppingBag  } from "react-icons/bi";
+import CARTMENU from "../Cart/Cartt"
 import "./Drop.css"
 import { Link } from "react-router-dom";
 import { FaUser} from "react-icons/fa";
@@ -60,7 +61,7 @@ export default function Navbar() {
           id="Main_Logo"
         />
         <span style={{ display: "flex", gap: "16px"}}>
-          <FaUser cursor="pointer" /> <BiShoppingBag cursor="pointer"  />
+          <FaUser cursor="pointer" /> <BiShoppingBag cursor="pointer" onClick={CARTMENU} />
         </span>
       </Box>
       <Box display="flex" justifyContent="center" id="MenuSpans">
@@ -407,7 +408,7 @@ export default function Navbar() {
           </Box>
           </MenuList>
         </Menu>
-      <Menu isOpen={isOpen||isOpen2||isOpen3||isOpen4||isOpen5||isOpen6||isOpen7}  position="absolute" id="ide" ><MenuList  bg="white" width="580%" h="360px"m="auto" mt="160px" zIndex="1" ml="28px" border="none"></MenuList> </Menu> </>:  <Box id="NavHomeParent" > 
+      <Menu isOpen={isOpen||isOpen2||isOpen3||isOpen4||isOpen5||isOpen6||isOpen7}  position="absolute" id="ide" ><MenuList  bg="white" width="580%" h="360px"m="auto" mt="160px" zIndex="1" ml="28px" border="none"></MenuList> </Menu> </>:  <Box id="NavHomeParen" > 
   <Box id="NavHam" bg="red" h="20px" w="20px"> <BiArrowFromRight id="CLOSEICON" onClick={LINEMENU}/>     <Accordion defaultIndex={[0]} allowMultiple>
   <AccordionItem>
     <h2>
@@ -474,6 +475,28 @@ export default function Navbar() {
            <Link className="Links"to="/dsgh">Hats</Link>
     </AccordionPanel>
   </AccordionItem>
+  <AccordionItem>
+    <h2>
+      <AccordionButton  bg="grey">
+        <Box flex='1' textAlign='left'>
+        ALL DRESS
+        </Box>
+        <AccordionIcon />
+           
+      </AccordionButton>
+    </h2>
+
+    <AccordionPanel pb={4} display="flex" flexDirection="column" >
+    {/* <h2 fontSize="19px"><b> </b></h2> */}
+            <Link className="Links" to="/dsgh">Sale Dresses</Link>
+            <Link className="Links" to="/dsgh">Sale Rompers & Jumpsuits</Link>
+            <Link className="Links" to="/dsgh"> Sale Tops</Link>
+            <Link className="Links"to="/dsgh">Sale Bottoms</Link>
+            <Link className="Links"to="/dsgh">Sale Shoes</Link>
+            <Link className="Links"to="/dsgh"> Sale Accessories</Link>
+            <Link className="Links" to="/dsgh"> Last Call Sales</Link>
+    </AccordionPanel>
+  </AccordionItem>
 </Accordion>
       </Box>
 
@@ -482,6 +505,8 @@ export default function Navbar() {
    
       </Box>
      
+
+     {/* <Box ></Box> */}
     </Box>
   );
 }

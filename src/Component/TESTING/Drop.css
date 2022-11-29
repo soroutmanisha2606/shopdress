@@ -47,22 +47,22 @@
   display: none;
 }
 #NavHam{
-  position: absolute;
   top: 0%;
   left: 0%;
   width: 60%;
   background-color: rgb(247, 247, 247);
+  position: absolute;
   height: 100vh;
   z-index: 4;
-  animation: divincart 0.5s ease-in-out;
+  animation: divincart 0.3s ease-in-out;
 }
 @keyframes divincart {
   from {
-      right: -20%;
+      left: -60%;
   }
 
   to {
-      right: 0;
+      left: 0;
   }
 }
 #CLOSEICON{
