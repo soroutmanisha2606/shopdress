@@ -17,6 +17,7 @@ import { FaUser} from "react-icons/fa";
 import { FiMenu} from "react-icons/fi";
 import {CiUser} from "react-icons/ci";
 import {BiArrowFromRight} from "react-icons/bi";
+import Login from "../Login/Login";
 
 export default function Navbar() {
   const [isLargerThan1144] = useMediaQuery('(min-width: 1050px)')
@@ -61,7 +62,8 @@ export default function Navbar() {
           id="Main_Logo"
         />
         <span style={{ display: "flex", gap: "16px"}}>
-          <FaUser cursor="pointer" /> <BiShoppingBag cursor="pointer" onClick={CARTMENU} />
+          {/* <FaUser cursor="pointer" /> <BiShoppingBag cursor="pointer"  /> */}
+          <Login cursor="pointer" /> <BiShoppingBag cursor="pointer"  />
         </span>
       </Box>
       <Box display="flex" justifyContent="center" id="MenuSpans">
