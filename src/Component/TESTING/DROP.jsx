@@ -41,7 +41,7 @@ export default function Navbar() {
   const { isOpen: isOpen8,onOpen: onOpen8, onClose: onClose8,} = useDisclosure();
   const { isOpen: isOpen9,onOpen: onOpen9, onClose: onClose9,} = useDisclosure();
   return (
-    <Box position="sticky" bg="white" top="0%">
+    <Box position="sticky" bg="white" top="0%" zIndex="1">
       <Box bg="green" h="35px">
       <h1 id="Nav_heading"> 30% OFF EVERYTING WITH CODE : CYBER30 </h1>
       </Box>
