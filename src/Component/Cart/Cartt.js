@@ -1,7 +1,7 @@
 import store from "../../Store/Store"
 import { GetCartData,GetPatchData,GetDeleteData } from '../../Actions/CartAction';
 export default function CARTMENU (){
-    console.log("sgsd   ")
+    // console.log("sgsd   ")
     
     if(document.getElementById("CARTDI")){
         document.getElementById("CARTDI").id="CARTDIV"
@@ -10,18 +10,29 @@ export default function CARTMENU (){
     }
     
 }
+
+export const SearchDiv=()=>{
+    if(document.getElementById("SearchDi")){
+        document.getElementById("SearchDi").id="SearchDiv"
+    }else{
+        document.getElementById("SearchDiv").id="SearchDi"
+    }
+}
+
+
 export const DecreaseQTY=(id,dispatch)=>{
     let temp=[]
     let Array=store.getState().ShopDressReducer.Cart;
     console.log("ok-des");
-    Array.map((el)=>{
+    Array.map((el, index,ar)=>{
         if(el.id==id){
-           if(el.Qty>1){
-             el.Qty= Number(el.Qty)-1;
+           if(Number(el.Qty)>1){
+             el.Qty= Number(el.Qty)-1; 
+              GetPatchData(el, el.id);
            }else{
-             GetDeleteData(id);
+             GetDeleteData(el.id,index,Array,dispatch);
            }
-           GetPatchData(el,id);
+        //    id,index,Array,dispatch
          
         }
     })
@@ -60,4 +71,8 @@ export const IncreaseQTY=(id,dispatch, Array)=>{
         
         // console.log(store.getState().ShopDressReducer.Cart[0].Qty);
 
+}
+
+export const SearchBar=(e)=>{
+     console.log(e.target.value)
 }
