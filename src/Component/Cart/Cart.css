@@ -1,0 +1,91 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+#CARTDIV{
+    z-index: 2;
+    position:fixed;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* overflow: hidden; */
+}
+
+#CARTDI{
+   display: none;
+}
+#CARTDIV_INNER{
+    position: absolute;
+    width: 30%;
+    top: 0%;
+    height: 100vh;
+    right: 0%;
+    background-color: rgb(255, 255, 255);
+    animation: divincar 0.4s ease-in-out;
+}
+.CartCPNYImg{
+    border: 1px solid black;
+    margin-top: 3px;
+    /* padding: auto; */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.CartCPNYImg:hover{
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgb(67, 67, 67);
+  transform: scale(1.1);
+}
+
+.CartCPNYImg>img{
+    width: 20%;
+}
+@keyframes divincar {
+    from {
+        right: -60%;
+    }
+  
+    to {
+        right: 0;
+    }
+  }
+
+  
+  #cartItems{
+    background-color: rgb(232, 232, 232);
+    height: 70%;
+    width: 95%;
+    margin: auto;
+    margin-top: 2%;
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  /* #c      */
+  /*
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(214, 214, 214); 
+    /* border-radius: 10px; */
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(2, 195, 2); 
+    /* border-radius: 10px; */
+  }
+  
+  /* Handle on hover */ 
+  ::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background: #57de18; 
+  }
