@@ -12,7 +12,7 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
-
+import "./CaptionCarousel.css"
 // Settings for the slider
 const settings = {
   dots: true,
@@ -21,7 +21,7 @@ const settings = {
   infinite: true,
   autoplay: true,
   speed: 500,
-  autoplaySpeed: 1000,
+  autoplaySpeed: 2000,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -44,28 +44,28 @@ export default function CaptionCarousel() {
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
-        'https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+        'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_knit_sweater_a73c90cb-e0f0-4b9b-b963-8d897c218da7_540x.jpg?v=1669397761',
     },
     {
       title: 'Design Projects 2',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
-        'https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80',
+        'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_knit_sweater-10_8a7dc24c-8cfd-4cbd-b63b-b0b6c5be0381_540x.jpg?v=1669397486',
     },
     {
       title: 'Design Projects 3',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
-        'https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+        'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_knit_sweater-4_869bc6b7-3cc6-4c65-a66f-29726e7d53fc_540x.jpg?v=1669397062',
     },
   ];
 
   return (
     <Box
       position={'relative'}
-      height={'500px'}
+      height={'400px'}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
       <link
@@ -113,7 +113,11 @@ export default function CaptionCarousel() {
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}>
+            className='carosal_box'
+            >
+              <Box shadow='dark-lg' rounded={20}>
+              <img className='img_carousal' src={card.image} alt=""/>
+              </Box>
             {/* This is the block you need to change, to customize the caption */}
             {/* <Container size="container.lg" height="600px" position="relative">
               <Stack
