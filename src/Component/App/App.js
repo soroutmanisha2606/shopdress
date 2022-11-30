@@ -3,6 +3,7 @@
 // import PaymentPage from "../Component/PaymentPage/PaymentPage";
 import React, { useState } from "react";
 import Footer from "../Footer/Footer";
+import Login from "../Login/Login";
 import Carddetails from "../PaymentPage/Carddetails";
 import { BasicUsage } from "../PaymentPage/PaymentModal";
 import PaymentPage from "../PaymentPage/PaymentPage";
@@ -14,8 +15,9 @@ function App() {
  
   return (
     <div className="App">
-   <Footer/>
-   <br/>
+   {/* <Footer/> */}
+   <Login/>
+    <br/>
    <br/>
    <BasicUsage/>
    <br/>
@@ -23,7 +25,8 @@ function App() {
    <PaymentPage/>
    <br/>
    <br/>
-   <PaymetSuccess/>
+   <PaymetSuccess/> 
+  
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
       {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
     
