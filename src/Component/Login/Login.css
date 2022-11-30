@@ -1,3 +1,10 @@
 .Carousel__box{
     width:50%
 }
+Input{
+    border: 2px solid wheat !important;
+}
+.modalHeader{
+    text-align: center;
+    color: rgb(116, 228, 116);
+}
