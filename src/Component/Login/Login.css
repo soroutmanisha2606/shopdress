@@ -6,5 +6,8 @@ Input{
 }
 .modalHeader{
     text-align: center;
-    color: rgb(116, 228, 116);
+    text-transform: uppercase;
+	background: linear-gradient(to right, #9ae6b4 0%, #38a169 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
