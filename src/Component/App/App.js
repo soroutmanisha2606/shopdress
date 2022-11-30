@@ -6,34 +6,28 @@ import Footer from "../Footer/Footer";
 import Carddetails from "../PaymentPage/Carddetails";
 import { BasicUsage } from "../PaymentPage/PaymentModal";
 import PaymentPage from "../PaymentPage/PaymentPage";
-import { Successfull } from "../PaymentPage/successfull";
+import PaymetSuccess from "../PaymentPage/PaymetSuccess";
+
 import Navbar from "../TESTING/DROP";
 
 function App() {
-  const [complete,setcomplete]=React.useState(false);
-  const [payment,setpayment]=useState(false);
+ 
   return (
     <div className="App">
-     {/* <Navbar/> */}
-     {/* <Navbar/> */}
+   <Footer/>
+   <br/>
+   <br/>
    <BasicUsage/>
-    {/* <PaymentPage/>
-<br/>
-<br/>
-<br/>
-    <Carddetails/>
-    <br/>
-<br/>
-<br/>
-    <Successfull/>
-    <br/> */}
-<br/>
-<br/>
+   <br/>
+   <br/>
+   <PaymentPage/>
+   <br/>
+   <br/>
+   <PaymetSuccess/>
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
       {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
     
-     <br/>
-     <br/>
+    
     
     </div>
   );

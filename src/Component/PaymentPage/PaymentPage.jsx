@@ -1,10 +1,36 @@
 import React from 'react'
 import "./PaymentPage.css"
+import { useFormik } from 'formik'
 import {Box, Button, Heading, Input, Link, Select} from "@chakra-ui/react"
+import { signUpSchema } from './schemas'
 export default function PaymentPage() {
+const Formik=useFormik({
+  initialValues:{
+   email:"",
+   country:"",
+   first_name:"",
+   last_name:"",
+   comapany:"",
+   appartment:"",
+   address:"",
+   city:"",
+   region:"",
+   Zip:"",
+   phone:""
+  },
+  validationSchema:signUpSchema,
+  onSubmit:(values,{setSubmitting})=>{
+    console.log(Formik.values+"values...");
+    alert(JSON.stringify(values,null,2))
+    setSubmitting(false )
+  }
+})
+
+
   return (
     <div className='payment_div'>
   <Box className='left_box'>
+    <form onSubmit={Formik.handleSubmit}>
     <Box>
       <img className='dressup_img_main_logo' src='https://cdn.shopify.com/s/files/1/0339/0901/files/All-Black-Logo_7_spacing.png?14284'/>
     </Box>
@@ -22,39 +48,67 @@ export default function PaymentPage() {
         <h6>Contact information</h6>
         <p> Already have an account?<span><Link>Log in</Link></span></p>
             </div>
-      <Input placeholder='Email' className='input' size='lg' />
+          
+      <Input placeholder='* Email' className='input' focusBorderColor={"blue"} size='lg' border={"none"}  name='email'  value={Formik.values.email} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
+      {Formik.errors.email&&Formik.touched.email?<p className='errors'>{Formik.errors.email}</p>:null}
       <br/>
       <br/>
       <label>Shipping address</label>
-      <Select placeholder='Country/region' size='lg' m={"10px"} >
+      <Select placeholder='Country/region' size='lg' m={"10px"}  name='country'  value={Formik.values.country} onChange={Formik.handleChange}>
   <option value='option1'>India</option>
   <option value='option2'>China</option>
   <option value='option3'>Usa</option>
 </Select>
-     
+{Formik.errors.country&&Formik.touched.country?<p className='errors'>{Formik.errors.country}</p>:null}
       <Box className='input_flex_boxes'>
-      <Input  placeholder='First Name'  size='lg' />
-      <Input  placeholder='First Name'  size='lg' />
+      <Input  placeholder='*First Name'  size='lg'  name='first_name'  value={Formik.values.first_name} onChange={Formik.handleChange}/>
+      <Input  placeholder='Last Name'  size='lg' name='last_name'   value={Formik.values.last_name} onChange={Formik.handleChange}/>
      </Box >
-     <Input placeholder='Company(optional)'className='input' size='lg' />
-     <Input placeholder='Address' className='input' size='lg' />
-     <Input placeholder='Appartment,suite,etc(optional)' className='input' size='lg' />
      <Box className='input_flex_boxes'>
-      <Input placeholder='City'  size='lg' />
-      <Select placeholder='Country/region'  size='lg' >
+     {Formik.errors.first_name&&Formik.touched.first_name?<p className='errors'>{Formik.errors.first_name}</p>:null}
+     {Formik.errors.last_name&&Formik.touched.last_name?<p className='errors'>{Formik.errors.last_name}</p>:null}
+     </Box>
+     <Input placeholder='Company(optional)'className='input' size='lg' name='comapany'   value={Formik.values.comapany} onChange={Formik.handleChange}/>
+     {Formik.errors.comapany&&Formik.touched.comapany?<p className='errors'>{Formik.errors.comapany}</p>:null}
+     <Input placeholder='*Address' className='input' size='lg'  name='address'  value={Formik.values.address} onChange={Formik.handleChange}/>
+     {Formik.errors.address&&Formik.touched.address?<p className='errors'>{Formik.errors.address}</p>:null}
+     <Input placeholder='Appartment,suite,etc(optional)' className='input' size='lg' name='appartment'   value={Formik.values.appartment} onChange={Formik.handleChange}/>
+     {Formik.errors.appartment&&Formik.touched.appartment?<p className='errors'>{Formik.errors.appartment}</p>:null}
+     <Box className='input_flex_boxes'>
+      <Input placeholder='*City'  size='lg' name='city'  value={Formik.values.city} onChange={Formik.handleChange} />
+      <Select placeholder='Country/region'  size='lg' name='region'   value={Formik.values.region} onChange={Formik.handleChange}>
   <option value='option1'>India</option>
   <option value='option2'>China</option>
   <option value='option3'>Usa</option>
 </Select>
-      <Input placeholder='ZIP code'  size='lg' />
+      <Input placeholder='*ZIP code'  size='lg' type="number"  name='Zip'  value={Formik.values.Zip} onChange={Formik.handleChange}/>
      </Box>
-     <Input placeholder='Phone' className='input' size='lg'  />
+     <Box className='input_flex_boxes'>
+     {Formik.errors.city&&Formik.touched.city?<p className='errors'>{Formik.errors.city}</p>:null}
+     {Formik.errors.region&&Formik.touched.region?<p className='errors'>{Formik.errors.region}</p>:null}
+     {Formik.errors.Zip&&Formik.touched.Zip?<p className='errors'>{Formik.errors.Zip}</p>:null}
+     </Box>
+     <Input placeholder='*Phone' className='input' size='lg'  name='phone' type="number  "   value={Formik.values.phone} onChange={Formik.handleChange}/>
+     {Formik.errors.phone&&Formik.touched.phone?<p className='errors'>{Formik.errors.phone}</p>:null}
     </Box>
       <Box className='last_box'>
     <Link path="/cart "> <Heading size={"xsm"}>back to cart</Heading> </Link> 
-        <Button bg={"black"}  color="white"  p={7} >continue to shopping</Button>
+        <Button bg={"black"}  color="white"  p={7} type="submit" disabled={Formik.isSubmitting} >continue to shopping</Button>
       </Box>
+      </form>
   </Box>
+
+
+
+
+
+
+
+
+
+
+
+  {/* right box */}
   <Box className='right_box'>
     <Box className='right_box_baby'>
     <Box className='Box_with_data'> 

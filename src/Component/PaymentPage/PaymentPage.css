@@ -49,7 +49,7 @@
 .input{
     width: 100%;
     box-sizing: border-box;
-    outline: none;
+    
 
 
 }
@@ -156,7 +156,7 @@ Input{
         display: flex;
         gap: 10px;
         width: 450px;
-        border: 10px solid green;
+        /* border: 10px solid green; */
         margin: auto;
         position: relative;
         padding: 10px;
@@ -167,9 +167,33 @@ Input{
         display: flex;
         gap: 10px;
         width: 290px;
-        border: 10px solid green;
+        /* border: 10px solid green; */
         margin: auto;
         position: relative;
         padding: 10px;
     }
+}
+.card_box_input{
+    display: flex;
+    gap:10px
+}
+.errors{
+    color: #d98e70;
+}
+.images_card_box{
+    width: 80%;
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0cm;
+}
+.image_card{
+    width: 100px;
+    height: 70px;
+}
+.order_box{
+    padding: 60px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
