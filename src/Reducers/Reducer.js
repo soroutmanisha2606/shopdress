@@ -10,10 +10,18 @@ export default function ShopDressReducer(state=Data, action){
                 Cart:action.payload
               }
         }
+    // case "PATCHCARTDATA"  :{
+        
+
+    //     return{
+    //         ...state,
+    //         Cart:
+    //     }
+    // }  
         default:{
-            return{
-                state
-            }
+            return state
+                
+           
         }
     }
 }
