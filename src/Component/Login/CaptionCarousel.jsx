@@ -115,7 +115,7 @@ export default function CaptionCarousel() {
             backgroundSize="cover"
             className='carosal_box'
             >
-              <Box shadow='dark-lg' rounded={20}>
+              <Box shadow='dark-lg'>
               <img className='img_carousal' src={card.image} alt=""/>
               </Box>
             {/* This is the block you need to change, to customize the caption */}

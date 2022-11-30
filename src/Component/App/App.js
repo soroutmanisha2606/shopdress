@@ -8,6 +8,7 @@ import Carddetails from "../PaymentPage/Carddetails";
 import { BasicUsage } from "../PaymentPage/PaymentModal";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import PaymetSuccess from "../PaymentPage/PaymetSuccess";
+import ProductDetails from "../ProductDetails/ProductDetails";
 
 import Navbar from "../TESTING/DROP";
 
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="App">
    {/* <Footer/> */}
-   <Login/>
+   {/* <Login/>
     <br/>
    <br/>
    <BasicUsage/>
@@ -25,7 +26,8 @@ function App() {
    <PaymentPage/>
    <br/>
    <br/>
-   <PaymetSuccess/> 
+   <PaymetSuccess/>  */}
+   <ProductDetails/>
   
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
       {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
