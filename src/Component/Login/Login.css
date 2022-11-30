@@ -1,3 +1,13 @@
 .Carousel__box{
     width:50%
 }
+Input{
+    border: 2px solid wheat !important;
+}
+.modalHeader{
+    text-align: center;
+    text-transform: uppercase;
+	background: linear-gradient(to right, #9ae6b4 0%, #38a169 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
