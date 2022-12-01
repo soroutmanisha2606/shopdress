@@ -3,6 +3,7 @@
 // import PaymentPage from "../Component/PaymentPage/PaymentPage";
 import React, { useState } from "react";
 import Footer from "../Footer/Footer";
+import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Carddetails from "../PaymentPage/Carddetails";
 import { BasicUsage } from "../PaymentPage/PaymentModal";
@@ -27,7 +28,8 @@ function App() {
    <br/>
    <br/>
    <PaymetSuccess/>  */}
-   <ProductDetails/>
+   {/* <ProductDetails/> */}
+   <Home/>
   
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
       {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
