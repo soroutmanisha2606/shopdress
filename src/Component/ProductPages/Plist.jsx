@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import dress from "./dress.json";
-import {Link} from "react-router-dom"
-
-
-
-
-
-
+import {Link} from "react-router-dom";
 
 
 export function Display(state){
@@ -64,7 +58,7 @@ function sold(){
     setState(data);
     Display(state);
   })
- }else if(select==="hl"){
+ }else if(select==="no"){
   select = "manufacture_date";
 
   fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=desc`)
@@ -76,7 +70,7 @@ function sold(){
 })
 
   
- }else if(select==="no"){
+ }else if(select==="hl"){
   select = "price";
 
   fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=desc`)
@@ -84,7 +78,7 @@ function sold(){
 .then((data)=>{
   console.log(data);
   setState(data);
-  Display();
+  Display(state);
 })
  }else{
   fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=asc`)
@@ -123,8 +117,8 @@ function sold(){
         </select>
     </div>
 
-   <Display/>
-
+   {/* <Display /> */}
+ {Display(state)}
 
 
     </div>
