@@ -2,22 +2,16 @@
 // import Footer from "./Component/Footer/Footer";
 // import PaymentPage from "../Component/PaymentPage/PaymentPage";
 import React, { useState } from "react";
-<<<<<<< HEAD
-import Allroutes from "../AllRoutes/Allroutes";
-=======
 import Cart from "../Cart/Cart";
->>>>>>> ffad76d1f66f586b4b357060f313bf198df5877c
 import Footer from "../Footer/Footer";
+import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Carddetails from "../PaymentPage/Carddetails";
 import { BasicUsage } from "../PaymentPage/PaymentModal";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import PaymetSuccess from "../PaymentPage/PaymetSuccess";
 import Practice from "../PaymentPage/practice";
-<<<<<<< HEAD
-=======
 import ProductDetails from "../ProductDetails/ProductDetails";
->>>>>>> ffad76d1f66f586b4b357060f313bf198df5877c
 
 import ProductPages from "../ProductPages/ProductPages"
 
@@ -28,20 +22,20 @@ function App() {
  
   return (
     <div className="App">
-<<<<<<< HEAD
    {/* <BasicUsage/>
     {/* <Practice/> */}
     {/* <PaymetSuccess/>   */}
    {/* <PaymentPage/>  */}
    
-   <Allroutes/>
-=======
+   {/* <Allroutes/> */}
 
 <ChakraProvider>
 
 <Navbar/>
+   {/* <Home/>
 <Cart/>
-<ProductPages/>
+<ProductPages/> */}
+   <ProductDetails/>
 </ChakraProvider>
    {/* <Footer/> */}
    {/* <Login/>
@@ -50,23 +44,13 @@ function App() {
    <BasicUsage/>
    <br/>
    <br/>
-
-
-
-
    <PaymentPage/>
    <br/>
    <br/>
    <PaymetSuccess/>  */}
-   {/* <ProductDetails/> */}
   
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
       {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
-    
-    
-    
-
->>>>>>> ffad76d1f66f586b4b357060f313bf198df5877c
     </div>
   );
 }
