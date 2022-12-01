@@ -2,9 +2,9 @@ import { Box, Button, Center, Heading, Input } from '@chakra-ui/react'
 import React from 'react'
 import "./PaymentPage.css"
 import {useFormik} from "formik";
-import { signUpSchema } from './schemas';
+import { paymenpageSchema, signUpSchema } from './schemas';
 // import { signUpSchema } from './schemas/index ';
-const Carddetails = ({setcomplete,complete}) => {
+const Carddetails = () => {
   const Formik=useFormik({
     initialValues:{
       card_number:"",
@@ -13,7 +13,7 @@ const Carddetails = ({setcomplete,complete}) => {
       country_name:"",
       postcode:"",
     },
-    validationSchema:signUpSchema ,
+    validationSchema:paymenpageSchema ,
     onSubmit:values=>{
       console.log("clicked")
       console.log(Formik.values+"values...");
@@ -41,7 +41,7 @@ const Carddetails = ({setcomplete,complete}) => {
       <img className='dressup_img_main_logo' src='https://cdn.shopify.com/s/files/1/0339/0901/files/All-Black-Logo_7_spacing.png?14284'/>
     </Box>
        <Box>
-      <Center> <Heading m={4}>Pay with debit or credit Card</Heading></Center>
+      <Center><Heading m={4}>Pay with debit or credit Card</Heading></Center>
      <Center><p>We keep your financial information securely encrypted</p>
         </Center> 
        </Box>

@@ -8,6 +8,7 @@ import Carddetails from "../PaymentPage/Carddetails";
 import { BasicUsage } from "../PaymentPage/PaymentModal";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import PaymetSuccess from "../PaymentPage/PaymetSuccess";
+import Practice from "../PaymentPage/practice";
 
 import Navbar from "../TESTING/DROP";
 
@@ -15,8 +16,9 @@ function App() {
  
   return (
     <div className="App">
-   
-    
+   <BasicUsage/>
+    <Practice/>
+   {/* // <PaymentPage/> */}
     </div>
   );
 }
