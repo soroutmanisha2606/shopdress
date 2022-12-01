@@ -52,3 +52,30 @@
     transform: scale(1.04);
     filter: brightness(0.5);
 }
+
+@media (max-width:1000px) {
+    .makeColumn {
+       flex-direction: column;
+    }
+    .makeColumn> .innerBox{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .css-egoftb{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+    }
+   
+}
+@media (max-width:500px) {
+    .css-egoftb{
+        flex-wrap: wrap;
+    }
+    .css-egoftb a{
+        flex: 50%;
+    }
+   
+}

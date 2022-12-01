@@ -18,7 +18,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookF, FaPinterestP, FaTwitter } from "react-icons/fa";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useParams } from "react-router-dom";
 import "./ProductDetails.css";
 const imgArray = [
   {
@@ -54,46 +54,57 @@ const imgArray = [
 ];
 
 const otherImg = [
-{
-    id:0,
-    img:'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_plaid_flannel-4_5f8b1040-5264-4d0f-a184-842f29fdf706_360x.jpg?v=1669395019'
-},
-{
-    id:1,
-    img:'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_cami_tank-5_fdcadb62-33ef-4cd2-af95-052959bf6593_360x.jpg?v=1660337503'
-},
-{
-    id:2,
-    img:'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_black_tiered_romper-2_360x.jpg?v=1659639517'
-},
-{
-    id:3,
-    img:'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_smaocked_maxi_dress-2_360x.jpg?v=1659639754'
-},
-{
-    id:4,
-    img:'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_tiered_tie_tank-3_360x.jpg?v=1656605911'
-}
+  {
+    id: 0,
+    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_plaid_flannel-4_5f8b1040-5264-4d0f-a184-842f29fdf706_360x.jpg?v=1669395019'
+  },
+  {
+    id: 1,
+    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_cami_tank-5_fdcadb62-33ef-4cd2-af95-052959bf6593_360x.jpg?v=1660337503'
+  },
+  {
+    id: 2,
+    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_black_tiered_romper-2_360x.jpg?v=1659639517'
+  },
+  {
+    id: 3,
+    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_smaocked_maxi_dress-2_360x.jpg?v=1659639754'
+  },
+  {
+    id: 4,
+    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_tiered_tie_tank-3_360x.jpg?v=1656605911'
+  }
 ]
 
 function ProductDetails(props) {
+  const [prodData, setprodData] = useState({});
   const [sideImg, setsideImage] = useState([]);
   const [extraImg, setextraImage] = useState([]);
   const [lgImg, setlgImg] = useState("");
+  const params = useParams()
   useEffect(() => {
+    getDetails(3)
     setsideImage(imgArray);
     setlgImg(imgArray[0].imgLg);
     setextraImage(otherImg)
   }, []);
 
   const handleImg = (img) => {
-    setlgImg(img);
-    console.log(img);
+    setlgImg(img);;
   };
+
+  const getDetails=(id)=>{
+    fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data/'+id)
+    .then(res=>res.json())
+    .then((data)=>{
+      setprodData(data)
+    })
+  }
+
   return (
     <div>
-      <Flex justifyContent={"space-between"} m={10}>
-        <Box w="6%">
+      <Flex className="makeColumn" justifyContent={"space-between"} m={10}>
+        <Box className="innerBox revflex" w="6%" >
           <Stack spacing={4}>
             {sideImg.map((ele, i) => {
               return (
@@ -111,42 +122,42 @@ function ProductDetails(props) {
             })}
           </Stack>
         </Box>
-        <Box w="43%">
+        <Box className="innerBox" w="43%">
           <Image src={lgImg} alt="NA" />
         </Box>
-        <Box className="scroolDiv" w="40%">
+        <Box className="innerBox scroolDiv" w="40%">
           <Stack spacing={6}>
-            <Text fontSize={20}>Light Grey Merry Pullover</Text>
-            <Text fontSize={20}>$ 50.00</Text>
+            <Text fontSize={20}>{prodData.name}</Text>
+            <Text fontSize={20}>$ {prodData.price}</Text>
             <hr className="hr"></hr>
             <Box>
-            <Flex mb={2}>
-              <Text fontSize={"sm"}>COLOR —</Text>
-              <Text fontSize={"xs"}>Light Grey</Text>
-            </Flex>
-            <Flex>
-              <Box
-                me={"3"}
-                w="45px"
-                h="45px"
-                rounded={"50%"}
-                border={"1px"}
-                p={"4px"}
-                textAlign="center"
-              >
-                <Box w="35px" h="35px" rounded={"50%"} bg={"grey"}></Box>
-              </Box>
-              <Box
-                w="45px"
-                h="45px"
-                rounded={"50%"}
-                border={"1px"}
-                p={"4px"}
-                textAlign="center"
-              >
-                <Box w="35px" h="35px" rounded={"50%"} bg={"brown"}></Box>
-              </Box>
-            </Flex>
+              <Flex mb={2}>
+                <Text fontSize={"sm"}>COLOR —</Text>
+                <Text fontSize={"xs"}>Light Grey</Text>
+              </Flex>
+              <Flex>
+                <Box
+                  me={"3"}
+                  w="45px"
+                  h="45px"
+                  rounded={"50%"}
+                  border={"1px"}
+                  p={"4px"}
+                  textAlign="center"
+                >
+                  <Box w="35px" h="35px" rounded={"50%"} bg={"grey"}></Box>
+                </Box>
+                <Box
+                  w="45px"
+                  h="45px"
+                  rounded={"50%"}
+                  border={"1px"}
+                  p={"4px"}
+                  textAlign="center"
+                >
+                  <Box w="35px" h="35px" rounded={"50%"} bg={"brown"}></Box>
+                </Box>
+              </Flex>
             </Box>
             <Box>
               <Text mb={2} fontSize={"xs"}>SIZE</Text>
@@ -182,9 +193,14 @@ function ProductDetails(props) {
               </Flex>
             </Box>
             <Box>
-              <Radio isChecked={true} colorScheme="green" value="1">
+              {
+               ( prodData.stock?<Radio isChecked={true} colorScheme="green" value="1">
                 <Text ms={"30px"}>In stock, ready to ship</Text>
-              </Radio>
+              </Radio>:<Radio isChecked={true} colorScheme="red" value="1">
+                <Text ms={"30px"}>Out of Stock</Text>
+              </Radio>)
+              }
+              
             </Box>
             <Box textAlign={"center"} border={"1px"}>
               <Button size={"md"}>Add To Cart</Button>
@@ -209,7 +225,7 @@ function ProductDetails(props) {
               <Link fontSize={"sm"}>More payment options</Link>
             </Box>
             <Box>
-                <Text fontSize={'2xl'} fontWeight={'bold'}>Stock Online</Text>
+              <Text fontSize={'2xl'} fontWeight={'bold'}>Stock Online</Text>
               <Box
                 cursor={"pointer"}
                 textAlign={"center"}
@@ -330,7 +346,7 @@ function ProductDetails(props) {
         </Box>
       </Flex>
       <Box m={4}>
-      <Grid templateColumns="repeat(5, 1fr)" gap={0}>
+        <Grid templateColumns="repeat(5, 1fr)" gap={0}>
           {otherImg.map((ele, i) => {
             return (
               <GridItem key={ele.id} w="100%" className="grid__box">

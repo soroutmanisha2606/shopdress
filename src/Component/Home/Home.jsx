@@ -66,7 +66,7 @@ export default function Home() {
         Womens Dress Boutique
       </Box>
       <Box p={5} mb={70}>
-        <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+        <Grid templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)","repeat(4, 1fr)"]} gap={6}>
           {state.map((ele, i) => {
             return (
               <GridItem key={i} w="100%" className="grid__box">
@@ -86,7 +86,8 @@ export default function Home() {
             select “store pick up” at checkout + pick up same day!
           </Text>
         </Box>
-        <Grid templateColumns="repeat(2, 1fr)" gap={1}>
+        <Box>
+        <Grid templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)","repeat(2, 1fr)"]} gap={1}>
           <GridItem className="right__img img__body">
             <img
               src="https://cdn.shopify.com/s/files/1/0339/0901/files/ED3D86B1-A275-45C8-AE5C-68C6338F67A2_720x.jpg?v=1669407186"
@@ -118,6 +119,7 @@ export default function Home() {
             </div>
           </GridItem>
         </Grid>
+        </Box>
       </Box>
       <Box className="bottom__banner">
         <img
@@ -153,7 +155,7 @@ export default function Home() {
         />
       </Box>
       <Box p={5} mb={70}>
-        <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+        <Grid templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)","repeat(4, 1fr)"]} gap={6}>
           {cardData.map((ele, i) => {
             return (
               <GridItem key={i} w="100%" className="grid__box">
@@ -170,7 +172,7 @@ export default function Home() {
           </Text>
        </Box>
       <Box p={5} mb={70}>
-        <Grid className="product__card" templateColumns="repeat(4, 1fr)" gap={6}>
+        <Grid className="product__card" templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)","repeat(4, 1fr)"]} gap={6}>
           {state.map((ele, i) => {
             return (
               <GridItem key={i} w="100%" className={"grid__box"+i}>
