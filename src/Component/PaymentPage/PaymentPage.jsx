@@ -2,10 +2,54 @@ import React from 'react'
 import "./PaymentPage.css"
 import { useFormik } from 'formik'
 import {Box, Button, Heading, Input, Link, Select} from "@chakra-ui/react"
-import { paymenpageSchema, signUpSchema } from './schemas'
-import { Navigate } from 'react-router-dom'
+import { signUpSchema } from './schemas'
+import { Navigate, useNavigate } from 'react-router-dom'
+//import { BasicUsage } from './PaymentModal'
+
+
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  
+} from '@chakra-ui/react'
+import { useEffect } from 'react'
+import Carddetails from './Carddetails'
+//import PaymentPage from './PaymentPage'
+// export function BasicUsage() {
+  
+//   useEffect(()=>{
+//     // onOpen()
+//   },[])
+//   return (
+//     <>
+    
+//     </>
+//   )
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function PaymentPage() {
-  //const navigate=Navigate();
+  const navigate=useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure()
 const Formik=useFormik({
  
   initialValues:{
@@ -22,11 +66,13 @@ const Formik=useFormik({
    phone:""
   },
   validationSchema:signUpSchema,
-  onSubmit:(values)=>{
+  onSubmit:values=>{
     console.log(Formik.values+"values...");
     alert(JSON.stringify(values,null,2))
-   // setSubmitting(false )
-  
+    // navigate("/carddetails");
+    //<BasicUsage/>
+    // open()
+    onOpen()
   }
 })
 
@@ -65,41 +111,60 @@ const Formik=useFormik({
 </Select>
 {Formik.errors.country&&Formik.touched.country?<p className='errors'>{Formik.errors.country}</p>:null}
       <Box className='input_flex_boxes'>
-      <Input  placeholder='*First Name'  size='lg'  name='first_name'  value={Formik.values.first_name} onChange={Formik.handleChange}/>
-      <Input  placeholder='Last Name'  size='lg' name='last_name'   value={Formik.values.last_name} onChange={Formik.handleChange}/>
+      <Input  placeholder='*First Name'  size='lg'  name='first_name'  value={Formik.values.first_name} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
+      <Input  placeholder='Last Name'  size='lg' name='last_name'   value={Formik.values.last_name} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
      </Box >
      <Box className='input_flex_boxes'>
      {Formik.errors.first_name&&Formik.touched.first_name?<p className='errors'>{Formik.errors.first_name}</p>:null}
      {Formik.errors.last_name&&Formik.touched.last_name?<p className='errors'>{Formik.errors.last_name}</p>:null}
      </Box>
-     <Input placeholder='Company(optional)'className='input' size='lg' name='comapany'   value={Formik.values.comapany} onChange={Formik.handleChange}/>
+     <Input placeholder='Company(optional)'className='input' size='lg' name='comapany'   value={Formik.values.comapany} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
      {Formik.errors.comapany&&Formik.touched.comapany?<p className='errors'>{Formik.errors.comapany}</p>:null}
-     <Input placeholder='*Address' className='input' size='lg'  name='address'  value={Formik.values.address} onChange={Formik.handleChange}/>
+     <Input placeholder='*Address' className='input' size='lg'  name='address'  value={Formik.values.address} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
      {Formik.errors.address&&Formik.touched.address?<p className='errors'>{Formik.errors.address}</p>:null}
-     <Input placeholder='Appartment,suite,etc(optional)' className='input' size='lg' name='appartment'   value={Formik.values.appartment} onChange={Formik.handleChange}/>
+     <Input placeholder='Appartment,suite,etc(optional)' className='input' size='lg' name='appartment'   value={Formik.values.appartment} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
      {Formik.errors.appartment&&Formik.touched.appartment?<p className='errors'>{Formik.errors.appartment}</p>:null}
      <Box className='input_flex_boxes'>
-      <Input placeholder='*City'  size='lg' name='city'  value={Formik.values.city} onChange={Formik.handleChange} />
-      <Select placeholder='Country/region'  size='lg' name='region'   value={Formik.values.region} onChange={Formik.handleChange}>
+      <Input placeholder='*City'  size='lg' name='city'  value={Formik.values.city} onBlur={Formik.onBlur} onChange={Formik.handleChange} />
+      <Select placeholder='Country/region'  size='lg' name='region'   value={Formik.values.region} onBlur={Formik.onBlur} onChange={Formik.handleChange}>
   <option value='option1'>India</option>
   <option value='option2'>China</option>
   <option value='option3'>Usa</option>
 </Select>
-      <Input placeholder='*ZIP code'  size='lg' type="number"  name='Zip'  value={Formik.values.Zip} onChange={Formik.handleChange}/>
+      <Input placeholder='*ZIP code'  size='lg' type="number"  name='Zip'  value={Formik.values.Zip} onBlur={Formik.onBlur} onChange={Formik.handleChange}/>
      </Box>
      <Box className='input_flex_boxes'>
      {Formik.errors.city&&Formik.touched.city?<p className='errors'>{Formik.errors.city}</p>:null}
      {Formik.errors.region&&Formik.touched.region?<p className='errors'>{Formik.errors.region}</p>:null}
      {Formik.errors.Zip&&Formik.touched.Zip?<p className='errors'>{Formik.errors.Zip}</p>:null}
      </Box>
-     <Input placeholder='*Phone' className='input' size='lg'  name='phone' type="number  "   value={Formik.values.phone} onChange={Formik.handleChange}/>
+     <Input placeholder='*Phone' className='input' size='lg'  name='phone' type="number  "   value={Formik.values.phone} onBlur={Formik.onBlur} onChange={Formik.handleChange}/>
      {Formik.errors.phone&&Formik.touched.phone?<p className='errors'>{Formik.errors.phone}</p>:null}
     </Box>
       <Box className='last_box'>
     <Link path="/cart "> <Heading size={"xsm"}>back to cart</Heading> </Link> 
-        <Button bg={"black"}  color="white"  p={7} type="submit">continue to shopping</Button>
+        <Button bg={"black"}  color="white"  p={7} type="submit">Continue</Button>
       </Box>
       </form>
+      <Button display={"none"} onClick={onOpen}></Button>
+
+<Modal isOpen={isOpen} onClose={onClose} size={''}>
+  <ModalOverlay />
+  <ModalContent  width={"800px"} >
+    {/* <ModalHeader>Modal Title</ModalHeader> */}
+    <ModalCloseButton />
+    <ModalBody height={"800px"}>
+        <Carddetails  w={500} m="auto"  />
+    </ModalBody>
+
+    {/* <ModalFooter>
+      <Button colorScheme='blue' mr={3} onClick={onClose}>
+        Close
+      </Button>
+      <Button variant='ghost'>Secondary Action</Button>
+    </ModalFooter> */}
+  </ModalContent>
+</Modal>
   </Box>
 
 
