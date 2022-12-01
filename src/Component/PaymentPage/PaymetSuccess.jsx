@@ -14,7 +14,6 @@ const PaymetSuccess = () => {
             <Heading color={"#1e656c"} m="10px" fontSize={"5xl"}>Payment Successful</Heading>
              <p>Thankyou for choosing <span style={{color:"black" ,fontSize:"19px",fontWeight:"bolder"}}>ShopDress Up</span></p>
              <Button bg={"none"} border="1px solid #1e656c" color="#1e656c" p={"30px"} m={"30px"} fontSize="2xl">Continue Shopping</Button>
- 
         </Box>
         </Center>
     </div>

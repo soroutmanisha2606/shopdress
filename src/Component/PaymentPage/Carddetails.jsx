@@ -14,10 +14,11 @@ const Carddetails = ({setcomplete,complete}) => {
       postcode:"",
     },
     validationSchema:signUpSchema,
-    onSubmit:(values,{setSubmitting})=>{
+    onSubmit:values=>{
+      console.log("clicked")
       console.log(Formik.values+"values...");
       alert(JSON.stringify(values,null,2))
-      setSubmitting(false )
+     
     }
    
 
@@ -29,13 +30,13 @@ const Carddetails = ({setcomplete,complete}) => {
   //   console.log(complete+"complete")
   // }
   // function handleclick(){
-  //   console.log("clicked")
+  //   console.log("clicked") 
   //   console.log(Formik.values);
   //   alert(JSON.stringify(Formik.values,2,null))
     
   // }
   return (
-    <div><Box className='order_box'>
+    <div><div className='order_box'>
        <Box>
       <img className='dressup_img_main_logo' src='https://cdn.shopify.com/s/files/1/0339/0901/files/All-Black-Logo_7_spacing.png?14284'/>
     </Box>
@@ -73,13 +74,13 @@ const Carddetails = ({setcomplete,complete}) => {
         {Formik.errors.postcode&&Formik.touched.postcode?<p className='errors'>{Formik.errors.postcode}</p>:null}
         <Box className='Final_button'>
       <Center> <p style={{fontSize:"16px",fontWeight:"bold",textAlign:"center",marginTop:"20px"}}>We'll pre-authorise up to $ 46.00 USD on your card, then send you<br/> back to the seller to complete your purchase. If you don't completeit or the purchase amount <br/> changes, any pending pre-authorisations usually drop off within 1 business day.</p></Center> 
-      <Center><Button bg={"black"} p={7} color="white" w={190} m="40px" disabled={Formik.isSubmitting} type="submit" >Pay and Order</Button></Center>
+      <Center><Button bg={"black"} p={7} color="white" w={190} m="40px" type="submit" >Pay and Order</Button></Center>
       </Box>
 
        </form>
       
 
-        </Box></div>
+        </div></div>
   )
 }
 

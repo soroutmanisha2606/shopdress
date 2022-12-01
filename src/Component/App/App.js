@@ -16,16 +16,16 @@ function App() {
   return (
     <div className="App">
    {/* <Footer/> */}
-   <Login/>
-    <br/>
+   {/* <Login/>
+    <br/> */}
    <br/>
    <BasicUsage/>
-   <br/>
+   {/* <br/>
    <br/>
    <PaymentPage/>
    <br/>
    <br/>
-   <PaymetSuccess/> 
+   <PaymetSuccess/>  */}
   
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
       {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
