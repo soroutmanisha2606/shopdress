@@ -4,53 +4,56 @@
 import React, { useState } from "react";
 import Cart from "../Cart/Cart";
 import Footer from "../Footer/Footer";
-import Home from "../Home/Home";
 import Login from "../Login/Login";
 import Carddetails from "../PaymentPage/Carddetails";
 import { BasicUsage } from "../PaymentPage/PaymentModal";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import PaymetSuccess from "../PaymentPage/PaymetSuccess";
+
 import Practice from "../PaymentPage/practice";
+
 import ProductDetails from "../ProductDetails/ProductDetails";
 
 import ProductPages from "../ProductPages/ProductPages"
 
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from "../TESTING/DROP";
+import Allroutes from "../AllRoutes/Allroutes";
 
 function App() {
  
   return (
     <div className="App">
-   {/* <BasicUsage/>
-    {/* <Practice/> */}
-    {/* <PaymetSuccess/>   */}
-   {/* <PaymentPage/>  */}
-   
+
+   <Navbar/>
+   <Cart/>
+
    {/* <Allroutes/> */}
 
-<ChakraProvider>
 
-{/* <Navbar/> */}
-   {/* <Home/> */}
-{/* <Cart/> */}
-{/* <ProductPages/> */}
-   <ProductDetails/>
-</ChakraProvider>
-   {/* <Footer/> */}
    {/* <Login/>
     <br/>
    <br/>
    <BasicUsage/>
    <br/>
    <br/>
-   <PaymentPage/>
+
+
+
+  
+   
    <br/>
    <br/>
-   <PaymetSuccess/>  */}
+  //  <PaymetSuccess/>  */}
+  {/* //  <ProductPages/> */}
+  {/* <ProductDetails/> */}
   
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
-      {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
+  {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
+    
+    <PaymentPage/>
+    <Footer/>
+
     </div>
   );
 }

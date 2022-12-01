@@ -4,7 +4,8 @@
     padding-bottom: 20px;
 }
 .left_box{
-    width: 55%;
+    width: 65%;
+    /* height: 300px; */
     box-shadow: 0 0 1px;
     /* border: 2px solid black; */
 }
@@ -27,18 +28,21 @@
     text-align: center;
     padding: 0px;
     border-radius: 8px;
-      gap: 10px;
+    gap: 10px;
     margin-bottom: 10px;
 
 }
 .paymet_img{
     display: flex;
     gap: 10px;
-    width: 1000px;
+    /* width: 1000px; */
     margin: auto;
     padding: 30px;
+    /* margin-right: 35px; */
+    /* padding-right: 70px; */
+
 }
- p{
+p{
  
     border: none;
 }
@@ -56,9 +60,7 @@
 }
  .placeholder{
     position: absolute;
-        /* top: 10px;
-        left: 8px; */
-     left: 8px;
+    left: 8px;
     font-size: 12px;
     padding: 0px 5px;
     transition: 0.3s;
@@ -83,7 +85,6 @@
 }
 .Input_papa_box{
     width: 80%;
-    /* border:2px solid red; */
     margin: auto;
 }
 .input{
@@ -96,9 +97,7 @@
     margin-top: 25px;
    align-items: center;
 }
-/* Input{
-    height: 60px;
-} */
+
 
 .Button{
     width: auto;
@@ -157,6 +156,7 @@
         display: flex;
         gap: 10px;
         width: 450px;
+        justify-content: space-around;
         /* border: 10px solid green; */
         margin: auto;
         position: relative;

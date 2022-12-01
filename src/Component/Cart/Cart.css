@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 #CARTDIV{
-    z-index: 2;
+    z-index: 10;
     position:fixed;
     top: 0%;
     width: 100%;
@@ -120,7 +120,7 @@
   }
 #ApplyCopounText{
   /* border-top: 1px solid black; */
-  background-color:#ffdfdf;
+  background-color:#ffeded;
   /* padding: 2%; */
   padding-left: 2%;
   padding-right: 2%;
@@ -134,3 +134,14 @@
   from {left: -80%;}
   to {left: 130%}
 } */
+
+@media (max-width:960px) {
+  #CARTDIV_INNER{
+    width: 50%;
+  }
+}
+@media (max-width:540px) {
+  #CARTDIV_INNER{
+    width: 84%;
+  }
+}
