@@ -3,8 +3,10 @@ import React from 'react'
 import "./PaymentPage.css"
 import {useFormik} from "formik";
 import { paymenpageSchema, signUpSchema } from './schemas';
+import { Navigate,useNavigate } from 'react-router-dom';
 // import { signUpSchema } from './schemas/index ';
 const Carddetails = () => {
+  const navigate=useNavigate();
   const Formik=useFormik({
     initialValues:{
       card_number:"",
@@ -18,6 +20,7 @@ const Carddetails = () => {
       console.log("clicked")
       console.log(Formik.values+"values...");
       alert(JSON.stringify(values,null,2))
+      navigate("/success");
      
     }
    

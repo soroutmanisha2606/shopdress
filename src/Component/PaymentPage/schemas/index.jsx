@@ -21,7 +21,7 @@ export const signUpSchema=yup.object({
     region:yup.string().min(3).max(12),
     Zip:yup.string().min(6).max(6).required("Please enter valid zip code "),
     phone:yup.string().min(10).max(10).required("Please enter Valid mobile number"),
-   practice_name:yup.string().min(2).max(20).required("requires")
+   
      
    
 
