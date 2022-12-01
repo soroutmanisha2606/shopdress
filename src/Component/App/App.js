@@ -2,6 +2,7 @@
 // import Footer from "./Component/Footer/Footer";
 // import PaymentPage from "../Component/PaymentPage/PaymentPage";
 import React, { useState } from "react";
+import Cart from "../Cart/Cart";
 import Footer from "../Footer/Footer";
 import Login from "../Login/Login";
 import Carddetails from "../PaymentPage/Carddetails";
@@ -25,20 +26,9 @@ function App() {
  
   return (
     <div className="App">
-<<<<<<< HEAD
 
-<ChakraProvider>
-
-      <Navbar/>
-      <ProductPages/>
-</ChakraProvider>
-=======
-<<<<<<< HEAD
-   <BasicUsage/>
-    <Practice/>
-   {/* // <PaymentPage/> */}
-=======
->>>>>>> 5f1a53afb32f4db937ad62b9fe9392e94770f34d
+<Navbar/>
+<Cart/>
    {/* <Footer/> */}
    {/* <Login/>
     <br/>
@@ -46,11 +36,15 @@ function App() {
    <BasicUsage/>
    <br/>
    <br/>
+
+
+
+
    <PaymentPage/>
    <br/>
    <br/>
    <PaymetSuccess/>  */}
-   {/* <ProductDetails/> */}
+   <ProductDetails/>
   
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
       {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}

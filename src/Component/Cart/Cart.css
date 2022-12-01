@@ -23,10 +23,29 @@
     background-color: rgb(255, 255, 255);
     animation: divincar 0.4s ease-in-out;
 }
+#CartDescription{
+  width: 98%;
+  bottom: 0.5;
+  position: absolute;
+  animation: CartDescription 0.6s ease-in-out;
+}
+@keyframes CartDescription {
+  from {
+      bottom: -60%;
+  }
+
+  to {
+      bottom:  0;
+  }
+}
+
 .CartCPNYImg{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin: auto;
     margin-top: 3px;
+    width: 96%;
     /* padding: auto; */
+    border-radius: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
     display: flex;
@@ -58,7 +77,7 @@
   
   #cartItems{
     background-color: rgb(255, 255, 255);
-    height: 64%;
+    height: 63%;
     width: 95%;
     margin: auto;
     margin-top: 2%;
