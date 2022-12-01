@@ -84,8 +84,8 @@ const Formik=useFormik({
     {/* <Box>
       <img className='dressup_img_main_logo' src='https://cdn.shopify.com/s/files/1/0339/0901/files/All-Black-Logo_7_spacing.png?14284'/>
     </Box> */}
-  <Center> <Heading>Please fill details </Heading></Center> 
-<Center> <p style={{fontSize:"16px",fontWeight:"bold",textAlign:"center",marginTop:"20px"}}>  Thankyou for choosing the Shopdress .Here the payment page <br/> where you have to fill some details for confurming your order</p></Center>
+  <Center> <Heading fontSize={"46px"}  >Shipping Address Details</Heading></Center> 
+<Center> <p style={{fontSize:"15px",fontWeight:"bold",textAlign:"center",marginTop:"20px"}}>  Thankyou for choosing the Shopdress .Here the payment page  where you <br/>have to fill some details for confirming your order</p></Center>
   <Center>  <Box className='PaymentPage_options'>
       {/* <p>Express checkout</p> */} 
       <Box className='paymet_img'>
