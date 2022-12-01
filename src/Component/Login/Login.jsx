@@ -84,6 +84,9 @@ export default function Login() {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <Flex justifyContent='space-between'>
+            <Box className='Carousel__box'>
+              <CaptionCarousel/>
+              </Box>
             <Box rounded={20} w={400}
             shadow='dark-lg'
            
@@ -91,11 +94,11 @@ export default function Login() {
               <Stack spacing={4}>
                 <FormControl id="email">
                   <FormLabel>Email address</FormLabel>
-                  <Input type="email" name='email'  onChange={(event)=>{handleOnchange(event.target)}}/>
+                  <Input className='inputbdr' type="email" name='email'  onChange={(event)=>{handleOnchange(event.target)}}/>
                 </FormControl>
                 <FormControl id="password">
                   <FormLabel>Password</FormLabel>
-                  <Input type="password" name='password' onChange={(event)=>{handleOnchange(event.target)}} />
+                  <Input className='inputbdr' type="password" name='password' onChange={(event)=>{handleOnchange(event.target)}} />
                 </FormControl>
                 <Stack spacing={10}>
                   <Stack
@@ -125,9 +128,6 @@ export default function Login() {
                 </Stack>
               </Stack>
             </Box>
-            <Box className='Carousel__box'>
-              <CaptionCarousel/>
-              </Box>
             </Flex>
           </ModalBody>
 
@@ -155,6 +155,9 @@ export default function Login() {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <Flex justifyContent='space-between'>
+            <Box  className='Carousel__box'>
+              <CaptionCarousel/>
+              </Box>
             <Box rounded={20} w={450} p={4} shadow='dark-lg'
             >
               <Stack spacing={4}>
@@ -162,24 +165,24 @@ export default function Login() {
                   <Box>
                     <FormControl id="firstName" isRequired>
                       <FormLabel>First Name</FormLabel>
-                      <Input type="text" name='fname' onChange={(event)=>{handleOnchange1(event.target)}} />
+                      <Input className='inputbdr' type="text" name='fname' onChange={(event)=>{handleOnchange1(event.target)}} />
                     </FormControl>
                   </Box>
                   <Box>
                     <FormControl id="lastName">
                       <FormLabel>Last Name</FormLabel>
-                      <Input type="text" name='lname' onChange={(event)=>{handleOnchange1(event.target)}}/>
+                      <Input className='inputbdr' type="text" name='lname' onChange={(event)=>{handleOnchange1(event.target)}}/>
                     </FormControl>
                   </Box>
                 </HStack>
                 <FormControl id="email" isRequired>
                   <FormLabel>Email address</FormLabel>
-                  <Input type="email" name='email' onChange={(event)=>{handleOnchange1(event.target)}} />
+                  <Input className='inputbdr' type="email" name='email' onChange={(event)=>{handleOnchange1(event.target)}} />
                 </FormControl>
                 <FormControl id="password" isRequired>
                   <FormLabel>Password</FormLabel>
                   <InputGroup>
-                    <Input name='password' onChange={(event)=>{handleOnchange1(event.target)}} type={showPassword ? 'text' : 'password'} />
+                    <Input className='inputbdr' name='password' onChange={(event)=>{handleOnchange1(event.target)}} type={showPassword ? 'text' : 'password'} />
                     <InputRightElement h={'full'}>
                       <Button
                         variant={'ghost'}
@@ -215,9 +218,6 @@ export default function Login() {
                 </Stack>
               </Stack>
             </Box>
-            <Box  className='Carousel__box'>
-              <CaptionCarousel/>
-              </Box>
             </Flex>
           </ModalBody>
           <ModalFooter>

@@ -1,9 +1,9 @@
 .Carousel__box{
     width:50%
 }
-/* Input{
+.inputbdr{
     border: 2px solid wheat !important;
-} */
+}
 .modalHeader{
     text-align: center;
     text-transform: uppercase;

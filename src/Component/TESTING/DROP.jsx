@@ -10,16 +10,18 @@ import {
 } from "@chakra-ui/react";
 import LINEMENU from "./Funcations.Nav/OpenClose";
 import {BiSearch,BiShoppingBag  } from "react-icons/bi";
-import CARTMENU from "../Cart/Cartt"
+import CARTMENU, {SearchDiv,SearchBar}from "../Cart/Cartt"
 import "./Drop.css"
 import { Link } from "react-router-dom";
 import { FaUser} from "react-icons/fa";
-import { FiMenu} from "react-icons/fi";
+import { FiMenu,FiSearch,FiX} from "react-icons/fi";
 import {CiUser} from "react-icons/ci";
 import {BiArrowFromRight} from "react-icons/bi";
+import { useSelector, useDispatch } from "react-redux";
 import Login from "../Login/Login";
 
 export default function Navbar() {
+  let Search=useSelector((state)=>{ return state.ShopDressReducer.Search})||[]
   const [isLargerThan1144] = useMediaQuery('(min-width: 1050px)')
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
@@ -38,10 +40,12 @@ export default function Navbar() {
   const { isOpen: isOpen5,onOpen: onOpen5, onClose: onClose5,} = useDisclosure();
   const { isOpen: isOpen6,onOpen: onOpen6, onClose: onClose6,} = useDisclosure();
   const { isOpen: isOpen7,onOpen: onOpen7, onClose: onClose7,} = useDisclosure();
-  const { isOpen: isOpen8,onOpen: onOpen8, onClose: onClose8,} = useDisclosure();
-  const { isOpen: isOpen9,onOpen: onOpen9, onClose: onClose9,} = useDisclosure();
   return (
     <Box position="sticky" bg="white" top="0%" zIndex="1">
+        <Box  id="SearchDi">
+        <Box bg="white" h="50px" borderRadius="10px" w="80%" m="auto" mt="63px" background="#115c11" display="flex" alignItems="center" justifyContent="space-around"> <FiSearch position="relative" fontSize="30px" color="white"  padding="10px"/><input type="text" style={{width:"92%",height:"50px",fontSize:"25px", border:"none",fontWeight:"400"}} onChange={SearchBar}  placeholder="  Search here ..."/> <FiX fontSize="32px" color="white"  cursor="pointer" onClick={SearchDiv}/></Box> 
+        <Box bg="white" h="70%" borderRadius="10px" w="80%" m="auto" mt="30px"  > <Box display="flex" justifyContent="space-around"  alignItems="center">  <img src="https://media.baamboozle.com/uploads/images/94038/1597523199_58366"/> </Box></Box> 
+        </Box>
       <Box bg="green" h="35px">
       <h1 id="Nav_heading"> 30% OFF EVERYTING WITH CODE : CYBER30 </h1>
       </Box>
@@ -51,11 +55,11 @@ export default function Navbar() {
         alignItems="center"
         pt="20px"
         pb="15px"
-        fontSize="23px" 
+        fontSize="31px" 
         id="LOGODIV"
       >
         {isLargerThan1144?"":<FiMenu cursor="pointer" onClick={LINEMENU}/> }
-        <BiSearch cursor="pointer" />
+        <BiSearch cursor="pointer"   onClick={SearchDiv}/>
         <img
           src="https://cdn.shopify.com/s/files/1/0339/0901/files/Peach-Black-DU-Logo_160x.png?v=1631144136"
           alt=""
