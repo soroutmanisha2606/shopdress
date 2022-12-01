@@ -1,36 +1,86 @@
 import React from 'react';
-import "../Sidebar/sidebar.css"
+import "../Sidebar/sidebar.css";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box
+} from '@chakra-ui/react'
 
 const Sidebar = () => {
   return (
     <div className='a-sidebar'>
-      <div>
-      <button>A V A I L A B I L I T Y</button> <br />
-      <span><input type="checkbox" value="in stock"/> In Stock </span><br />
-      <span><input type="checkbox" value="not in stock"/> Not in Stock </span>
-      </div>
+     <Accordion defaultIndex={[0]} allowMultiple>
+  <AccordionItem className='accord'>
+    <h2>
+      <AccordionButton>
+        <Box flex='1' textAlign='left'>
+         A V A I L A B I L I T Y
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+     <input type="checkbox" value="true" /> In Stock 
+     <input type="checkbox" value="false" /> Not In Stock
+    </AccordionPanel>
+  </AccordionItem>
 
-      <div>
-        <button>P R I C E</button>
-        <div className="slider">
-          <div className="progress"></div>
-        </div>
-        <div className="range-input">
-       <input type="range" className='range-min' min="0" max="52"/>
-       <input type="range" className='range-max' min="0" max="52" />
-        </div>
-      </div>
+  <AccordionItem  className='accord'>
+    <h2>
+      <AccordionButton>
+        <Box flex='1' textAlign='left'>
+          P R I C E
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </AccordionPanel>
+  </AccordionItem>
+
+  <AccordionItem   className='accord'>
+    <h2>
+      <AccordionButton>
+        <Box flex='1' textAlign='left'>
+          C O L O R
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </AccordionPanel>
+  </AccordionItem>
+
+  <AccordionItem className='accord'>
+    <h2>
+      <AccordionButton>
+        <Box flex='1' textAlign='left'>
+          S I Z E
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </AccordionPanel>
+  </AccordionItem>
 
 
-    <div>
-      <button>C O L O R</button>
-    </div>
-
-
-    <div>
-      <button>S I Z E</button>
-    </div>
-    
+</Accordion>
 
     </div>
   )
