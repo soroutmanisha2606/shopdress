@@ -13,7 +13,7 @@ const Carddetails = ({setcomplete,complete}) => {
       country_name:"",
       postcode:"",
     },
-    validationSchema:signUpSchema,
+    validationSchema:signUpSchema ,
     onSubmit:values=>{
       console.log("clicked")
       console.log(Formik.values+"values...");
