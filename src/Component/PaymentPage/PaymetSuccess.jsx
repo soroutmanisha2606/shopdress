@@ -1,11 +1,14 @@
 import { Box, Button, Center, Heading } from '@chakra-ui/react'
 import React from 'react'
+import Chatbot from './Chatbot'
+import "./PaymentPage.css"
 //https://cdn.dribbble.com/users/614270/screenshots/14575431/media/4907a0869e9ed2ac4e2d1c2beaf9f012.gif
 const PaymetSuccess = () => {
   return (
-    <div style={{textAlign:"center"}}>
-        <Box>
+    <div style={{textAlign:"center",display:"flex",gap:"50px"}} className="success">
+        <Box style={{marginLeft:"100px"}}>
         {/* <img src='https://i.pinimg.com/originals/69/94/87/699487bb246152a16ccedd1a18814b4e.gif'/> */}
+        <Chatbot width="500px"/>
         </Box>
         <Center>
         <Box>
