@@ -31,7 +31,7 @@ function App() {
 
 <ChakraProvider>
 
-{/* <Navbar/> */}
+<Navbar/>
    {/* <Home/> */}
 {/* <Cart/> */}
 {/* <ProductPages/> */}
