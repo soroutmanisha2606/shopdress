@@ -3,6 +3,9 @@
  color: #ececec;
  height: 700px;
 }
+*{
+    margin: 0;
+}
 .all_divs{
     display: flex;
     justify-content: space-around;
@@ -78,8 +81,8 @@
     height: auto;
     line-height: 3;
     /* border: 3px solid white; */
-  align-content: center;
- padding-top: 40px;
+  /* align-content: center; */
+ /* padding-top: 40px; */
  
 }
 .responsive_img{
@@ -126,6 +129,9 @@ text-align: center;
 @media only screen and (max-width: 768px) {
    .responsive_box{
     display: block;
+    /* border: 10px solid red; */
+    
+    margin-top: 200px;
     
    }
    .parent_box{

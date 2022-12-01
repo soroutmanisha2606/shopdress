@@ -22,8 +22,8 @@
 }
 .PaymentPage_options{
     /* border: 1px solid grey; */
-    width: 80%;
-    margin: auto;
+    width: 90%;
+    margin-left: 180px;
     text-align: center;
     padding: 0px;
     border-radius: 8px;
