@@ -17,9 +17,11 @@ import { FaUser} from "react-icons/fa";
 import { FiMenu,FiSearch,FiX} from "react-icons/fi";
 import {CiUser} from "react-icons/ci";
 import {BiArrowFromRight} from "react-icons/bi";
+import { useSelector, useDispatch } from "react-redux";
 import Login from "../Login/Login";
 
 export default function Navbar() {
+  let Search=useSelector((state)=>{ return state.ShopDressReducer.Search})||[]
   const [isLargerThan1144] = useMediaQuery('(min-width: 1050px)')
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
@@ -38,8 +40,6 @@ export default function Navbar() {
   const { isOpen: isOpen5,onOpen: onOpen5, onClose: onClose5,} = useDisclosure();
   const { isOpen: isOpen6,onOpen: onOpen6, onClose: onClose6,} = useDisclosure();
   const { isOpen: isOpen7,onOpen: onOpen7, onClose: onClose7,} = useDisclosure();
-  const { isOpen: isOpen8,onOpen: onOpen8, onClose: onClose8,} = useDisclosure();
-  const { isOpen: isOpen9,onOpen: onOpen9, onClose: onClose9,} = useDisclosure();
   return (
     <Box position="sticky" bg="white" top="0%" zIndex="1">
         <Box  id="SearchDi">
@@ -55,7 +55,7 @@ export default function Navbar() {
         alignItems="center"
         pt="20px"
         pb="15px"
-        fontSize="23px" 
+        fontSize="31px" 
         id="LOGODIV"
       >
         {isLargerThan1144?"":<FiMenu cursor="pointer" onClick={LINEMENU}/> }
