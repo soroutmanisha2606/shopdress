@@ -68,7 +68,7 @@ export default function Login() {
   }
   return (
     <>
-      <Button onClick={onOpen}><FaUser /></Button>
+      <Button onClick={onOpen} border="none" bg="white" paddingBottom="6px" ><FaUser fontSize="25px" /></Button>
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
@@ -87,13 +87,10 @@ export default function Login() {
             <Box className='Carousel__box'>
               <CaptionCarousel/>
               </Box>
-            <Box rounded={20} w={400}
-            shadow='dark-lg'
-           
-              p={4}>
+            <Box rounded={20} w={400} p={4}>
               <Stack spacing={4}>
                 <FormControl id="email">
-                  <FormLabel>Email address</FormLabel>
+                  <FormLabel >Email address</FormLabel>
                   <Input className='inputbdr' type="email" name='email'  onChange={(event)=>{handleOnchange(event.target)}}/>
                 </FormControl>
                 <FormControl id="password">
@@ -158,7 +155,7 @@ export default function Login() {
             <Box  className='Carousel__box'>
               <CaptionCarousel/>
               </Box>
-            <Box rounded={20} w={450} p={4} shadow='dark-lg'
+            <Box rounded={20} w={450} p={4}
             >
               <Stack spacing={4}>
                 <HStack>

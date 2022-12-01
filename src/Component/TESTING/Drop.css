@@ -129,3 +129,102 @@
   z-index: 2;
   
 }
+
+/* ????????????????????????????????????????? */
+/* .a-Main-Box{
+  display : flex;
+ margin: auto;
+ margin: 2%;
+ width: 100;
+}
+.a-side-nav{
+  width: 33%;
+  /* height: 100vh; */
+  /* line-height: 40px; */
+/* } */ */
+/* .a-list-items{
+  width: 100%;
+} */
+/* .select-box-a{
+  display: flex;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px;
+} */
+/* .select-box-a>select{
+  width: 24%;
+  padding: 7px;
+  height: 40px;
+  border: 1px solid black;
+  /* line-height: 50px; */
+/* } */ 
+
+
+#Boxxxxx{
+  padding: 1%;
+  border: 1px solid black;
+  width: 100%;
+  /* display: grid; */
+  text-align: center;
+  gap: 20px;
+  /* grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); */
+  /* display: flex; */
+}
+
+/* .a-list-items{
+  width: 100%; */
+  /* z-index: -1; */
+/* } */
+.image-boxx>div>img{
+  width: 100%;
+  /* width: 80%; */
+  cursor: pointer;
+  height: 390px;
+  /* z-index: -1; */
+
+}
+.imageshoww{
+  position: relative;
+  /* top: 0; */
+}
+
+.imagehidee>img{
+  /* z-index: 1; */
+  width: 100%;
+  height: 390px;
+}
+.imagehidee{
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.imagehidee:hover{
+  opacity: 1;
+}
+.a-text-detailss{
+  border: 1px solid rgb(11, 224, 11);
+  text-align: center;
+  padding: 10px;
+}
+.quickVieww{
+  /* padding: 10%; */
+  text-align: center;
+  width: 95%;
+  left: 2.5%;
+  top: 85%;
+  padding: 8px;
+  position: absolute;
+  font-weight: 500;
+  background-color: #fcfcfc;
+  /* margin-bottom: 20px; */
+}
+.quickVieww:hover{
+  background-color: #ccfffe;
+}
