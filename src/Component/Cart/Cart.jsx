@@ -45,15 +45,16 @@ export default function Cart() {
            }
            </ul>
         </Box>
-        <Box textAlign="center" pl="13px" pt="10px" pr="22px">
+        <Box textAlign="center" pl="13px" pt="10px" pr="22px"  id="CartDescription">
        
-           <Box className='CartCPNYImg' bg="#2a7e06" color="white" fontSize="18px" position="absolute" width="90%" right="4%" bottom="2%">Proceed</Box> 
              {/* <hr/> */}
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"17px", paddingLeft:"14px", paddingRight:"14px", color:"black", fontWeight:"500"}} > <span>MRP : </span> <span>$ 100 </span>  </span>
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"14px", paddingLeft:"14px", paddingRight:"14px", color:"#d42d4a", fontWeight:"400"}} > <span>Product Discount : </span> <span>-  $ 30 </span>  </span>
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"14px", paddingLeft:"14px", paddingRight:"14px", color:"grey", fontWeight:"600"}} > <span>Hooray! You saved -  $ 30 on Product Discount</span>  </span>
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"17px", paddingLeft:"14px", paddingRight:"14px", color:"black", fontWeight:"600"}} > <span>Grand Total : </span> <span>$ 100 </span>  </span>
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"15px", paddingLeft:"14px", paddingRight:"14px", color:"black", fontWeight:"600"}} > <span>Apply Coupon</span> <span><input style={{border:"1px solid green", color:"green", paddingLeft:"12px", fontWeight:"500"}} type="text" placeholder='Enter Coupon'/></span>  </span>
+            <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"15px", paddingLeft:"14px", paddingRight:"14px", color:"black",paddingTop:"10px", paddingBottom:"10px", fontWeight:"600"}} > <span id="ApplyCopounText">No Coupon Applied </span>  </span>
+           <Box className='CartCPNYImg' bg="#2a7e06" color="white" fontSize="18px" >Proceed</Box> 
             
         </Box> 
        </Box>

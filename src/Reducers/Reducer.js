@@ -1,4 +1,5 @@
 let Data={
+    Search:[],
     Cart:[]
 }
 export default function ShopDressReducer(state=Data, action){

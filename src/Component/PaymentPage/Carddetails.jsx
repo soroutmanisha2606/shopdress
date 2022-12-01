@@ -2,9 +2,11 @@ import { Box, Button, Center, Heading, Input } from '@chakra-ui/react'
 import React from 'react'
 import "./PaymentPage.css"
 import {useFormik} from "formik";
-import { signUpSchema } from './schemas';
+import { paymenpageSchema, signUpSchema } from './schemas';
+import { Navigate,useNavigate } from 'react-router-dom';
 // import { signUpSchema } from './schemas/index ';
-const Carddetails = ({setcomplete,complete}) => {
+const Carddetails = () => {
+  const navigate=useNavigate();
   const Formik=useFormik({
     initialValues:{
       card_number:"",
@@ -13,11 +15,13 @@ const Carddetails = ({setcomplete,complete}) => {
       country_name:"",
       postcode:"",
     },
-    validationSchema:signUpSchema,
-    onSubmit:(values,{setSubmitting})=>{
+    validationSchema:paymenpageSchema ,
+    onSubmit:values=>{
+      console.log("clicked")
       console.log(Formik.values+"values...");
       alert(JSON.stringify(values,null,2))
-      setSubmitting(false )
+      navigate("/success");
+     
     }
    
 
@@ -29,18 +33,18 @@ const Carddetails = ({setcomplete,complete}) => {
   //   console.log(complete+"complete")
   // }
   // function handleclick(){
-  //   console.log("clicked")
+  //   console.log("clicked") 
   //   console.log(Formik.values);
   //   alert(JSON.stringify(Formik.values,2,null))
     
   // }
   return (
-    <div><Box className='order_box'>
-       <Box>
+    <div><div className='order_box'>
+       {/* <Box>
       <img className='dressup_img_main_logo' src='https://cdn.shopify.com/s/files/1/0339/0901/files/All-Black-Logo_7_spacing.png?14284'/>
-    </Box>
+    </Box> */}
        <Box>
-      <Center> <Heading m={4}>Pay with debit or credit Card</Heading></Center>
+      <Center><Heading m={4}>Pay with debit or credit Card</Heading></Center>
      <Center><p>We keep your financial information securely encrypted</p>
         </Center> 
        </Box>
@@ -67,19 +71,19 @@ const Carddetails = ({setcomplete,complete}) => {
         {<p>{""}</p>}
          {Formik.errors.cvv&&Formik.touched.cvv?<p className='errors'>{Formik.errors.cvv}</p>:null}
         </Box>
-        <Input placeholder="*Enter Country name" marginTop={"25px"} size="lg" name='country_name'value={Formik.values.country_name} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
+       {/* // <Input placeholder="*Enter Country name" marginTop={"25px"} size="lg" name='country_name'value={Formik.values.country_name} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
         {Formik.errors.country_name&&Formik.touched.country_name?<p className='errors'>{Formik.errors.country_name}</p>:null}
         <Input placeholder="Enter postCode" type="number" marginTop={"25px"} size="lg" name='postcode' value={Formik.values.postcode} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
-        {Formik.errors.postcode&&Formik.touched.postcode?<p className='errors'>{Formik.errors.postcode}</p>:null}
+        {Formik.errors.postcode&&Formik.touched.postcode?<p className='errors'>{Formik.errors.postcode}</p>:null} */}
         <Box className='Final_button'>
-      <Center> <p style={{fontSize:"16px",fontWeight:"bold",textAlign:"center",marginTop:"20px"}}>We'll pre-authorise up to $ 46.00 USD on your card, then send you<br/> back to the seller to complete your purchase. If you don't completeit or the purchase amount <br/> changes, any pending pre-authorisations usually drop off within 1 business day.</p></Center> 
-      <Center><Button bg={"black"} p={7} color="white" w={190} m="40px" disabled={Formik.isSubmitting} type="submit" >Pay and Order</Button></Center>
+      {/* <Center> <p style={{fontSize:"16px",fontWeight:"bold",textAlign:"center",marginTop:"20px"}}>We'll pre-authorise up to $ 46.00 USD on your card, then send you<br/> back to the seller to complete your purchase. If you don't completeit or the purchase amount <br/> changes, any pending pre-authorisations usually drop off within 1 business day.</p></Center>  */}
+      <Center><Button bg={"black"} p={7} color="white" w={190} m="40px" type="submit" >Pay and Order</Button></Center>
       </Box>
 
        </form>
       
 
-        </Box></div>
+        </div></div>
   )
 }
 

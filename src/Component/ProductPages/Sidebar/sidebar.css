@@ -1,35 +1,10 @@
 .a-sidebar{
-    padding: 7%;
-    position: fixed;
-    /* top: 0; */
-    height: 100vh;
     border: 1px solid black;
-    height: 100vh;
+    position: sticky;
+    top: 23%;
+    padding: 20px;
 }
-.slider{
-    height: 7px;
-    background-color: #ddd;
-    border-radius: 5px;
-    position: relative;
-}
-
-.slider .progress{
-    height: 7px;
-    border-radius: 5px;
-    background-color: black;
-    position: absolute;
-    left: 5%;
-    right: 5%;
-}
-.range-input{
-    position: relative;
-    top: -5%;
-}
-.range-input input{
-    position: absolute;
-    top: -10%;
-    height: 5px;
-    width: 100%;
-    background: none;
-    -webkit-appearance: none;
+.accord{
+  border: none;
+  border-bottom: 0.5px solid #fff;
 }

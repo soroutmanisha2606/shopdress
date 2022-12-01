@@ -1,6 +1,7 @@
 .payment_div{
     display: flex;
-    gap: 10 px;
+    gap: 0px;
+    padding-bottom: 20px;
 }
 .left_box{
     width: 55%;
@@ -95,9 +96,9 @@
     margin-top: 25px;
    align-items: center;
 }
-Input{
+/* Input{
     height: 60px;
-}
+} */
 
 .Button{
     width: auto;
