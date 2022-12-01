@@ -15,22 +15,7 @@ function App() {
  
   return (
     <div className="App">
-   {/* <Footer/> */}
-   {/* <Login/>
-    <br/> */}
-   <br/>
-   <BasicUsage/>
-   {/* <br/>
-   <br/>
-   <PaymentPage/>
-   <br/>
-   <br/>
-   <PaymetSuccess/>  */}
-  
-  {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
-      {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
-    
-    
+   
     
     </div>
   );
