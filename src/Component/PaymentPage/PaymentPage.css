@@ -1,6 +1,7 @@
 .payment_div{
     display: flex;
-    gap: 10 px;
+    gap: 0px;
+    padding-bottom: 20px;
 }
 .left_box{
     width: 55%;
