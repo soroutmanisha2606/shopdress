@@ -12,8 +12,13 @@ import PaymetSuccess from "../PaymentPage/PaymetSuccess";
 import Practice from "../PaymentPage/practice";
 =======
 import ProductDetails from "../ProductDetails/ProductDetails";
+<<<<<<< HEAD
+import ProductPages from "../ProductPages/ProductPages"
+=======
 >>>>>>> 95503a08648944cf9b7711055914257e41be44d8
+>>>>>>> 5f1a53afb32f4db937ad62b9fe9392e94770f34d
 
+import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from "../TESTING/DROP";
 
 function App() {
@@ -21,10 +26,19 @@ function App() {
   return (
     <div className="App">
 <<<<<<< HEAD
+
+<ChakraProvider>
+
+      <Navbar/>
+      <ProductPages/>
+</ChakraProvider>
+=======
+<<<<<<< HEAD
    <BasicUsage/>
     <Practice/>
    {/* // <PaymentPage/> */}
 =======
+>>>>>>> 5f1a53afb32f4db937ad62b9fe9392e94770f34d
    {/* <Footer/> */}
    {/* <Login/>
     <br/>
@@ -36,7 +50,7 @@ function App() {
    <br/>
    <br/>
    <PaymetSuccess/>  */}
-   <ProductDetails/>
+   {/* <ProductDetails/> */}
   
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
       {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
