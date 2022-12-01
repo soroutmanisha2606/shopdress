@@ -9,13 +9,21 @@ import { BasicUsage } from "../PaymentPage/PaymentModal";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import PaymetSuccess from "../PaymentPage/PaymetSuccess";
 import ProductDetails from "../ProductDetails/ProductDetails";
+import ProductPages from "../ProductPages/ProductPages"
 
+import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from "../TESTING/DROP";
 
 function App() {
  
   return (
     <div className="App">
+
+<ChakraProvider>
+
+      <Navbar/>
+      <ProductPages/>
+</ChakraProvider>
    {/* <Footer/> */}
    {/* <Login/>
     <br/>
@@ -27,7 +35,7 @@ function App() {
    <br/>
    <br/>
    <PaymetSuccess/>  */}
-   <ProductDetails/>
+   {/* <ProductDetails/> */}
   
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
       {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
