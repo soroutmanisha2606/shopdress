@@ -4,9 +4,52 @@ import { useFormik } from 'formik'
 import {Box, Button, Heading, Input, Link, Select} from "@chakra-ui/react"
 import { signUpSchema } from './schemas'
 import { Navigate, useNavigate } from 'react-router-dom'
-import { BasicUsage } from './PaymentModal'
+//import { BasicUsage } from './PaymentModal'
+
+
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  
+} from '@chakra-ui/react'
+import { useEffect } from 'react'
+import Carddetails from './Carddetails'
+//import PaymentPage from './PaymentPage'
+// export function BasicUsage() {
+  
+//   useEffect(()=>{
+//     // onOpen()
+//   },[])
+//   return (
+//     <>
+    
+//     </>
+//   )
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function PaymentPage() {
   const navigate=useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure()
 const Formik=useFormik({
  
   initialValues:{
@@ -26,8 +69,10 @@ const Formik=useFormik({
   onSubmit:values=>{
     console.log(Formik.values+"values...");
     alert(JSON.stringify(values,null,2))
-    navigate("/carddetails");
+    // navigate("/carddetails");
     //<BasicUsage/>
+    // open()
+    onOpen()
   }
 })
 
@@ -98,9 +143,28 @@ const Formik=useFormik({
     </Box>
       <Box className='last_box'>
     <Link path="/cart "> <Heading size={"xsm"}>back to cart</Heading> </Link> 
-        <Button bg={"black"}  color="white"  p={7} type="submit">continue to shopping</Button>
+        <Button bg={"black"}  color="white"  p={7} type="submit">Continue</Button>
       </Box>
       </form>
+      <Button display={"none"} onClick={onOpen}></Button>
+
+<Modal isOpen={isOpen} onClose={onClose} size={''}>
+  <ModalOverlay />
+  <ModalContent  width={"800px"} >
+    {/* <ModalHeader>Modal Title</ModalHeader> */}
+    <ModalCloseButton />
+    <ModalBody height={"800px"}>
+        <Carddetails  w={500} m="auto"  />
+    </ModalBody>
+
+    {/* <ModalFooter>
+      <Button colorScheme='blue' mr={3} onClick={onClose}>
+        Close
+      </Button>
+      <Button variant='ghost'>Secondary Action</Button>
+    </ModalFooter> */}
+  </ModalContent>
+</Modal>
   </Box>
 
 

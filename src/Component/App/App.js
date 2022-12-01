@@ -21,6 +21,7 @@ function App() {
     {/* <Practice/> */}
     {/* <PaymetSuccess/>   */}
    {/* <PaymentPage/>  */}
+   
    <Allroutes/>
     </div>
   );
