@@ -13,7 +13,7 @@ export function Display(state){
     <img src={e.image_1} alt="" />
     <div className="imagehide">
     <img src={e.image_2} className="hover-img" alt="" />
-<Link to="" className='quickView'>Quick View</Link>
+<Link to="/product" className='quickView'>Quick View</Link>
     </div>
     </div>
   </div>
