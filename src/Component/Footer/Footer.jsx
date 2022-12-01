@@ -144,7 +144,8 @@ settext({...text,[e.target.name]:e.target.value})
  <Box><BsInstagram/></Box> 
  <Box><FaFacebookF/></Box>
  <Box><FaPinterestP/></Box>
- </Box></Box>
+ </Box>
+ </Box>
     </AccordionPanel>
    
   </AccordionItem>
