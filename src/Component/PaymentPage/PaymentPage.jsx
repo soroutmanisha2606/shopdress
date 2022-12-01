@@ -143,7 +143,7 @@ const Formik=useFormik({
     </Box>
       <Box className='last_box'>
     <Link path="/cart "> <Heading size={"xsm"}>back to cart</Heading> </Link> 
-        <Button bg={"black"}  color="white"  p={7} type="submit">Continue</Button>
+        <Button bg={"black"}  color="white" width={"190px"} m={3}  p={7} type="submit">Continue</Button>
       </Box>
       </form>
       <Button display={"none"} onClick={onOpen}></Button>
