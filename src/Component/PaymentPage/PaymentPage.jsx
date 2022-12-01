@@ -68,7 +68,7 @@ const Formik=useFormik({
   validationSchema:signUpSchema,
   onSubmit:values=>{
     console.log(Formik.values+"values...");
-    alert(JSON.stringify(values,null,2))
+   // alert(JSON.stringify(values,null,2))
     // navigate("/carddetails");
     //<BasicUsage/>
     // open()
@@ -150,7 +150,7 @@ const Formik=useFormik({
 
 <Modal isOpen={isOpen} onClose={onClose} size={''}>
   <ModalOverlay />
-  <ModalContent  width={"800px"} >
+  <ModalContent  width={"600px"} maxHeight={"500px"}>
     {/* <ModalHeader>Modal Title</ModalHeader> */}
     <ModalCloseButton />
     <ModalBody height={"800px"}>

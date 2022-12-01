@@ -41,7 +41,7 @@ export const paymenpageSchema=yup.object({
 //    practice_name:yup.string().min(2).max(20).required("requires"),
    card_number:yup.string().min(14).max(14).required("Please enter valid card number"),
     cvv:yup.string().min(6).max(6).required("please enter valid cvv"),
-    country_name:yup.string().min(2).max(15).required("please enter country name"),
+   // country_name:yup.string().min(2).max(15).required("please enter country name"),
     cvv:yup.string().min(6).max(6).required("please enter valid cvv number"),
     name_card:yup.string().min(2).max(20).required("please enter valid name"), 
 
