@@ -8,7 +8,7 @@ import App from "./Component/App/App"
 import  store  from './Store/Store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <>
   <BrowserRouter>
   <ChakraProvider>
 
@@ -17,7 +17,7 @@ root.render(
     </Provider>
      </ChakraProvider>
     </BrowserRouter>
-   </React.StrictMode>
+   </>
 );
 
 // If you want to start measuring performance in your app, pass a function

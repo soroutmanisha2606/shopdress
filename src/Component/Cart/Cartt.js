@@ -90,3 +90,28 @@ async function FetchSearhData(dispatch){
     })
  
 }
+
+export const ApplyCoupon = (e)=>{
+    if (e.key === 'Enter') {
+        let n=document.getElementById('CouponInput').value;
+        // let n=;
+        if(n=='Dressup10'){
+            let amount =Number( localStorage.getItem('Total_Price'));
+            let amound= (amount/100) * 10
+            // let amound=
+            localStorage.setItem('Total_Price',(amount-amound))
+            console.log("ok", (amount-amound) )
+            document.getElementById('GDP').innerHTML=`$ ${amount-amound}`
+            document.getElementById('ApplyCopounText').innerHTML=`Coupon Applied  `
+            document.getElementById('ApplyCopounText').style.background=`#c6f6d5`;
+            document.getElementById('ApplyCopounText').style.color=`#133f2b`;
+            document.getElementById('ApplyCopounText').style.background=`Coupon Applied  `
+        }   
+        console.log(n);
+    }
+
+    // if
+    // let o=e.target.value;
+    // if()
+     
+}

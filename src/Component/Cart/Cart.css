@@ -120,13 +120,13 @@
   }
 #ApplyCopounText{
   /* border-top: 1px solid black; */
-  background-color:#c6f6d5;
+  background-color:#ffdfdf;
   /* padding: 2%; */
   padding-left: 2%;
   padding-right: 2%;
   position: relative;
   font-weight: 500;
-  color:#133f2b;
+  color:rgb(66, 8, 8);
   animation: mymove 5.4s infinite;
   animation-timing-function: linear;
 }  

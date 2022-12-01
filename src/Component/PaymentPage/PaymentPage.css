@@ -201,3 +201,11 @@
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+@media only screen and (max-width: 790px) {
+   .success{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-left: -10px;
+   }
+}
