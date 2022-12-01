@@ -2,9 +2,12 @@ import React from 'react'
 import "./PaymentPage.css"
 import { useFormik } from 'formik'
 import {Box, Button, Heading, Input, Link, Select} from "@chakra-ui/react"
-import { signUpSchema } from './schemas'
+import { paymenpageSchema, signUpSchema } from './schemas'
+import { Navigate } from 'react-router-dom'
 export default function PaymentPage() {
+  //const navigate=Navigate();
 const Formik=useFormik({
+ 
   initialValues:{
    email:"",
    country:"",
@@ -19,10 +22,11 @@ const Formik=useFormik({
    phone:""
   },
   validationSchema:signUpSchema,
-  onSubmit:(values,{setSubmitting})=>{
+  onSubmit:(values)=>{
     console.log(Formik.values+"values...");
     alert(JSON.stringify(values,null,2))
-    setSubmitting(false )
+   // setSubmitting(false )
+  
   }
 })
 
@@ -49,7 +53,7 @@ const Formik=useFormik({
         <p> Already have an account?<span><Link>Log in</Link></span></p>
             </div>
           
-      <Input placeholder='* Email' className='input' focusBorderColor={"blue"} size='lg' border={"none"}  name='email'  value={Formik.values.email} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
+      <Input placeholder='* Email' className='input' focusBorderColor={"blue"} size='lg'   name='email'  value={Formik.values.email} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
       {Formik.errors.email&&Formik.touched.email?<p className='errors'>{Formik.errors.email}</p>:null}
       <br/>
       <br/>
@@ -93,7 +97,7 @@ const Formik=useFormik({
     </Box>
       <Box className='last_box'>
     <Link path="/cart "> <Heading size={"xsm"}>back to cart</Heading> </Link> 
-        <Button bg={"black"}  color="white"  p={7} type="submit" disabled={Formik.isSubmitting} >continue to shopping</Button>
+        <Button bg={"black"}  color="white"  p={7} type="submit">continue to shopping</Button>
       </Box>
       </form>
   </Box>
