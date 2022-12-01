@@ -1,8 +1,6 @@
 import store from "../../Store/Store"
 import { GetCartData,GetPatchData,GetDeleteData } from '../../Actions/CartAction';
 export default function CARTMENU (){
-    // console.log("sgsd   ")
-    
     if(document.getElementById("CARTDI")){
         document.getElementById("CARTDI").id="CARTDIV"
     }else{
@@ -32,8 +30,6 @@ export const DecreaseQTY=(id,dispatch)=>{
            }else{
              GetDeleteData(el.id,index,Array,dispatch);
            }
-        //    id,index,Array,dispatch
-         
         }
     })
     temp=[...Array]
@@ -41,10 +37,6 @@ export const DecreaseQTY=(id,dispatch)=>{
         type:"GETCARTDATA",
         payload:temp
     })
-    // GetCartData(dispatch)
-    // console.log(Array);
-
-
     
 }
 
@@ -63,16 +55,38 @@ export const IncreaseQTY=(id,dispatch, Array)=>{
      })
 
         temp=[...Array]
-    
         dispatch({
             type:"GETCARTDATA",
             payload:temp
         })
-        
-        // console.log(store.getState().ShopDressReducer.Cart[0].Qty);
-
 }
 
-export const SearchBar=(e)=>{
-     console.log(e.target.value)
+
+export const SearchBar=(dispatch)=>{
+    let ans=debounced(FetchSearhData,500,dispatch);
+    ans();
+    console.log("e.target.value")
+}
+function debounced(fn, delay, dispatch) {
+    let Timeout;
+    return function() {
+        console.log("fgf");
+      if (Timeout) clearTimeout(Timeout);
+
+      Timeout = setTimeout(function () {
+        fn(dispatch);
+      }, delay);
+    };
+    // df();
+} 
+async function FetchSearhData(dispatch){
+    let qure=document.getElementById('inputSearch').value;
+    let res = await fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?q=${qure}`);
+    let ans= await res.json();
+    // console.log(ans)
+    dispatch({
+        type:"GETSEACHDATA",
+        payload:ans
+    })
+ 
 }

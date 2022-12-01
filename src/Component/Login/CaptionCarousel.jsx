@@ -20,7 +20,7 @@ const settings = {
   fade: true,
   infinite: true,
   autoplay: true,
-  speed: 500,
+  speed: 700,
   autoplaySpeed: 2000,
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -65,8 +65,9 @@ export default function CaptionCarousel() {
   return (
     <Box
       position={'relative'}
-      height={'400px'}
-      overflow={'hidden'}>
+  height="500px"
+  overflow={"hidden"}
+     >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -108,15 +109,15 @@ export default function CaptionCarousel() {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height={'8xl'}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
             className='carosal_box'
             >
-              <Box shadow='dark-lg'>
-              <img className='img_carousal' src={card.image} alt=""/>
+              <Box >
+              <img width="450px" className='img_carousal' src={card.image} alt=""/>
               </Box>
             {/* This is the block you need to change, to customize the caption */}
             {/* <Container size="container.lg" height="600px" position="relative">
