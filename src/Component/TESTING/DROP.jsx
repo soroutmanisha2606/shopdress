@@ -36,7 +36,7 @@ export default function Navbar() {
     onOpen: onOpen3,
     onClose: onClose3,
   } = useDisclosure();
-  console.log(Search);
+// console.log(Search);
 
 
 function Display(){
