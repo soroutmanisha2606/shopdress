@@ -31,10 +31,10 @@ function App() {
 
 <ChakraProvider>
 
-<Navbar/>
-   {/* <Home/>
-<Cart/>
-<ProductPages/> */}
+{/* <Navbar/> */}
+   {/* <Home/> */}
+{/* <Cart/> */}
+{/* <ProductPages/> */}
    <ProductDetails/>
 </ChakraProvider>
    {/* <Footer/> */}
