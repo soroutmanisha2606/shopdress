@@ -53,6 +53,7 @@ export default function Cart() {
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"14px", paddingLeft:"14px", paddingRight:"14px", color:"grey", fontWeight:"600"}} > <span>Hooray! You saved -  $ 30 on Product Discount</span>  </span>
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"17px", paddingLeft:"14px", paddingRight:"14px", color:"black", fontWeight:"600"}} > <span>Grand Total : </span> <span>$ 100 </span>  </span>
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"15px", paddingLeft:"14px", paddingRight:"14px", color:"black", fontWeight:"600"}} > <span>Apply Coupon</span> <span><input style={{border:"1px solid green", color:"green", paddingLeft:"12px", fontWeight:"500"}} type="text" placeholder='Enter Coupon'/></span>  </span>
+            <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"15px", paddingLeft:"14px", paddingRight:"14px", color:"black",paddingTop:"10px", paddingBottom:"10px", fontWeight:"600"}} > <span id="ApplyCopounText">No Coupon Applied </span>  </span>
            <Box className='CartCPNYImg' bg="#2a7e06" color="white" fontSize="18px" >Proceed</Box> 
             
         </Box> 

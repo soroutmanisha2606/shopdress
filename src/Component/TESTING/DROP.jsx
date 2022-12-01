@@ -44,7 +44,9 @@ export default function Navbar() {
     <Box position="sticky" bg="white" top="0%" zIndex="1">
         <Box  id="SearchDi">
         <Box bg="white" h="50px" borderRadius="10px" w="80%" m="auto" mt="63px" background="#115c11" display="flex" alignItems="center" justifyContent="space-around"> <FiSearch position="relative" fontSize="30px" color="white"  padding="10px"/><input type="text" style={{width:"92%",height:"50px",fontSize:"25px", border:"none",fontWeight:"400"}} onChange={SearchBar}  placeholder="  Search here ..."/> <FiX fontSize="32px" color="white"  cursor="pointer" onClick={SearchDiv}/></Box> 
-        <Box bg="white" h="70%" borderRadius="10px" w="80%" m="auto" mt="30px"  > <Box display="flex" justifyContent="space-around"  alignItems="center">  <img src="https://media.baamboozle.com/uploads/images/94038/1597523199_58366"/> </Box></Box> 
+        <Box bg="white" h="70%" borderRadius="10px" w="80%" m="auto" mt="30px"  >
+        {Search.length==0 ?<Box display="flex" justifyContent="space-around"  alignItems="center">  <img src="https://media.baamboozle.com/uploads/images/94038/1597523199_58366"/> </Box> : "sd"  }
+        </Box> 
         </Box>
       <Box bg="green" h="35px">
       <h1 id="Nav_heading"> 30% OFF EVERYTING WITH CODE : CYBER30 </h1>
