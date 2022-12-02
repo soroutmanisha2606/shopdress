@@ -17,6 +17,7 @@ import ProductPages from "../ProductPages/ProductPages"
 
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from "../TESTING/DROP";
+import Chatbot from "../PaymentPage/Chatbot";
 
 function App() {
  
@@ -36,6 +37,7 @@ function App() {
 {/* <Cart/> */}
 {/* <ProductPages/> */}
    <ProductDetails/>
+   <Chatbot/>
 </ChakraProvider>
    {/* <Footer/> */}
    {/* <Login/>
