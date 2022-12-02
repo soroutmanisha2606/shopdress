@@ -95,7 +95,11 @@ function ProductDetails(props) {
   const [lgImg, setlgImg] = useState("");
   const params = useParams()
   useEffect(() => {
-    SearchDiv();
+    let d=localStorage.getItem("Searchisopen") ||"kk"
+    if(d=="true"){
+
+      SearchDiv();
+    }
     getDetails(3)
     setsideImage(imgArray);
     setlgImg(imgArray[0].imgLg);
