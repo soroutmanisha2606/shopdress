@@ -10,10 +10,15 @@ export default function CARTMENU (){
 }
 
 export const SearchDiv=()=>{
+
+   
     if(document.getElementById("SearchDi")){
         document.getElementById("SearchDi").id="SearchDiv"
+    
+         localStorage.setItem("Searchisopen","true")
     }else{
         document.getElementById("SearchDiv").id="SearchDi"
+        localStorage.setItem("Searchisopen","false")
     }
 }
 
