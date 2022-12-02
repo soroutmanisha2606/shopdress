@@ -9,26 +9,29 @@ import Carddetails from "../PaymentPage/Carddetails";
 import { BasicUsage } from "../PaymentPage/PaymentModal";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import PaymetSuccess from "../PaymentPage/PaymetSuccess";
+
 import Practice from "../PaymentPage/practice";
+
 import ProductDetails from "../ProductDetails/ProductDetails";
 
 import ProductPages from "../ProductPages/ProductPages"
 
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from "../TESTING/DROP";
+import Chatbot from "../PaymentPage/Chatbot";
+import Allroutes from "../AllRoutes/Allroutes";
 
 function App() {
  
   return (
-    <div className="App">
+   <div className="App">
 
-<ChakraProvider>
+   <Navbar/>
+   <Cart/>
 
-<Navbar/>
-<Cart/>
-<ProductPages/>
-</ChakraProvider>
-   {/* <Footer/> */}
+   {/* <Allroutes/> */}
+
+
    {/* <Login/>
     <br/>
    <br/>
@@ -38,20 +41,22 @@ function App() {
 
 
 
-
-   <PaymentPage/>
+  
+   
    <br/>
    <br/>
-   <PaymetSuccess/>  */}
-   {/* <ProductDetails/> */}
+  //  <PaymetSuccess/>  */}
+  {/* //  <ProductPages/> */}
+  {/* <ProductDetails/> */}
   
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
-      {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
+  {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
     
-    
-    
+    <PaymentPage/>
+    <Footer/>
 
     </div>
+   
   );
 }
 

@@ -3,8 +3,10 @@ import React from 'react'
 import "./PaymentPage.css"
 import {useFormik} from "formik";
 import { paymenpageSchema, signUpSchema } from './schemas';
+import { Navigate,useNavigate } from 'react-router-dom';
 // import { signUpSchema } from './schemas/index ';
 const Carddetails = () => {
+  const navigate=useNavigate();
   const Formik=useFormik({
     initialValues:{
       card_number:"",
@@ -17,31 +19,22 @@ const Carddetails = () => {
     onSubmit:values=>{
       console.log("clicked")
       console.log(Formik.values+"values...");
-      alert(JSON.stringify(values,null,2))
+     // alert(JSON.stringify(values,null,2))
+      navigate("/success");
      
     }
    
 
   })
-  // console.log(Formik.errors)
-  // function handleclick(){
-  //   console.log("clicked");
-   
-  //   console.log(complete+"complete")
-  // }
-  // function handleclick(){
-  //   console.log("clicked") 
-  //   console.log(Formik.values);
-  //   alert(JSON.stringify(Formik.values,2,null))
-    
-  // }
+  
+  
   return (
     <div><div className='order_box'>
-       <Box>
+       {/* <Box>
       <img className='dressup_img_main_logo' src='https://cdn.shopify.com/s/files/1/0339/0901/files/All-Black-Logo_7_spacing.png?14284'/>
-    </Box>
+    </Box> */}
        <Box>
-      <Center><Heading m={4}>Pay with debit or credit Card</Heading></Center>
+      <Center><Heading fontSize={30} m={2}>Pay with debit or credit Card</Heading></Center>
      <Center><p>We keep your financial information securely encrypted</p>
         </Center> 
        </Box>
@@ -55,26 +48,26 @@ const Carddetails = () => {
        </Box>
        </Center>
        <form onSubmit={Formik.handleSubmit}>
-        <Input  placeholder="*Enter card Number" marginTop={"25px"} size="lg" name='card_number' value={Formik.values.card_number} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
+        <Input  placeholder="*Enter card Number" marginTop={"15px"} size="lg" name='card_number' value={Formik.values.card_number} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
        {Formik.errors.card_number&&Formik.touched.card_number?<p className='errors'>{Formik.errors.card_number}</p>:null}
-        <Input placeholder="*Name on card" marginTop={"25px"} size="lg" name='name_card' value={Formik.values.name_card} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
+        <Input placeholder="*Name on card" marginTop={"15px"} size="lg" name='name_card' value={Formik.values.name_card} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
         {Formik.errors.name_card&&Formik.touched.name_card?<p className='errors'>{Formik.errors.name_card}</p>:null}
         <Box className='card_box_input'>
-        <Input placeholder="*CVV" type="number" marginTop={"25px"} size="lg" name='cvv' value={Formik.values.cvv} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
-            <Input placeholder="" type="date" marginTop={"25px"} size="lg" name=''/>
+        <Input placeholder="*CVV" type="number" marginTop={"15px"} size="lg" name='cvv' value={Formik.values.cvv} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
+            <Input placeholder="" type="date" marginTop={"15px"} size="lg" name=''/>
            
         </Box>
         <Box>
         {<p>{""}</p>}
          {Formik.errors.cvv&&Formik.touched.cvv?<p className='errors'>{Formik.errors.cvv}</p>:null}
         </Box>
-        <Input placeholder="*Enter Country name" marginTop={"25px"} size="lg" name='country_name'value={Formik.values.country_name} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
+       {/* // <Input placeholder="*Enter Country name" marginTop={"25px"} size="lg" name='country_name'value={Formik.values.country_name} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
         {Formik.errors.country_name&&Formik.touched.country_name?<p className='errors'>{Formik.errors.country_name}</p>:null}
         <Input placeholder="Enter postCode" type="number" marginTop={"25px"} size="lg" name='postcode' value={Formik.values.postcode} onChange={Formik.handleChange} onBlur={Formik.onBlur}/>
-        {Formik.errors.postcode&&Formik.touched.postcode?<p className='errors'>{Formik.errors.postcode}</p>:null}
+        {Formik.errors.postcode&&Formik.touched.postcode?<p className='errors'>{Formik.errors.postcode}</p>:null} */}
         <Box className='Final_button'>
-      <Center> <p style={{fontSize:"16px",fontWeight:"bold",textAlign:"center",marginTop:"20px"}}>We'll pre-authorise up to $ 46.00 USD on your card, then send you<br/> back to the seller to complete your purchase. If you don't completeit or the purchase amount <br/> changes, any pending pre-authorisations usually drop off within 1 business day.</p></Center> 
-      <Center><Button bg={"black"} p={7} color="white" w={190} m="40px" type="submit" >Pay and Order</Button></Center>
+      {/* <Center> <p style={{fontSize:"16px",fontWeight:"bold",textAlign:"center",marginTop:"20px"}}>We'll pre-authorise up to $ 46.00 USD on your card, then send you<br/> back to the seller to complete your purchase. If you don't completeit or the purchase amount <br/> changes, any pending pre-authorisations usually drop off within 1 business day.</p></Center>  */}
+      <Center><Button bg={"black"} p={7} color="white" w={190} m="10px" type="submit" >Pay and Order</Button></Center>
       </Box>
 
        </form>

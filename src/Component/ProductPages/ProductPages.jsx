@@ -180,10 +180,10 @@ fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?price_gte=${
   
   return (
     <>
-    <div className='blackF'>
-               <h3>Black Friday</h3>
-          </div>
-          <div className='a-Main-Box'>
+    {/* <div className='blackF'>
+               {/* <h3>Black Friday</h3> */}
+          {/* </div> */}
+    <div className='a-Main-Box'>
           
       <div  className='a-side-nav'> <Sidebar filterCheckbox={filterCheckbox} filterCheckbox2={filterCheckbox2} SizeL={SizeL} SizeM={SizeM} SizeS={SizeS} handlePriceRange={handlePriceRange}/></div>      
       <div className="a-list-items"><Plist sold={sold} array={state} setState={setState} /></div>

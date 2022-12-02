@@ -1,8 +1,6 @@
 import store from "../../Store/Store"
 import { GetCartData,GetPatchData,GetDeleteData } from '../../Actions/CartAction';
 export default function CARTMENU (){
-    // console.log("sgsd   ")
-    
     if(document.getElementById("CARTDI")){
         document.getElementById("CARTDI").id="CARTDIV"
     }else{
@@ -12,10 +10,15 @@ export default function CARTMENU (){
 }
 
 export const SearchDiv=()=>{
+
+   
     if(document.getElementById("SearchDi")){
         document.getElementById("SearchDi").id="SearchDiv"
+    
+         localStorage.setItem("Searchisopen","true")
     }else{
         document.getElementById("SearchDiv").id="SearchDi"
+        localStorage.setItem("Searchisopen","false")
     }
 }
 
@@ -32,8 +35,6 @@ export const DecreaseQTY=(id,dispatch)=>{
            }else{
              GetDeleteData(el.id,index,Array,dispatch);
            }
-        //    id,index,Array,dispatch
-         
         }
     })
     temp=[...Array]
@@ -41,10 +42,6 @@ export const DecreaseQTY=(id,dispatch)=>{
         type:"GETCARTDATA",
         payload:temp
     })
-    // GetCartData(dispatch)
-    // console.log(Array);
-
-
     
 }
 
@@ -63,16 +60,63 @@ export const IncreaseQTY=(id,dispatch, Array)=>{
      })
 
         temp=[...Array]
-    
         dispatch({
             type:"GETCARTDATA",
             payload:temp
         })
-        
-        // console.log(store.getState().ShopDressReducer.Cart[0].Qty);
-
 }
 
-export const SearchBar=(e)=>{
-     console.log(e.target.value)
+
+export const SearchBar=(dispatch)=>{
+    let ans=debounced(FetchSearhData,500,dispatch);
+    ans();
+    console.log("e.target.value")
+}
+function debounced(fn, delay, dispatch) {
+    let Timeout;
+    return function() {
+        console.log("fgf");
+      if (Timeout) clearTimeout(Timeout);
+
+      Timeout = setTimeout(function () {
+        fn(dispatch);
+      }, delay);
+    };
+    // df();
+} 
+async function FetchSearhData(dispatch){
+    let qure=document.getElementById('inputSearch').value;
+    let res = await fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?q=${qure}`);
+    let ans= await res.json();
+    // console.log(ans)
+    dispatch({
+        type:"GETSEACHDATA",
+        payload:ans
+    })
+ 
+}
+
+export const ApplyCoupon = (e)=>{
+    if (e.key === 'Enter') {
+        let n=document.getElementById('CouponInput').value;
+        // let n=;
+        if(n=='Dressup10'){
+            let amount =Number( localStorage.getItem('Total_Price'));
+            let amound= (amount/100) * 10
+            // let amound=
+            localStorage.setItem('Total_Price',(amount-amound))
+            console.log("ok", (amount-amound) )
+            document.getElementById('GDP').innerHTML=`$ ${amount-amound}`
+            document.getElementById('ApplyCopounText').innerHTML=`Coupon Applied  `
+            document.getElementById('ApplyCopounText').style.background=`#c6f6d5`;
+            document.getElementById('ApplyCopounText').style.color=`#133f2b`;
+            document.getElementById('ApplyCopounText').style.background=`Coupon Applied  `
+        }   
+        console.log(n);
+    }
+
+    // if
+    // let o=e.target.value;
+    // if()
+     
 }

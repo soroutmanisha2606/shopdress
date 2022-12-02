@@ -1,9 +1,11 @@
 .payment_div{
     display: flex;
-    gap: 10 px;
+    gap: 0px;
+    padding-bottom: 20px;
 }
 .left_box{
-    width: 55%;
+    width: 65%;
+    /* height: 300px; */
     box-shadow: 0 0 1px;
     /* border: 2px solid black; */
 }
@@ -21,23 +23,26 @@
 }
 .PaymentPage_options{
     /* border: 1px solid grey; */
-    width: 80%;
-    margin: auto;
+    width: 90%;
+    margin-left: 180px;
     text-align: center;
     padding: 0px;
     border-radius: 8px;
-      gap: 10px;
+    gap: 10px;
     margin-bottom: 10px;
 
 }
 .paymet_img{
     display: flex;
     gap: 10px;
-    width: 1000px;
+    /* width: 1000px; */
     margin: auto;
     padding: 30px;
+    /* margin-right: 35px; */
+    /* padding-right: 70px; */
+
 }
- p{
+p{
  
     border: none;
 }
@@ -55,9 +60,7 @@
 }
  .placeholder{
     position: absolute;
-        /* top: 10px;
-        left: 8px; */
-     left: 8px;
+    left: 8px;
     font-size: 12px;
     padding: 0px 5px;
     transition: 0.3s;
@@ -82,7 +85,6 @@
 }
 .Input_papa_box{
     width: 80%;
-    /* border:2px solid red; */
     margin: auto;
 }
 .input{
@@ -95,9 +97,7 @@
     margin-top: 25px;
    align-items: center;
 }
-/* Input{
-    height: 60px;
-} */
+
 
 .Button{
     width: auto;
@@ -156,6 +156,7 @@
         display: flex;
         gap: 10px;
         width: 450px;
+        justify-content: space-around;
         /* border: 10px solid green; */
         margin: auto;
         position: relative;
@@ -181,19 +182,30 @@
     color: #d98e70;
 }
 .images_card_box{
-    width: 80%;
+    width: 100%;
     text-align: center;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 80px;
     box-shadow: 0cm;
 }
 .image_card{
-    width: 100px;
-    height: 70px;
+    width: 60px;
+    height: 30px;
 }
 .order_box{
-    padding: 60px;
+    padding: 10px;
+    /* width: 100%; */
+    margin: auto;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+@media only screen and (max-width: 790px) {
+   .success{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-left: -10px;
+   }
 }
