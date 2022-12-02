@@ -1,6 +1,7 @@
 let Data={
     Search:[],
-    Cart:[]
+    Cart:[],
+    User:[]
 }
 export default function ShopDressReducer(state=Data, action){
     switch(action.type){
@@ -17,6 +18,14 @@ export default function ShopDressReducer(state=Data, action){
         return{
             ...state,
             Search:action.payload
+        }
+    }  
+    case "USERDATA"  :{
+        
+
+        return{
+            ...state,
+            User:action.payload
         }
     }  
         default:{
