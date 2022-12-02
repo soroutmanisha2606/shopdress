@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Toast, useToast } from '@chakra-ui/react'
 import "./Login.css"
 import {
   Modal,
@@ -28,8 +29,15 @@ import { FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import CaptionCarousel from './CaptionCarousel';
+import { useDispatch, useSelector } from 'react-redux';
+import  {UserData}  from '../../Actions/UserData.js';
+
+
+
 export default function Login() {
+  const toast = useToast()
   const [showPassword, setShowPassword] = useState(false);
+  const [showPassword1, setShowPassword1] = useState(false);
   const [loginData, setLoginData] = useState({
     email:"",
     password:""
@@ -40,6 +48,13 @@ export default function Login() {
     email:"",
     password:""
   });
+  let Array=useSelector((state)=>{ return state.ShopDressReducer.User})||[]
+  
+  let dispatch=useDispatch();
+  useEffect(()=>{
+    UserData(dispatch)
+  },[])
+  console.log(Array);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2, } = useDisclosure();
   const initialRef = React.useRef(null)
@@ -60,12 +75,35 @@ export default function Login() {
    })
   }
 
-  const login = ()=>{
-    console.log(loginData);
+  const login = async ()=>{
+    const match = await Array.filter((ele)=>{
+      return ele.email==loginData.email && ele.password==loginData.password
+    })
+    if(match.length===0){
+     toaster('error','Wrong Credentials')
+    }else{
+      toaster('success','Login Successfully')
+      onClose()
+    }
+      
   }
   const signUp = ()=>{
-    console.log(signUpData);
+    fetch("https://cartikkg-shop-dress-up-new.onrender.com/users",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(signUpData)
+    }).then( toaster('success','Account Created Successfully') ,onClose2(),onOpen())
   }
+
+  const toaster = (type,msg)=>{
+    toast({
+      title: msg,
+      status: type,
+      isClosable: true,
+      position:'top-right'
+    })
+  }
+
   return (
     <>
       <Button onClick={onOpen} border="none" bg="white" paddingBottom="6px" ><FaUser fontSize="25px" /></Button>
@@ -93,9 +131,24 @@ export default function Login() {
                   <FormLabel >Email address</FormLabel>
                   <Input className='inputbdr' type="email" name='email'  onChange={(event)=>{handleOnchange(event.target)}}/>
                 </FormControl>
-                <FormControl id="password">
+                {/* <FormControl id="password">
                   <FormLabel>Password</FormLabel>
                   <Input className='inputbdr' type="password" name='password' onChange={(event)=>{handleOnchange(event.target)}} />
+                </FormControl> */}
+                <FormControl id="password" isRequired>
+                  <FormLabel>Password</FormLabel>
+                  <InputGroup>
+                    <Input className='inputbdr' name='password' onChange={(event)=>{handleOnchange(event.target)}} type={showPassword1 ? 'text' : 'password'} />
+                    <InputRightElement h={'full'}>
+                      <Button
+                        variant={'ghost'}
+                        onClick={() =>
+                          setShowPassword1((showPassword) => !showPassword)
+                        }>
+                        {showPassword1 ? <ViewIcon /> : <ViewOffIcon />}
+                      </Button>
+                    </InputRightElement>
+                  </InputGroup>
                 </FormControl>
                 <Stack spacing={10}>
                   <Stack
