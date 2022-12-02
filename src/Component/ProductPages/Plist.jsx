@@ -81,7 +81,7 @@ fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data')
     <img src={e.image_1} alt="" />
     <div className="imagehide">
     <img src={e.image_2} className="hover-img" alt="" />
-<Link to="" className='quickView'>Quick View</Link>
+     <Link to={`/Productspage/${e.id}`} className='quickView'>Quick View</Link>
     </div>
     </div>
   </div>

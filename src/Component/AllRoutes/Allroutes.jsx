@@ -7,6 +7,7 @@ import PaymetSuccess from '../PaymentPage/PaymetSuccess'
 import ProductDetails from '../ProductDetails/ProductDetails'
 import Home from "../Home/Home"
 import ErrorPage from '../ErrorPage/ErrorPage'
+import ProductPages from '../ProductPages/ProductPages'
 
 const Allroutes = () => {
   return (
@@ -15,9 +16,8 @@ const Allroutes = () => {
             <Route path='/' element={<Home/>}/>
             <Route path='/payment' element={<PaymentPage/>}/>
             <Route path='/carddetails' element={<BasicUsage/>}/>
-            <Route path='/Products' element={<BasicUsage/>}>
-              <Route path="/Products/:id" element={<ProductDetails/>}/>
-            </Route>
+            <Route path='/Productspage' element={<ProductPages/>}/>
+             <Route path="/Productspage/:id" element={<ProductDetails/>}/>
             <Route path='/success' element={<PaymetSuccess/>}/>
             <Route path='*' element={<ErrorPage/>}/>
         </Routes>

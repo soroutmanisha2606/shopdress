@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { BsInstagram } from "react-icons/bs";
+import CARTMENU, {SearchDiv,SearchBar}from "../Cart/Cartt"
 import { FaFacebookF, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { NavLink, Link, useParams } from "react-router-dom";
 import "./ProductDetails.css";
@@ -52,28 +53,39 @@ const imgArray = [
       "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-6_720x.jpg?v=1669238449",
   },
 ];
-
+// {
+//   "id":"1",
+//   "name": "BHLDN Freya Satin Charmeuse Dress",
+//   "image_1":
+//     "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_ivory_merry_pullover_c040af8a-e267-41d4-8fd3-9c4c2fcae40d_540x.jpg?v=1669239241",
+//   "image_2":
+//     "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_ivory_merry_pullover_c040af8a-e267-41d4-8fd3-9c4c2fcae40d_540x.jpg?v=1669239241",
+//   "image_3": "image.png",
+//   "price": "220.0",
+//   "size" : "M",
+//   "Qty":1
+// }
 const otherImg = [
-  {
-    id: 0,
-    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_plaid_flannel-4_5f8b1040-5264-4d0f-a184-842f29fdf706_360x.jpg?v=1669395019'
-  },
-  {
-    id: 1,
-    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_cami_tank-5_fdcadb62-33ef-4cd2-af95-052959bf6593_360x.jpg?v=1660337503'
-  },
-  {
-    id: 2,
-    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_black_tiered_romper-2_360x.jpg?v=1659639517'
-  },
-  {
-    id: 3,
-    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_smaocked_maxi_dress-2_360x.jpg?v=1659639754'
-  },
-  {
-    id: 4,
-    img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_tiered_tie_tank-3_360x.jpg?v=1656605911'
-  }
+  // {
+  //   id: 0,
+  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_plaid_flannel-4_5f8b1040-5264-4d0f-a184-842f29fdf706_360x.jpg?v=1669395019'
+  // },
+  // {
+  //   id: 1,
+  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_cami_tank-5_fdcadb62-33ef-4cd2-af95-052959bf6593_360x.jpg?v=1660337503'
+  // },
+  // {
+  //   id: 2,
+  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_black_tiered_romper-2_360x.jpg?v=1659639517'
+  // },
+  // {
+  //   id: 3,
+  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_smaocked_maxi_dress-2_360x.jpg?v=1659639754'
+  // },
+  // {
+  //   id: 4,
+  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_tiered_tie_tank-3_360x.jpg?v=1656605911'
+  // }
 ]
 
 function ProductDetails(props) {
@@ -83,6 +95,7 @@ function ProductDetails(props) {
   const [lgImg, setlgImg] = useState("");
   const params = useParams()
   useEffect(() => {
+    SearchDiv();
     getDetails(3)
     setsideImage(imgArray);
     setlgImg(imgArray[0].imgLg);
@@ -90,9 +103,17 @@ function ProductDetails(props) {
   }, []);
 
   const handleImg = (img) => {
-    setlgImg(img);;
+    setlgImg(img);
   };
-
+  async function AddtoCart(taskk){
+    await fetch('https://cartikkg-shop-dress-up-new.onrender.com/cart',{
+      method:"POST",
+      body: JSON.stringify(taskk),
+      headers :{
+        "Content-Type":"application/json",
+      },
+    });
+  }
   const getDetails=(id)=>{
     fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data/'+id)
     .then(res=>res.json())
@@ -194,16 +215,16 @@ function ProductDetails(props) {
             </Box>
             <Box>
               {
-               ( prodData.stock?<Radio isChecked={true} colorScheme="green" value="1">
-                <Text ms={"30px"}>In stock, ready to ship</Text>
-              </Radio>:<Radio isChecked={true} colorScheme="red" value="1">
-                <Text ms={"30px"}>Out of Stock</Text>
-              </Radio>)
+              //  ( prodData.stock?<Radio isChecked={true} colorScheme="green" value="1">
+              //   <Text ms={"30px"}>In stock, ready to ship</Text>
+              // </Radio>:<Radio isChecked={true} colorScheme="red" value="1">
+              //   {/* <Text ms={"30px"}>Out of Stock</Text> */}
+              // </Radio>)
               }
               
             </Box>
             <Box textAlign={"center"} border={"1px"}>
-              <Button size={"md"}>Add To Cart</Button>
+              <Button w="100%"  >Add To Cart</Button>
             </Box>
             <Box textAlign={"center"} border={"1px"} bgColor={"#5a31f4"}>
               <Flex justifyContent={"center"} alignItems={"center"} py={1.5}>
@@ -355,7 +376,7 @@ function ProductDetails(props) {
               </GridItem>
             );
           })}
-        </Grid>
+        </Grid>a
       </Box>
     </div>
   );
