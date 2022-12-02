@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import dress from "./dress.json";
 import {Link} from "react-router-dom";
 
 
@@ -31,68 +30,20 @@ export function Display(state){
   </div>
 }
 
-const Plist = () => {
+const Plist = ({array,sold,setState}) => {
 
-const [state,setState] = useState([]);
+// const [state,setState] = useState([]);
 useEffect(()=>{
 fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data')
 .then((res)=>res.json())
 .then((data)=>{
-  console.log(data);
+  // console.log(data);
   setState(data);
 })
 
 },[])
 
 
-
-function sold(){
-  let select = document.getElementById("select").value;
-  console.log("select")
- if(select==="za"){
-  select = "name";
-  fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=desc`)
-  .then((res)=>res.json())
-  .then((data)=>{
-    console.log(data);
-    setState(data);
-    Display(state);
-  })
- }else if(select==="no"){
-  select = "manufacture_date";
-
-  fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=desc`)
-.then((res)=>res.json())
-.then((data)=>{
-  console.log(data);
-  setState(data);
-  Display(state);
-})
-
-  
- }else if(select==="hl"){
-  select = "price";
-
-  fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=desc`)
-.then((res)=>res.json())
-.then((data)=>{
-  console.log(data);
-  setState(data);
-  Display(state);
-})
- }else{
-  fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=asc`)
-.then((res)=>res.json())
-.then((data)=>{
-  console.log(data);
-  setState(data);
-  Display(state);
-})
-
-
- }
-
-}
 
 
 
@@ -103,7 +54,7 @@ function sold(){
   return (<>
   <div className='main-box-a'>
     <div className='select-box-a'>
-<p>{state.length} Products</p>
+<p>{array.length} Products</p>
 
       <select id='select' onClick={sold}> 
         <option >Sort</option>
@@ -118,8 +69,34 @@ function sold(){
     </div>
 
    {/* <Display /> */}
- {Display(state)}
+ {/* {Display(state)} */}
 
+ {/* array. */}
+ <div className='list-item'>
+  {array.map((e)=>{
+    return <>
+    <div>
+  <div  className="image-box">
+    <div className="imageshow">
+    <img src={e.image_1} alt="" />
+    <div className="imagehide">
+    <img src={e.image_2} className="hover-img" alt="" />
+<Link to="" className='quickView'>Quick View</Link>
+    </div>
+    </div>
+  </div>
+
+  <div className='a-text-details'>
+
+    <p>{e.name}</p>
+    <p>$ {e.price}</p>
+  </div>
+
+    </div>
+    </>
+  })}
+
+  </div>
 
     </div>
   </>

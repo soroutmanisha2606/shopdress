@@ -64,7 +64,7 @@
       "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_green_merry_bright_pullover-5_540x.jpg?v=1669238603",
     "image_3":
       "https://images.urbndata.com/is/image/Anthropologie/78007374_001_d6?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=540",
-    "price": "595.0",
+    "price": "495.0",
     "sold" : 40,
     "manufacture_date" : 1997,
     "size" : "S",
@@ -167,5 +167,33 @@
     "manufacture_date" : 2020,
     "size" : "M",
     "stock":true
-  }
+  },
+
+  { "id" : 12,
+  "name": "Totally Cozy Brushed Knit Pullover",
+  "image_1":
+    "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_soft_knit_top-5_720x.jpg?v=1669592353",
+  "image_2":
+    "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_soft_knit_top-12_540x.jpg?v=1669592359",
+  "image_3": "image.png",
+  "price": "220.0",
+  "sold" : 25,
+  "manufacture_date" : 2010,
+  "size" : "S",
+  "stock" : true
+},
+{ "id" : 13,
+"name": "Shades Of Cozy Aztec Cardigan",
+"image_1":
+  "https://cdn.shopify.com/s/files/1/0339/0901/products/0R4A5775_540x.jpg?v=1669591762",
+"image_2":
+  "https://cdn.shopify.com/s/files/1/0339/0901/products/0R4A5760_540x.jpg?v=1669591771",
+"image_3": "image.png",
+"price": "220.0",
+"sold" : 25,
+"manufacture_date" : 2010,
+"size" : "S",
+"stock" : true
+}
+
 ]
