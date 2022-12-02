@@ -3,23 +3,23 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 const data = [
   {
-    Image:
-      "https://cdn.shopify.com/s/files/1/0339/0901/collections/Exclusives_block_360x.jpg?v=1669385965",
+    Image:"https://cdn.shopify.com/s/files/1/0339/0901/collections/Exclusives_block_360x.jpg?v=1669385965",
+    Image1:"https://cdn.shopify.com/s/files/1/0339/0901/collections/NEW_SWEATERS_360x.jpg?v=1669225841",
     text: "Test Data",
   },
   {
-    Image:
-      "https://cdn.shopify.com/s/files/1/0339/0901/collections/NEW_SWEATERS_360x.jpg?v=1669225841",
+    Image:"https://cdn.shopify.com/s/files/1/0339/0901/collections/NEW_SWEATERS_360x.jpg?v=1669225841",
+    Image1:"https://cdn.shopify.com/s/files/1/0339/0901/collections/Exclusives_block_360x.jpg?v=1669385965",
     text: "Test Data",
   },
   {
-    Image:
-      "https://cdn.shopify.com/s/files/1/0339/0901/collections/Screen_Shot_2022-11-08_at_11.14.23_AM_360x.jpg?v=1669225344",
+    Image:"https://cdn.shopify.com/s/files/1/0339/0901/collections/Screen_Shot_2022-11-08_at_11.14.23_AM_360x.jpg?v=1669225344",
+    Image1:"https://cdn.shopify.com/s/files/1/0339/0901/collections/8273D5C1-FD21-4EA6-9B26-72A01CB8C2BC_360x.jpg?v=1669225867",
     text: "Test Data",
   },
   {
-    Image:
-      "https://cdn.shopify.com/s/files/1/0339/0901/collections/8273D5C1-FD21-4EA6-9B26-72A01CB8C2BC_360x.jpg?v=1669225867",
+    Image1:"https://cdn.shopify.com/s/files/1/0339/0901/collections/Screen_Shot_2022-11-08_at_11.14.23_AM_360x.jpg?v=1669225344",
+    Image:"https://cdn.shopify.com/s/files/1/0339/0901/collections/8273D5C1-FD21-4EA6-9B26-72A01CB8C2BC_360x.jpg?v=1669225867",
     text: "Test Data",
   },
 ];
@@ -29,18 +29,15 @@ const cardData = [
     text: "Test Data",
   },
   {
-    Image:
-      "https://cdn.shopify.com/s/files/1/0339/0901/collections/50_BELOW_360x.jpg?v=1669229916",
+    Image:"https://cdn.shopify.com/s/files/1/0339/0901/collections/50_BELOW_360x.jpg?v=1669229916",
     text: "Test Data",
   },
   {
-    Image:
-      "https://cdn.shopify.com/s/files/1/0339/0901/collections/100.jpg?v=1669229916",
+    Image: "https://cdn.shopify.com/s/files/1/0339/0901/collections/100.jpg?v=1669229916",
     text: "Test Data",
   },
   {
-    Image:
-      "	https://cdn.shopify.com/s/files/1/0339/0901/collections/for_her_360x.jpg?v=1669230002",
+    Image: "	https://cdn.shopify.com/s/files/1/0339/0901/collections/for_her_360x.jpg?v=1669230002",
     text: "Test Data",
   },
 ];
@@ -182,7 +179,7 @@ export default function Home() {
                       <img src={ele.Image} alt="" className="img__width" />
                       </div>
                       <div class="flip-box-back">
-                      <img src={ele.Image} alt="" className="img__width" />
+                        <img src={ele.Image1} alt="" className="img__width" />
                       </div>
                     </div>
                   </div>

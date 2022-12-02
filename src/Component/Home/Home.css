@@ -139,7 +139,7 @@
 
 .grid__box0 .product__btn {
     bottom: -50px !important;
-    /* transition: 0.5s all; */
+    transition: 0.5s all;
 }
 
 .grid__box1 .product__btn {
@@ -238,7 +238,7 @@
 
 
 .flip-box-front {
-    background-color: #bbb;
+    background-color: #fff;
     color: black;
 }
 
@@ -247,13 +247,23 @@
     transform: rotateY(180deg);
 }
 
-/* @media (min-width: ) and (max-width: 50em) {
-  } */
+
 @media (max-width:1000px) {
-    .img__btn {
-        display: none;
+    /* .grid__box0 .product__btn {
+        bottom: 50px !important;
     }
-   
+    
+    .grid__box1 .product__btn {
+        bottom: 50px !important;
+    }
+    
+    .grid__box2 .product__btn {
+        bottom: 50px !important;
+    }
+    
+    .grid__box3 .product__btn {
+        bottom: 50px !important;
+    } */
 }
 
 @media (max-width:700px) {
@@ -262,5 +272,13 @@
     }
     .flip-box {
         height: 335px;
+    }
+}
+
+@media (max-width:500px) {
+    .type-banner__text{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
