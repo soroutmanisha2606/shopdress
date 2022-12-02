@@ -228,3 +228,75 @@
 .quickVieww:hover{
   background-color: #ccfffe;
 }
+
+.dropbtn {
+  /* background-color: #3498DB; */
+  color: black;
+  /* padding: 16px; */
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.logoutbtn:hover{
+ background-color: red !important;
+ color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: -48px;
+  top: 60px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+.google__btn> div:nth-child(1){
+  display: none;
+}
+
+.google__btn{
+  border: none;
+    background: red !important;
+    box-shadow: none !important;
+    padding: 3px 24px !important;
+    line-height: 8px;
+    color:#fff !important;
+    border-radius: 4px !important;
+    border:2px solid red !important;
+    font-weight: 500px;
+    transition: 0.3s all;
+
+}
+.google__btn:hover{
+  background-color: #fff !important;
+  border:2px solid red !important;
+  color:#111 !important;
+}
+.icon__btn{
+  padding: 0px 20px;
+  font-size:1.3rem;
+}

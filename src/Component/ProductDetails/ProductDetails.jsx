@@ -376,7 +376,7 @@ function ProductDetails(props) {
               </GridItem>
             );
           })}
-        </Grid>a
+        </Grid>
       </Box>
     </div>
   );
