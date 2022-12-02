@@ -8,6 +8,7 @@ import Sidebar from './Sidebar/Sidebar';
 export default function ProductPages() {
   const [state,setState] = useState([]);
   const [fixed , setFixed] = useState([]);
+  const [price,setPrice] = useState([0,500]);
 useEffect(()=>{
   fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data`).then((res)=>res.json()).then((data)=>{
     // console.log(data);
@@ -15,7 +16,7 @@ useEffect(()=>{
   })
 },[])
 
-console.log(document.getElementById("slide"))
+
 
   function filterCheckbox2(e){
     // console.log(check);
@@ -166,6 +167,16 @@ function sold(){
 
 }
 
+
+
+function handlePriceRange(val){
+// console.log(val);
+fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?price_gte=${val[0]}&price_lte=${val[1]}`).then((res)=>res.json()).then((data)=>{
+  // console.log(data);
+  setState(data);
+})
+}
+
   
   return (
     <>
@@ -174,7 +185,7 @@ function sold(){
           </div>
           <div className='a-Main-Box'>
           
-      <div  className='a-side-nav'> <Sidebar filterCheckbox={filterCheckbox} filterCheckbox2={filterCheckbox2} SizeL={SizeL} SizeM={SizeM} SizeS={SizeS}/></div>      
+      <div  className='a-side-nav'> <Sidebar filterCheckbox={filterCheckbox} filterCheckbox2={filterCheckbox2} SizeL={SizeL} SizeM={SizeM} SizeS={SizeS} handlePriceRange={handlePriceRange}/></div>      
       <div className="a-list-items"><Plist sold={sold} array={state} setState={setState} /></div>
      
     </div>

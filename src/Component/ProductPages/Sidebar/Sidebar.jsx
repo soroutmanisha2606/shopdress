@@ -19,8 +19,9 @@ import { useState  } from 'react';
 import { Display } from '../Plist';
 
 
-const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS}) => {
+const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRange}) => {
   // let [state,setState] =useState([]);
+  const [sliderVal1, setSliderVal1] = useState([0, 500])
 
 // useEffect(()=>{
 
@@ -68,14 +69,42 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS}) => {
     </h2>
     <AccordionPanel pb={4}>
 
-  <div className='priceFlex'><p>$ 0</p> <p>$ 500</p></div>
-    <RangeSlider defaultValue={[120, 240]} id="slide" min={0} max={300} step={30}>
+  {/* <div className='priceFlex'><p>$ 0</p> <p>$ 500</p></div> */}
+  
+    {/* <RangeSlider defaultValue={[120, 240]} id="slide" min={0} max={300} step={30}>
   <RangeSliderTrack bg='gray.100'>
     <RangeSliderFilledTrack bg='black' />
   </RangeSliderTrack>
   <RangeSliderThumb boxSize={4} index={0} bg="black" />
   <RangeSliderThumb boxSize={4} index={1} bg="black" />
-</RangeSlider>
+</RangeSlider> */}
+{/* <Box fontSize="18px" fontWeight={700} letterSpacing="0.25px" color={"#151b39"} pl="20px">Price</Box> */}
+            { <RangeSlider
+                defaultValue={[0, 45000]}
+                w="85%"
+                ml="25px"
+                mr="50px"
+                aria-label={['min', 'max']}
+                onChangeEnd={(val) => handlePriceRange(val)}
+                onChange={(val) => setSliderVal1(val)}
+                pos="relative"
+                mb="20px"
+                min={0}
+                max={500}
+            >
+                <RangeSliderTrack h="5px">
+                    <RangeSliderFilledTrack bgColor={"#d7d7d7"} />
+                </RangeSliderTrack>
+                <RangeSliderThumb index={0} boxSize="23px"  >
+                    <Box position="absolute" bottom="5px"  fontSize={"14px"}>{sliderVal1[0]}</Box>
+                    <Box w="23px" h="21px" bgColor="transparent" borderRadius={"50%"} border="7px solid #24aeb1" ></Box>
+                </RangeSliderThumb>
+                <RangeSliderThumb index={1} boxSize="23px"  >
+                    <Box position="absolute" bottom="5px" fontSize={"14px"}>{sliderVal1[1]}</Box>
+                    <Box w="23px" h="21px" bgColor="black" borderRadius={"50%"}  ></Box>
+                </RangeSliderThumb>
+            </RangeSlider>}
+      
 
 
     </AccordionPanel>
