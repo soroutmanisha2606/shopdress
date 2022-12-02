@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import {Box} from "@chakra-ui/react";
 // 
 import {FiArrowRightCircle,FiMinus,FiPlus} from "react-icons/fi";
+import {Link} from "react-router-dom"
 import {FaArrowCircleRight} from "react-icons/fa";
 import { GetCartData,GetPatchData,GetDeleteData } from '../../Actions/CartAction';
 import { useDispatch , useSelector} from 'react-redux';
@@ -57,7 +58,7 @@ export default function Cart() {
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"17px", paddingLeft:"14px", paddingRight:"14px", color:"black", fontWeight:"600"}} > <span>Grand Total : </span> <span id="GDP">$     {localStorage.getItem('Total_Price')-80} </span>  </span>
             <span style={{  display:"flex", justifyContent:"space-between", textAlign:"center",fontSize:"15px", paddingLeft:"14px", paddingRight:"14px", color:"black", fontWeight:"600"}} > <span>Apply Coupon</span> <span><input id="CouponInput" style={{border:"1px solid green", color:"green", paddingLeft:"12px", fontWeight:"500"}} type="text" placeholder='Enter Coupon' onKeyPress={ApplyCoupon}/></span>  </span>
             <span style={{  display:"flex", justifyContent:"flex-end", textAlign:"center",fontSize:"15px", paddingLeft:"14px", paddingRight:"14px", color:"black",paddingTop:"10px", paddingBottom:"10px", fontWeight:"600"}} > <span id="ApplyCopounText">No Coupon Applied </span>  </span>
-           <Box className='CartCPNYImg' bg="#2a7e06" color="white" fontSize="18px" >Proceed</Box> 
+           <Link  to="/payment" className='CartCPNYImg'  style={{background:"#2a7e06",color:"white", fontSize:"18px"}} bg="" color="white" fontSize="" >Proceed</Link> 
             
         </Box> 
        </Box>

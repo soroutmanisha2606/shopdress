@@ -111,7 +111,7 @@ function Display(){
       <img src={e.image_1} alt="" />
       <div className="imagehidee">
       <img src={e.image_2} className="hover-imgg" alt="" />
-  <Link to="" className='quickVieww'   >Quick View</Link>
+  <Link to={`/Productspage/${e.id}`} className='quickVieww'   >Quick View</Link>
       </div>
       </div>
     </div>
@@ -177,22 +177,22 @@ function Display(){
             >
          <Box display="flex" flexDirection="column">   
            <h2 fontSize="19px"><b> SHOP BY CATEGORIES</b></h2> 
-            <Link className="Links" to="/blackfriday">Luxe Looks Collection</Link>
-            <Link className="Links" to="/dsgh">Christmas Graphics</Link>
-            <Link className="Links" to="/dsgh"> Party Shop</Link>
-            <Link className="Links"to="/dsgh">Gift Cards</Link>
-            <Link className="Links"to="/dsgh">Cozy Gifts</Link>
-            <Link className="Links"to="/dsgh"> Gift Ideas For Her</Link>
-            <Link className="Links" to="/dsgh"> Loungewear</Link>
+            <Link className="Links" to="/Productspage">Luxe Looks Collection</Link>
+            <Link className="Links" to="/Productspage">Christmas Graphics</Link>
+            <Link className="Links" to="/Productspage"> Party Shop</Link>
+            <Link className="Links"to="/Productspage">Gift Cards</Link>
+            <Link className="Links"to="/Productspage">Cozy Gifts</Link>
+            <Link className="Links"to="/Productspage"> Gift Ideas For Her</Link>
+            <Link className="Links" to="/Productspage"> Loungewear</Link>
             </Box>
             <Box display="flex" flexDirection="column">   
             <h2 fontSize="19px"><b> HOLIDAY DEALS</b></h2>
-            <Link className="Links" to="/dsgh">50% Off </Link>
-            <Link className="Links" to="/dsgh">50% Off Holiday Deals</Link>
-            <Link className="Links" to="/dsgh">$16 Basics</Link>
-            <Link className="Links" to="/dsgh">Gifts Under $100</Link>
-            <Link className="Links"to="/dsgh">Gifts Under $50</Link>
-            <Link className="Links"to="/dsgh"> Gifts Under $30</Link>
+            <Link className="Links" to="/Productspage">50% Off </Link>
+            <Link className="Links" to="/Productspage">50% Off Holiday Deals</Link>
+            <Link className="Links" to="/Productspage">$16 Basics</Link>
+            <Link className="Links" to="/Productspage">Gifts Under $100</Link>
+            <Link className="Links"to="/Productspage">Gifts Under $50</Link>
+            <Link className="Links"to="/Productspage"> Gifts Under $30</Link>
             </Box>
           </Box>
           </MenuList>
@@ -222,40 +222,40 @@ function Display(){
             
            <Box display="flex" flexDirection="column">    
            <h2 fontSize="19px"><b> HOLIDAY CUSTOMS</b></h2>
-            <Link className="Links" to="/dsgh">Christmas</Link>
-            <Link className="Links" to="/dsgh">USA</Link>
+            <Link className="Links" to="/Productspage">Christmas</Link>
+            <Link className="Links" to="/Productspage">USA</Link>
          
             </Box>
             <Box display="flex" flexDirection="column">   
             <h2 fontSize="19px"><b> GAME DAY</b></h2>
-            <Link className="Links" to="/dsgh">Alanta </Link>
-            <Link className="Links" to="/dsgh">UGA</Link>
+            <Link className="Links" to="/Productspage">Alanta </Link>
+            <Link className="Links" to="/Productspage">UGA</Link>
         
             </Box>
 
             <Box display="flex" flexDirection="column"> 
             <h2 fontSize="19px"><b> FAITH COLLECTION</b></h2>    
-            <Link className="Links" to="/dsgh">Alanta </Link>
-            <Link className="Links" to="/dsgh">UGA</Link>
+            <Link className="Links" to="/Productspage">Alanta </Link>
+            <Link className="Links" to="/Productspage">UGA</Link>
         
             </Box>
             <Box display="flex" flexDirection="column">   
             <h2 fontSize="19px"><b> CITY CUSTOMS</b></h2>  
-            <Link className="Links" to="/dsgh">Nashville</Link>
-            <Link className="Links" to="/dsgh">Charleston</Link>
-            <Link className="Links" to="/dsgh">Savannah</Link>
-            <Link className="Links" to="/dsgh">Greenville</Link>
-            <Link className="Links" to="/dsgh">Dahlonega</Link>
-            <Link className="Links" to="/dsgh">Nashville</Link>
-            <Link className="Links" to="/dsgh">Charleston</Link>
+            <Link className="Links" to="/Productspage">Nashville</Link>
+            <Link className="Links" to="/Productspage">Charleston</Link>
+            <Link className="Links" to="/Productspage">Savannah</Link>
+            <Link className="Links" to="/Productspage">Greenville</Link>
+            <Link className="Links" to="/Productspage">Dahlonega</Link>
+            <Link className="Links" to="/Productspage">Nashville</Link>
+            <Link className="Links" to="/Productspage">Charleston</Link>
             </Box>
             <Box display="flex" flexDirection="column"> 
             <h2 fontSize="19px"><b> CUSTOM ACCESSORIES</b></h2>  
-            <Link className="Links" to="/dsgh">Custom Hats</Link>
-            <Link className="Links" to="/dsgh">Stickers</Link>
-            <Link className="Links" to="/dsgh">Buttons</Link>
-            <Link className="Links" to="/dsgh">Koozies</Link>
-            <Link className="Links" to="/dsgh">Tote Bags</Link>
+            <Link className="Links" to="/Productspage">Custom Hats</Link>
+            <Link className="Links" to="/Productspage">Stickers</Link>
+            <Link className="Links" to="/Productspage">Buttons</Link>
+            <Link className="Links" to="/Productspage">Koozies</Link>
+            <Link className="Links" to="/Productspage">Tote Bags</Link>
             </Box>
           </Box>
           </MenuList>
@@ -283,31 +283,31 @@ function Display(){
             >
            <Box display="flex" flexDirection="column">    
            <h2 fontSize="19px"><b>TOPS</b></h2>  
-            <Link className="Links" to="/dsgh">All Tops</Link>
-            <Link className="Links" to="/dsgh">Casual Tops</Link>
-            <Link className="Links" to="/dsgh">Graphic Tees</Link>
-            <Link className="Links"to="/dsgh">Tunics</Link>
-            <Link className="Links"to="/dsgh">Shirt & Blouses</Link>
-            <Link className="Links"to="/dsgh"> Tees</Link>
-            <Link className="Links" to="/dsgh"> Sweaters & Knits</Link>
+            <Link className="Links" to="/Productspage">All Tops</Link>
+            <Link className="Links" to="/Productspage">Casual Tops</Link>
+            <Link className="Links" to="/Productspage">Graphic Tees</Link>
+            <Link className="Links"to="/Productspage">Tunics</Link>
+            <Link className="Links"to="/Productspage">Shirt & Blouses</Link>
+            <Link className="Links"to="/Productspage"> Tees</Link>
+            <Link className="Links" to="/Productspage"> Sweaters & Knits</Link>
             
             </Box>
             <Box display="flex" flexDirection="column">
             <h2 fontSize="19px"><b>ALL BOTTOMS </b></h2>     
-            <Link className="Links" to="/dsgh">Denim</Link>
-            <Link className="Links" to="/dsgh">Skirts</Link>
-            <Link className="Links"to="/dsgh">Pants</Link>
-            <Link className="Links"to="/dsgh">Leggings</Link>
-            <Link className="Links"to="/dsgh">Shorts</Link>
+            <Link className="Links" to="/Productspage">Denim</Link>
+            <Link className="Links" to="/Productspage">Skirts</Link>
+            <Link className="Links"to="/Productspage">Pants</Link>
+            <Link className="Links"to="/Productspage">Leggings</Link>
+            <Link className="Links"to="/Productspage">Shorts</Link>
             </Box>
             <Box display="flex" flexDirection="column">
             <h2 fontSize="19px"><b>DRESSES </b></h2>     
-            <Link className="Links" to="/dsgh">All Dresses</Link>
-            <Link className="Links" to="/dsgh">Mini Dresses</Link>
-            <Link className="Links"to="/dsgh">Midi Dresses</Link>
-            <Link className="Links"to="/dsgh">Maxi Dresses</Link>
-            <Link className="Links"to="/dsgh">Rompers & Jumpsuits</Link>
-            <Link className="Links"to="/dsgh"> Casual Dresses</Link>
+            <Link className="Links" to="/Productspage">All Dresses</Link>
+            <Link className="Links" to="/Productspage">Mini Dresses</Link>
+            <Link className="Links"to="/Productspage">Midi Dresses</Link>
+            <Link className="Links"to="/Productspage">Maxi Dresses</Link>
+            <Link className="Links"to="/Productspage">Rompers & Jumpsuits</Link>
+            <Link className="Links"to="/Productspage"> Casual Dresses</Link>
             </Box>
           </Box>
           </MenuList>
@@ -336,32 +336,32 @@ function Display(){
             >
            <Box display="flex" flexDirection="column" >  
            <h2 fontSize="19px"><b> ALL New</b></h2>
-            <Link className="Links" to="/dsgh">New Tops</Link>
-            <Link className="Links" to="/dsgh">New Dresses</Link>
-            <Link className="Links" to="/dsgh">New Bottoms</Link>
-            <Link className="Links"to="/dsgh">New Rompers & Jumpsuits</Link>
-            <Link className="Links"to="/dsgh">New Accesories</Link>
+            <Link className="Links" to="/Productspage">New Tops</Link>
+            <Link className="Links" to="/Productspage">New Dresses</Link>
+            <Link className="Links" to="/Productspage">New Bottoms</Link>
+            <Link className="Links"to="/Productspage">New Rompers & Jumpsuits</Link>
+            <Link className="Links"to="/Productspage">New Accesories</Link>
            
             </Box>
             <Box display="flex" flexDirection="column">
             <h2 fontSize="19px"><b> DU EXCLUSIVE</b></h2>   
-            <Link className="Links" to="/dsgh">Game DAy</Link>
-            <Link className="Links" to="/dsgh">Nashville</Link>
-            <Link className="Links"to="/dsgh">Charleston</Link>
-            <Link className="Links"to="/dsgh">Savannah</Link>
-            <Link className="Links"to="/dsgh">Greenville</Link>
-            <Link className="Links"to="/dsgh">Dahlonega</Link>
-            <Link className="Links"to="/dsgh">Hats</Link>
+            <Link className="Links" to="/Productspage">Game DAy</Link>
+            <Link className="Links" to="/Productspage">Nashville</Link>
+            <Link className="Links"to="/Productspage">Charleston</Link>
+            <Link className="Links"to="/Productspage">Savannah</Link>
+            <Link className="Links"to="/Productspage">Greenville</Link>
+            <Link className="Links"to="/Productspage">Dahlonega</Link>
+            <Link className="Links"to="/Productspage">Hats</Link>
             </Box>
             <Box display="flex" flexDirection="column">
             <h2 fontSize="19px"><b> SHOP BY COLLECTION</b></h2>   
-            <Link className="Links" to="/dsgh">FAll Lookbook</Link>
-            <Link className="Links" to="/dsgh">Fall Flannels</Link>
-            <Link className="Links"to="/dsgh">Game DAy</Link>
-            <Link className="Links"to="/dsgh">Matching Sets</Link>
-            <Link className="Links"to="/dsgh">Babydoll Fits</Link>
-            <Link className="Links"to="/dsgh">Restocks</Link>
-            <Link className="Links"to="/dsgh">The Basic Shop</Link>
+            <Link className="Links" to="/Productspage">FAll Lookbook</Link>
+            <Link className="Links" to="/Productspage">Fall Flannels</Link>
+            <Link className="Links"to="/Productspage">Game DAy</Link>
+            <Link className="Links"to="/Productspage">Matching Sets</Link>
+            <Link className="Links"to="/Productspage">Babydoll Fits</Link>
+            <Link className="Links"to="/Productspage">Restocks</Link>
+            <Link className="Links"to="/Productspage">The Basic Shop</Link>
            
             </Box>
           </Box>
@@ -391,20 +391,20 @@ function Display(){
             >
            <Box display="flex" flexDirection="column">    
            <h2 fontSize="19px"><b> ALL DRESS</b></h2>
-            <Link className="Links" to="/dsgh">Sale Dresses</Link>
-            <Link className="Links" to="/dsgh">Sale Rompers & Jumpsuits</Link>
-            <Link className="Links" to="/dsgh"> Sale Tops</Link>
-            <Link className="Links"to="/dsgh">Sale Bottoms</Link>
-            <Link className="Links"to="/dsgh">Sale Shoes</Link>
-            <Link className="Links"to="/dsgh"> Sale Accessories</Link>
-            <Link className="Links" to="/dsgh"> Last Call Sales</Link>
+            <Link className="Links" to="/Productspage">Sale Dresses</Link>
+            <Link className="Links" to="/Productspage">Sale Rompers & Jumpsuits</Link>
+            <Link className="Links" to="/Productspage"> Sale Tops</Link>
+            <Link className="Links"to="/Productspage">Sale Bottoms</Link>
+            <Link className="Links"to="/Productspage">Sale Shoes</Link>
+            <Link className="Links"to="/Productspage"> Sale Accessories</Link>
+            <Link className="Links" to="/Productspage"> Last Call Sales</Link>
             </Box>
             <Box display="flex" flexDirection="column">   
             <h2 fontSize="19px"><b> DRESS BY DISCOUNT</b></h2>
-            <Link className="Links" to="/dsgh">Under $20</Link>
-            <Link className="Links" to="/dsgh">Under $15</Link>
-            <Link className="Links"to="/dsgh">Under $10</Link>
-            <Link className="Links"to="/dsgh">Under $5 </Link>
+            <Link className="Links" to="/Productspage">Under $20</Link>
+            <Link className="Links" to="/Productspage">Under $15</Link>
+            <Link className="Links"to="/Productspage">Under $10</Link>
+            <Link className="Links"to="/Productspage">Under $5 </Link>
             </Box>
           </Box>
           </MenuList>
@@ -434,20 +434,20 @@ function Display(){
             >
            <Box display="flex" flexDirection="column">    
            <h2 fontSize="19px"><b>ALL ACCESSORIES</b></h2>
-            <Link className="Links" to="/dsgh">Hats</Link>
-            <Link className="Links" to="/dsgh">Hair Accessories</Link>
-            <Link className="Links" to="/dsgh">HandBags</Link>
-            <Link className="Links"to="/dsgh">Bandeus & Bralettes</Link>
-            <Link className="Links"to="/dsgh">Sunglasses</Link>
-            {/* <Link className="Links"to="/dsgh"> Sale Accessories</Link>
-            <Link className="Links" to="/dsgh"> Last Call Sales</Link> */}
+            <Link className="Links" to="/Productspage">Hats</Link>
+            <Link className="Links" to="/Productspage">Hair Accessories</Link>
+            <Link className="Links" to="/Productspage">HandBags</Link>
+            <Link className="Links"to="/Productspage">Bandeus & Bralettes</Link>
+            <Link className="Links"to="/Productspage">Sunglasses</Link>
+            {/* <Link className="Links"to="/Productspage"> Sale Accessories</Link>
+            <Link className="Links" to="/Productspage"> Last Call Sales</Link> */}
             </Box>
             <Box display="flex" flexDirection="column">   
             <h2 fontSize="19px"><b> JEWELRY</b></h2>
-            <Link className="Links" to="/dsgh">Necklaces</Link>
-            <Link className="Links" to="/dsgh">Earings</Link>
-            <Link className="Links"to="/dsgh">Bracelets</Link>
-            <Link className="Links"to="/dsgh">Rings</Link>
+            <Link className="Links" to="/Productspage">Necklaces</Link>
+            <Link className="Links" to="/Productspage">Earings</Link>
+            <Link className="Links"to="/Productspage">Bracelets</Link>
+            <Link className="Links"to="/Productspage">Rings</Link>
             </Box>
           </Box>
           </MenuList>
@@ -478,21 +478,21 @@ function Display(){
             >
            <Box display="flex" flexDirection="column">    
            <h2 ><b> SHOP BY CATEGORY</b></h2>
-            <Link className="Links" to="/dsgh">New Markdowns</Link>
-            <Link className="Links" to="/dsgh">Sale Dresses</Link>
-            <Link className="Links" to="/dsgh"> Sale Rompers & Jumpsuits</Link>
-            <Link className="Links"to="/dsgh">Sale Tops</Link>
-            <Link className="Links"to="/dsgh">Sale Bottoms</Link>
-            <Link className="Links"to="/dsgh"> Sale Shoes</Link>
-            <Link className="Links" to="/dsgh"> Sale Accessories</Link>
-            {/* <Link className="Links" to="/dsgh"> Last Call Sale</Link> */}
+            <Link className="Links" to="/Productspage">New Markdowns</Link>
+            <Link className="Links" to="/Productspage">Sale Dresses</Link>
+            <Link className="Links" to="/Productspage"> Sale Rompers & Jumpsuits</Link>
+            <Link className="Links"to="/Productspage">Sale Tops</Link>
+            <Link className="Links"to="/Productspage">Sale Bottoms</Link>
+            <Link className="Links"to="/Productspage"> Sale Shoes</Link>
+            <Link className="Links" to="/Productspage"> Sale Accessories</Link>
+            {/* <Link className="Links" to="/Productspage"> Last Call Sale</Link> */}
             </Box>
             <Box display="flex" flexDirection="column">   
             <h2 fontSize="19px"><b> SHOP BY PRICE</b></h2>
-            <Link className="Links" to="/dsgh">Under $20</Link>
-            <Link className="Links" to="/dsgh">Under $15</Link>
-            <Link className="Links"to="/dsgh">Under $10</Link>
-            <Link className="Links"to="/dsgh">Under $5 </Link>
+            <Link className="Links" to="/Productspage">Under $20</Link>
+            <Link className="Links" to="/Productspage">Under $15</Link>
+            <Link className="Links"to="/Productspage">Under $10</Link>
+            <Link className="Links"to="/Productspage">Under $5 </Link>
             </Box>
           </Box>
           </MenuList>
@@ -509,13 +509,13 @@ function Display(){
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4} display="flex" flexDirection="column"  >
-            <Link className="Links" to="/dsgh">New Markdowns</Link>
-            <Link className="Links" to="/dsgh">Sale Dresses</Link>
-            <Link className="Links" to="/dsgh"> Sale Rompers & Jumpsuits</Link>
-            <Link className="Links"to="/dsgh">Sale Tops</Link>
-            <Link className="Links"to="/dsgh">Sale Bottoms</Link>
-            <Link className="Links"to="/dsgh"> Sale Shoes</Link>
-            <Link className="Links" to="/dsgh"> Sale Accessories</Link>
+            <Link className="Links" to="/Productspage">New Markdowns</Link>
+            <Link className="Links" to="/Productspage">Sale Dresses</Link>
+            <Link className="Links" to="/Productspage"> Sale Rompers & Jumpsuits</Link>
+            <Link className="Links"to="/Productspage">Sale Tops</Link>
+            <Link className="Links"to="/Productspage">Sale Bottoms</Link>
+            <Link className="Links"to="/Productspage"> Sale Shoes</Link>
+            <Link className="Links" to="/Productspage"> Sale Accessories</Link>
     </AccordionPanel>
   </AccordionItem>
 
@@ -531,10 +531,10 @@ function Display(){
     </h2>
 
     <AccordionPanel pb={4} display="flex" flexDirection="column" >
-     <Link className="Links" to="/dsgh">Under $20</Link>
-            <Link className="Links" to="/dsgh">Under $15</Link>
-            <Link className="Links"to="/dsgh">Under $10</Link>
-            <Link className="Links"to="/dsgh">Under $5 </Link>
+     <Link className="Links" to="/Productspage">Under $20</Link>
+            <Link className="Links" to="/Productspage">Under $15</Link>
+            <Link className="Links"to="/Productspage">Under $10</Link>
+            <Link className="Links"to="/Productspage">Under $5 </Link>
     </AccordionPanel>
   </AccordionItem>
   <AccordionItem>
@@ -549,19 +549,19 @@ function Display(){
     </h2>
 
     <AccordionPanel pb={4} display="flex" flexDirection="column" >
-     <Link className="Links" to="/dsgh">Under $20</Link>
-     <Link className="Links"to="/dsgh">New Accesories</Link>
+     <Link className="Links" to="/Productspage">Under $20</Link>
+     <Link className="Links"to="/Productspage">New Accesories</Link>
            
       
            {/* <Box display="flex" flexDirection="column"> */}
            <h2 fontSize="19px"><b> </b></h2>   
-           <Link className="Links" to="/dsgh">Game DAy</Link>
-           <Link className="Links" to="/dsgh">Nashville</Link>
-           <Link className="Links"to="/dsgh">Charleston</Link>
-           <Link className="Links"to="/dsgh">Savannah</Link>
-           <Link className="Links"to="/dsgh">Greenville</Link>
-           <Link className="Links"to="/dsgh">Dahlonega</Link>
-           <Link className="Links"to="/dsgh">Hats</Link>
+           <Link className="Links" to="/Productspage">Game DAy</Link>
+           <Link className="Links" to="/Productspage">Nashville</Link>
+           <Link className="Links"to="/Productspage">Charleston</Link>
+           <Link className="Links"to="/Productspage">Savannah</Link>
+           <Link className="Links"to="/Productspage">Greenville</Link>
+           <Link className="Links"to="/Productspage">Dahlonega</Link>
+           <Link className="Links"to="/Productspage">Hats</Link>
     </AccordionPanel>
   </AccordionItem>
   <AccordionItem>
@@ -577,13 +577,13 @@ function Display(){
 
     <AccordionPanel pb={4} display="flex" flexDirection="column" >
     {/* <h2 fontSize="19px"><b> </b></h2> */}
-            <Link className="Links" to="/dsgh">Sale Dresses</Link>
-            <Link className="Links" to="/dsgh">Sale Rompers & Jumpsuits</Link>
-            <Link className="Links" to="/dsgh"> Sale Tops</Link>
-            <Link className="Links"to="/dsgh">Sale Bottoms</Link>
-            <Link className="Links"to="/dsgh">Sale Shoes</Link>
-            <Link className="Links"to="/dsgh"> Sale Accessories</Link>
-            <Link className="Links" to="/dsgh"> Last Call Sales</Link>
+            <Link className="Links" to="/Productspage">Sale Dresses</Link>
+            <Link className="Links" to="/Productspage">Sale Rompers & Jumpsuits</Link>
+            <Link className="Links" to="/Productspage"> Sale Tops</Link>
+            <Link className="Links"to="/Productspage">Sale Bottoms</Link>
+            <Link className="Links"to="/Productspage">Sale Shoes</Link>
+            <Link className="Links"to="/Productspage"> Sale Accessories</Link>
+            <Link className="Links" to="/Productspage"> Last Call Sales</Link>
     </AccordionPanel>
   </AccordionItem>
 </Accordion>
