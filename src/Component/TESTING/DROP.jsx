@@ -22,6 +22,7 @@ import {
   AlertDialogHeader,
   AlertDialogContent,
   AlertDialogOverlay,
+  Toast,
 } from "@chakra-ui/react";
 import LINEMENU from "./Funcations.Nav/OpenClose";
 import { BiSearch, BiShoppingBag } from "react-icons/bi";
@@ -41,7 +42,7 @@ import { GoogleLogout } from "react-google-login";
 export default function Navbar() {
   const { isOpen: isLogout, onOpen: onOpenLogout, onClose: onCloseLogout } = useDisclosure()
   const cancelRef = React.useRef()
-  const [userName, setUserName] = useState('Hi User !')
+  const [userName, setUserName] = useState('User !')
   let dispatch = useDispatch();
   let Search =
     useSelector((state) => {
@@ -94,9 +95,9 @@ export default function Navbar() {
     }
     return Displayy(Search);
   }
-  function myFunction() {
+  const myFunction=()=> {
     document.getElementById("myDropdown").classList.toggle("show");
-    setUserName(localStorage.getItem('userName') ? localStorage.getItem('userName') : 'Hi User !')
+    setUserName(localStorage.getItem('userName') ? localStorage.getItem('userName') : 'User !')
   }
   window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
@@ -275,14 +276,19 @@ export default function Navbar() {
           {/* <Login cursor="pointer" />  */}
           <div className="dropdown">
             <Button onClick={myFunction} className="dropbtn">
-              <FaUser cursor="pointer" />
+              <FaUser  size={22} cursor="pointer" />
             </Button>
             <Box p={'10px'} textAlign={'center'} id="myDropdown" className="dropdown-content">
-              <Text fontSize={'lg'} color={'green.500'}>{userName}</Text>
-              {userName != 'Hi User !' ? <Button className="logoutbtn" color={'white'} w={'90%'} borderRadius={'none'} py={'2px'} bg={'red'} onClick={onOpenLogout}>LOGOUT</Button> : <Login />}
-              {/* {userName != 'Hi User !' ? <Button className="logoutbtn" color={'white'} w={'90%'} borderRadius={'none'} py={'2px'} bg={'red'} onClick={onOpenLogout}>LOGOUT</Button> : <Login />} */}
-              {/* //  <Login/>
-            //  <Button className="logoutbtn" color={'white'} w={'90%'} borderRadius={'none'} py={'2px'} bg={'red'}>LOGOUT</Button> */}
+              <Text fontSize={'lg'} color={'green.500'}>Hi ,{userName}</Text>
+              
+              {/* {userName != 'User !' ? <Button className="logoutbtn" color={'white'} w={'90%'} borderRadius={'none'} py={'2px'} bg={'red'} onClick={onOpenLogout}>LOGOUT</Button> : <Login />} */}
+              {userName != 'User !' ?  <GoogleLogout className="google__btn"  
+                buttonText="Logout"
+                onLogoutSuccess={onOpenLogout}
+              clientId="500852971355-6upomadqd80rkj5hdbqf8j7pl07q8kpq.apps.googleusercontent.com"
+              disabled={false}
+              >
+              </GoogleLogout> : <Login />}
             </Box>
           </div>
 
@@ -295,11 +301,11 @@ export default function Navbar() {
             <AlertDialogOverlay>
               <AlertDialogContent>
                 <AlertDialogHeader fontSize='lg' fontWeight='bold'>
-                  Delete Customer
+                  Shopdressup
                 </AlertDialogHeader>
 
                 <AlertDialogBody>
-                  Are you sure? You can't undo this action afterwards.
+                  Are you sure? You want to Logout.
                 </AlertDialogBody>
 
                 <AlertDialogFooter>
