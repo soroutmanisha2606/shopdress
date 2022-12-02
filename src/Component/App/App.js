@@ -28,10 +28,10 @@ function App() {
    <div className="App">
 
    <Navbar/>
-   <Home />
+   {/* <Home /> */}
    {/* <Cart/> */}
 
-   {/* <Allroutes/> */}
+   <Allroutes/>
 
 
    {/* <Login/>

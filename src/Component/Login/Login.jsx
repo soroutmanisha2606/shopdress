@@ -92,12 +92,15 @@ const onFailure = (err) => {
   }
 
   const login = async ()=>{
+    console.log(loginData);
     const match = await Array.filter((ele)=>{
       return ele.email==loginData.email && ele.password==loginData.password
     })
     if(match.length===0){
      toaster('error','Wrong Credentials')
     }else{
+      console.log(match);
+      localStorage.setItem('userName',match[0].fname)
       toaster('success','Login Successfully')
       onClose()
     }
@@ -188,7 +191,7 @@ const onFailure = (err) => {
                       onSuccess={onSuccess}
                       onFailure={onFailure}
                       cookiePolicy={'single_host_origin'}
-                      isSignedIn={true}
+                      isSignedIn={false}
                   />
                   <Stack pt={6}>
                     <Text align={'center'}>

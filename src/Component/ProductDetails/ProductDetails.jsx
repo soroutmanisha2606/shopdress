@@ -23,35 +23,31 @@ import { NavLink, Link, useParams } from "react-router-dom";
 import "./ProductDetails.css";
 const imgArray = [
   {
-    id: 0,
-    img: "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-2_120x.jpg?v=1669238424",
-    imgLg:
-      "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-2_720x.jpg?v=1669238424",
+   
+    img: "",
+    imgLg:""
   },
   {
-    id: 1,
-    img: "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-5_120x.jpg?v=1669238434",
-    imgLg:
-      "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-5_720x.jpg?v=1669238434",
+   
+    img: "",
+    imgLg:""
   },
   {
-    id: 2,
-    img: "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-7_120x.jpg?v=1669238448",
-    imgLg:
-      "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-7_720x.jpg?v=1669238448",
+   
+    img: "",
+    imgLg:""
   },
   {
-    id: 3,
-    img: "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-8_120x.jpg?v=1669238448",
-    imgLg:
-      "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-8_720x.jpg?v=1669238448",
+   
+    img: "",
+    imgLg:""
   },
   {
-    id: 4,
-    img: "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-6_120x.jpg?v=1669238449",
-    imgLg:
-      "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_grey_merry_pullover-6_720x.jpg?v=1669238449",
+   
+    img: "",
+    imgLg:""
   },
+  
 ];
 // {
 //   "id":"1",
@@ -97,12 +93,9 @@ function ProductDetails(props) {
   useEffect(() => {
     let d=localStorage.getItem("Searchisopen") ||"kk"
     if(d=="true"){
-
       SearchDiv();
     }
-    getDetails(3)
-    setsideImage(imgArray);
-    setlgImg(imgArray[0].imgLg);
+    getDetails(params.id)
     setextraImage(otherImg)
   }, []);
 
@@ -122,7 +115,20 @@ function ProductDetails(props) {
     fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data/'+id)
     .then(res=>res.json())
     .then((data)=>{
+      
+    imgArray[0].img = data.image_1
+    imgArray[1].img = data.image_2
+    imgArray[2].img = data.image_3
+    imgArray[3].img = data.image_4
+    imgArray[4].img = data.image_5
+    imgArray[0].imgLg = data.image_1.replace("120", "720")
+    imgArray[1].imgLg = data.image_2.replace("120", "720")
+    imgArray[2].imgLg = data.image_3.replace("120", "720")
+    imgArray[3].imgLg = data.image_4.replace("120", "720")
+    imgArray[4].imgLg = data.image_5.replace("120", "720")
       setprodData(data)
+      setsideImage(imgArray);
+      setlgImg(imgArray[0].imgLg);
     })
   }
 
@@ -133,7 +139,7 @@ function ProductDetails(props) {
           <Stack spacing={4}>
             {sideImg.map((ele, i) => {
               return (
-                <NavLink key={ele.id}>
+                <NavLink key={i}>
                   <Image
                     height={130}
                     src={ele.img}
@@ -148,7 +154,7 @@ function ProductDetails(props) {
           </Stack>
         </Box>
         <Box className="innerBox" w="43%">
-          <Image src={lgImg} alt="NA" />
+          <Image  src={lgImg} alt="NA" />
         </Box>
         <Box className="innerBox scroolDiv" w="40%">
           <Stack spacing={6}>
