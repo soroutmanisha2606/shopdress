@@ -1,3 +1,14 @@
+.blackF{
+    padding: 25px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.blackF>h3{
+    width: 200px;
+    font-size: 30px;
+    /* font-size: large; */
+}
 .a-Main-Box{
     display : flex;
    margin: auto;
@@ -5,7 +16,7 @@
    width: 100;
 }
 .a-side-nav{
-    width: 33%;
+    width: 30%;
     /* height: 100vh; */
     line-height: 40px;
 }
@@ -14,7 +25,7 @@
 } */
 .select-box-a{
     display: flex;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     align-items: center;
     justify-content: space-between;
     padding: 13px;
@@ -23,14 +34,14 @@
     width: 24%;
     padding: 7px;
     height: 40px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* line-height: 50px; */
 }
 
 
 .list-item{
     padding: 1%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     display: grid;
     text-align: center;
@@ -46,9 +57,12 @@
     width: 100%;
     /* width: 80%; */
     cursor: pointer;
-    height: 500px;
+    height: 520px;
     /* z-index: -1; */
 
+}
+#select{
+    border: 1px solid black;
 }
 .imageshow{
     position: relative;
@@ -75,7 +89,7 @@
     opacity: 1;
 }
 .a-text-details{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 10px;
 }
 .quickView{

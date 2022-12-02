@@ -1,5 +1,6 @@
+
 .a-sidebar{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: sticky;
     top: 23%;
     padding: 20px;
@@ -7,4 +8,9 @@
 .accord{
   border: none;
   border-bottom: 0.5px solid #fff;
+}
+.priceFlex{
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
 }
