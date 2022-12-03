@@ -1,8 +1,7 @@
 .Carousel__box{
     position: relative;
     width:50%;
-    /* left:0%; */
-    /* border-radius: 1000px; */
+    
 }
 .inputbdr{
     border: 2px solid rgb(124, 160, 100) !important;
@@ -11,7 +10,6 @@
     text-align: center;
     text-transform: uppercase;
 	background: linear-gradient(to right, #385944 0%, #38a169 100%);
-	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 .loginbtn:hover{

@@ -1,7 +1,6 @@
 
 .a-sidebar{
-    /* border: 1px solid black; */
-    position: sticky;
+   position: sticky;
     top: 23%;
     padding: 20px;
 }

@@ -282,13 +282,16 @@ export default function Navbar() {
               <Text fontSize={'lg'} color={'green.500'}>Hi ,{userName}</Text>
               
               {/* {userName != 'User !' ? <Button className="logoutbtn" color={'white'} w={'90%'} borderRadius={'none'} py={'2px'} bg={'red'} onClick={onOpenLogout}>LOGOUT</Button> : <Login />} */}
-              {userName != 'User !' ?  <GoogleLogout className="google__btn"  
+              {userName != 'User !' ?  
+              <GoogleLogout className="google__btn"  
                 buttonText="Logout"
                 onLogoutSuccess={onOpenLogout}
               clientId="500852971355-6upomadqd80rkj5hdbqf8j7pl07q8kpq.apps.googleusercontent.com"
               disabled={false}
               >
-              </GoogleLogout> : <Login />}
+              </GoogleLogout> 
+              
+              : <Login />}
             </Box>
           </div>
 

@@ -68,10 +68,6 @@ fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data')
         </select>
     </div>
 
-   {/* <Display /> */}
- {/* {Display(state)} */}
-
- {/* array. */}
  <div className='list-item'>
   {array.map((e)=>{
     return <>

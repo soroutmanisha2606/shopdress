@@ -10,7 +10,6 @@
     display: flex;
     justify-content: space-around;
     margin-top: 50px;
-    /* border:4px solid white; */
     padding: 20px;
     margin-left: -40px;
     gap:20px
@@ -80,10 +79,7 @@
     color: #ececec;
     height: auto;
     line-height: 3;
-    /* border: 3px solid white; */
-  /* align-content: center; */
- /* padding-top: 40px; */
- 
+  
 }
 .responsive_img{
     position: absolute;
@@ -116,7 +112,6 @@
 text-align: center;
     
 }
-/* resonvive */
 @media only screen and (max-width: 1529px) {
     .responsive_box{
      display: none;
@@ -129,8 +124,6 @@ text-align: center;
 @media only screen and (max-width: 768px) {
    .responsive_box{
     display: block;
-    /* border: 10px solid red; */
-    
     margin-top: 200px;
     
    }
