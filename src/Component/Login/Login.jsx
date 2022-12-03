@@ -31,10 +31,12 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import CaptionCarousel from './CaptionCarousel';
 import { useDispatch, useSelector } from 'react-redux';
 import  {UserData}  from '../../Actions/UserData.js';
-
+import { GoogleLogin  } from 'react-google-login';
+import { gapi } from 'gapi-script';
 
 
 export default function Login() {
+  const clientId = "500852971355-6upomadqd80rkj5hdbqf8j7pl07q8kpq.apps.googleusercontent.com"
   const toast = useToast()
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
@@ -53,13 +55,27 @@ export default function Login() {
   let dispatch=useDispatch();
   useEffect(()=>{
     UserData(dispatch)
+    const initClient = () => {
+      gapi.client.init({
+      clientId: clientId,
+      scope: ''
+    });
+ };
+ gapi.load('client:auth2', initClient);
   },[])
-  console.log(Array);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2, } = useDisclosure();
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
-
+  const onSuccess = (res) => {
+    onClose();
+    var token = res.tokenId.slice(0,30)
+    localStorage.setItem("TokenID" , token)
+    localStorage.setItem("userName" ,res.profileObj.givenName)
+};
+const onFailure = (err) => {
+    console.log('failed:', err);
+};
   const handleOnchange = (e)=>{
    const {name,value} = e
    setLoginData({
@@ -76,12 +92,15 @@ export default function Login() {
   }
 
   const login = async ()=>{
+    console.log(loginData);
     const match = await Array.filter((ele)=>{
       return ele.email==loginData.email && ele.password==loginData.password
     })
     if(match.length===0){
      toaster('error','Wrong Credentials')
     }else{
+      console.log(match);
+      localStorage.setItem('userName',match[0].fname)
       toaster('success','Login Successfully')
       onClose()
     }
@@ -106,7 +125,7 @@ export default function Login() {
 
   return (
     <>
-      <Button onClick={onOpen} border="none" bg="white" paddingBottom="6px" ><FaUser fontSize="25px" /></Button>
+      <Button  className="loginbtn" w={'90%'} borderRadius={'none'} py={'2px'} bgGradient='linear(to-r, green.200, green.500)'  onClick={onOpen} border="none" bg="white" paddingBottom="6px" >LOGIN</Button>
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
@@ -166,6 +185,14 @@ export default function Login() {
                     }}>
                     Sign in
                   </Button>
+                  <GoogleLogin
+                      clientId={clientId}
+                      buttonText="Sign in with Google"
+                      onSuccess={onSuccess}
+                      onFailure={onFailure}
+                      cookiePolicy={'single_host_origin'}
+                      isSignedIn={false}
+                  />
                   <Stack pt={6}>
                     <Text align={'center'}>
                       Don't have a account? <Link onClick={() => {
