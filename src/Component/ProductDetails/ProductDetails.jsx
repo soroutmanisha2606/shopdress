@@ -154,7 +154,7 @@ function ProductDetails(props) {
           </Stack>
         </Box>
         <Box className="innerBox" w="43%">
-          <Image  src={lgImg} alt="NA" />
+          <Image height={720}  src={lgImg} alt="NA" />
         </Box>
         <Box className="innerBox scroolDiv" w="40%">
           <Stack spacing={6}>
