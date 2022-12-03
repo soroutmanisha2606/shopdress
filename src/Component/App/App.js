@@ -29,7 +29,7 @@ function App() {
    <Navbar/>
    <Cart/>
 
-   {/* <Allroutes/> */}
+   <Allroutes/>
 
 
    {/* <Login/>
@@ -52,7 +52,7 @@ function App() {
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
   {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
     
-    <PaymentPage/>
+    {/* <PaymentPage/> */}
     <Footer/>
 
     </div>

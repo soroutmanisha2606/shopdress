@@ -93,7 +93,7 @@ function Display(){
   return (
     <Box position="sticky" bg="white" top="0%" zIndex="1">
         <Box  id="SearchDi">
-        <Box bg="white" h="50px" borderRadius="10px" w="80%" m="auto" mt="63px" background="#115c11" display="flex" alignItems="center" justifyContent="space-around"> <FiSearch position="relative" fontSize="30px" color="white"  padding="10px"/><input type="text" style={{width:"92%",height:"50px",fontSize:"25px", border:"none",fontWeight:"400"}} onChange={()=>{ SearchBar(dispatch)}} id="inputSearch"  placeholder="  Search here ..."/> <FiX fontSize="32px" color="white"  cursor="pointer" onClick={SearchDiv}/></Box> 
+        <Box bg="white" h="50px" borderRadius="10px" w="80%" m="auto" mt="63px" background="#115c11" display="flex" alignItems="center" justifyContent="space-around"> <FiSearch position="relative" fontSize="30px" color="white"  padding="10px"/><input type="text" style={{width:"92%",height:"50px",fontSize:"25px", border:"none",fontWeight:"400"}} onChange={()=>{ SearchBar(dispatch)}} id="inputSearch"  placeholder="  Search here ..."/> <FiX fontSize="32px" color="white"  cursor="pointer" onClick={()=>{SearchDiv(dispatch)}}/></Box> 
         <Box bg="white" h="70%" borderRadius="10px" w="80%" m="auto" mt="30px" overflowY="scroll"  >
         {Search.length==0 ?<Box display="flex" justifyContent="space-around"   alignItems="center">  <img src="https://media.baamboozle.com/uploads/images/94038/1597523199_58366"/> </Box> :<div id="Boxxxxx" style={  {
     padding:"1%",
