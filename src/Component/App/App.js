@@ -18,14 +18,13 @@ import ProductPages from "../ProductPages/ProductPages"
 
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from "../TESTING/DROP";
-import Chatbot from "../PaymentPage/Chatbot";
 import Allroutes from "../AllRoutes/Allroutes";
 import Home from "../Home/Home";
 
 function App() {
  
   return (
-   <div className="App">
+    <div className="App">
 
    <Navbar/>
    {/* <Home /> */}
@@ -35,7 +34,6 @@ function App() {
     <Footer/>
 
     </div>
-   
   );
 }
 

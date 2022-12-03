@@ -4,7 +4,7 @@ export default function CARTMENU (){
     if(document.getElementById("CARTDI")){
         document.getElementById("CARTDI").id="CARTDIV"
     }else{
-        document.getElementById("CARTDIV").id="CARTDI"
+        document.getElementById("CARTDIV").id="CARTDI";
     }
     
 }
