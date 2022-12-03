@@ -9,7 +9,7 @@ export default function CARTMENU (){
     
 }
 
-export const SearchDiv=()=>{
+export const SearchDiv=(dispatch)=>{
 
    
     if(document.getElementById("SearchDi")){
@@ -17,6 +17,10 @@ export const SearchDiv=()=>{
     
          localStorage.setItem("Searchisopen","true")
     }else{
+        dispatch({
+            type:"GETCARTDATA",
+            payload:[]
+        })
         document.getElementById("SearchDiv").id="SearchDi"
         localStorage.setItem("Searchisopen","false")
     }

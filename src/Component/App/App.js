@@ -19,6 +19,7 @@ import ProductPages from "../ProductPages/ProductPages"
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from "../TESTING/DROP";
 import Allroutes from "../AllRoutes/Allroutes";
+import Home from "../Home/Home";
 
 function App() {
  
@@ -26,32 +27,10 @@ function App() {
     <div className="App">
 
    <Navbar/>
-   <Cart/>
-
+   {/* <Home /> */}
+    <Cart/>
    <Allroutes/>
-
-
-   {/* <Login/>
-    <br/>
-   <br/>
-   <BasicUsage/>
-   <br/>
-   <br/>
-
-
-
-  
-   
-   <br/>
-   <br/>
-  //  <PaymetSuccess/>  */}
-  {/* //  <ProductPages/> */}
-  {/* <ProductDetails/> */}
-  
-  {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
-  {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
-    
-    {/* <PaymentPage/> */}
+  <BasicUsage/>
     <Footer/>
 
     </div>

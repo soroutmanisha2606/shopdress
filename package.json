@@ -13,8 +13,11 @@
     "emailjs-com": "^3.2.0",
     "formik": "^2.2.9",
     "framer-motion": "^7.6.15",
+    "gapi-script": "^1.2.0",
+    "jquery": "^3.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-login": "^5.2.2",
     "react-icons": "^4.6.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
@@ -51,5 +54,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "Hompage":"."
 }
