@@ -28,33 +28,10 @@ function App() {
    <div className="App">
 
    <Navbar/>
-   {/* <Home /> */}
-   {/* <Cart/> */}
-
+   <Home />
+    <Cart/>
    <Allroutes/>
 
-
-   {/* <Login/>
-    <br/>
-   <br/>
-   <BasicUsage/>
-   <br/>
-   <br/>
-
-
-
-  
-   
-   <br/>
-   <br/>
-  //  <PaymetSuccess/>  */}
-  {/* //  <ProductPages/> */}
-  {/* <ProductDetails/> */}
-  
-  {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
-  {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
-    
-    {/* <PaymentPage/> */}
     <Footer/>
 
     </div>
