@@ -19,7 +19,7 @@ import { useState  } from 'react';
 import { Display } from '../Plist';
 
 
-const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRange}) => {
+const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRange,reset}) => {
   // let [state,setState] =useState([]);
   const [sliderVal1, setSliderVal1] = useState([0, 500])
 
@@ -36,6 +36,7 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
 
   return (
     <div className='a-sidebar'>
+      <button onClick={reset} className="btnreset">Reset</button>
      <Accordion defaultIndex={[0]} allowMultiple>
   <AccordionItem className='accord'>
     <h2>
@@ -80,7 +81,7 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
 </RangeSlider> */}
 {/* <Box fontSize="18px" fontWeight={700} letterSpacing="0.25px" color={"#151b39"} pl="20px">Price</Box> */}
             { <RangeSlider
-                defaultValue={[0, 45000]}
+                defaultValue={[0, 500]}
                 w="85%"
                 ml="25px"
                 mr="50px"
@@ -93,11 +94,11 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
                 max={500}
             >
                 <RangeSliderTrack h="5px">
-                    <RangeSliderFilledTrack bgColor={"#d7d7d7"} />
+                    <RangeSliderFilledTrack bgColor="black" />
                 </RangeSliderTrack>
                 <RangeSliderThumb index={0} boxSize="23px"  >
                     <Box position="absolute" bottom="5px"  fontSize={"14px"}>{sliderVal1[0]}</Box>
-                    <Box w="23px" h="21px" bgColor="transparent" borderRadius={"50%"} border="7px solid #24aeb1" ></Box>
+                    <Box w="23px" h="21px" bgColor="black" borderRadius={"50%"} ></Box>
                 </RangeSliderThumb>
                 <RangeSliderThumb index={1} boxSize="23px"  >
                     <Box position="absolute" bottom="5px" fontSize={"14px"}>{sliderVal1[1]}</Box>
@@ -120,10 +121,16 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+      <div className='color-div'>
+        <div style={{backgroundColor:"red"}}></div>
+        <div style={{backgroundColor:"blue"}}></div>
+        <div  style={{backgroundColor:"yellow"}}></div>
+        <div  style={{backgroundColor:"gray"}}></div>
+        <div style={{backgroundColor:"pink"}}></div>
+        <div  style={{backgroundColor:"purple"}}></div>
+        <div style={{backgroundColor:"green"}}></div>
+        <div style={{backgroundColor:"whiteSmoke"}}></div>
+      </div>
     </AccordionPanel>
   </AccordionItem>
 
@@ -139,15 +146,15 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
     <AccordionPanel pb={4}>
     <div>
 
-     <input type="checkbox" onChange={SizeL}/> Large
+     <input type="checkbox" id='lsize' onChange={SizeL}/> Large
       </div>
       <div>
 
-     <input type="checkbox"  onChange={SizeM}/> Medium
+     <input type="checkbox" id='msize' onChange={SizeM}/> Medium
       </div>
       <div>
 
-     <input type="checkbox"  onChange={SizeS}/> Small
+     <input type="checkbox" id='ssize' onChange={SizeS}/> Small
       </div>
     </AccordionPanel>
   </AccordionItem>

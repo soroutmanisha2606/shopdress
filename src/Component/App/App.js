@@ -18,18 +18,17 @@ import ProductPages from "../ProductPages/ProductPages"
 
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from "../TESTING/DROP";
-import Chatbot from "../PaymentPage/Chatbot";
 import Allroutes from "../AllRoutes/Allroutes";
 
 function App() {
  
   return (
-   <div className="App">
+    <div className="App">
 
    <Navbar/>
    <Cart/>
 
-   {/* <Allroutes/> */}
+   <Allroutes/>
 
 
    {/* <Login/>
@@ -52,11 +51,10 @@ function App() {
   {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
   {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
     
-    <PaymentPage/>
+    {/* <PaymentPage/> */}
     <Footer/>
 
     </div>
-   
   );
 }
 

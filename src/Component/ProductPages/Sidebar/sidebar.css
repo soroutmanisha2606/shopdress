@@ -14,3 +14,25 @@
   justify-content: space-between;
   font-size: small;
 }
+.btnreset{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 5px;
+  width: 150px;
+  border-radius: 5px;
+}
+.btnreset:hover{
+  background-color: rgb(233, 233, 233);
+}
+.color-div{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.color-div>div{
+  height: 30px;
+  width: 30px;
+  border-radius: 25px;
+  border: 1px solid black;
+}
