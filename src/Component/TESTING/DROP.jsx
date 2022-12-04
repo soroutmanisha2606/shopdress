@@ -28,7 +28,7 @@ import LINEMENU from "./Funcations.Nav/OpenClose";
 import { BiSearch, BiShoppingBag } from "react-icons/bi";
 import CARTMENU, { SearchDiv, SearchBar } from "../Cart/Cartt";
 import "./Drop.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { FiMenu, FiSearch, FiX } from "react-icons/fi";
 import { CiUser } from "react-icons/ci";
@@ -44,6 +44,7 @@ export default function Navbar() {
   const cancelRef = React.useRef()
   const [userName, setUserName] = useState('User !')
   let dispatch = useDispatch();
+  const navigate = useNavigate()
   let Search =
     useSelector((state) => {
       return state.ShopDressReducer.Search;
@@ -142,6 +143,7 @@ export default function Navbar() {
   const logOutConfirm = () => {
     localStorage.clear()
     onCloseLogout()
+    navigate('/')
   }
   return (
     <Box position="sticky" bg="white" top="0%" zIndex="1">

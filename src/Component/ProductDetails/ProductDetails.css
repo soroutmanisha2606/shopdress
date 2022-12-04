@@ -69,11 +69,6 @@
     width: 540px;
     margin: 20px auto;
 }
-    /* .css-egoftb {
-        justify-content: space-between;
-        flex-direction: row;
-        
-    } */
     .revflex>.chakra-stack {
         display: flex;
         flex-direction: row !important;

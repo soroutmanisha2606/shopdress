@@ -2,7 +2,7 @@ export  const UserData = (dispatch)=>{
 
     // return(dispatch,getState)=>{
        async function GetData(){
-        let res = await fetch('https://cartikkg-shop-dress-up-new.onrender.com/users');
+        let res = await fetch('https://dead-gold-binturong-kilt.cyclic.app/users');
         let data= await res.json();
     
         dispatch({
