@@ -23,6 +23,7 @@ import { FaFacebookF, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { NavLink, Link, useParams, useNavigate } from "react-router-dom";
 import "./ProductDetails.css";
 import { useDispatch } from "react-redux";
+import { GetCartData } from "../../Actions/CartAction";
 const imgArray = [
   {
    
@@ -121,22 +122,12 @@ function ProductDetails(props) {
   };
   async function AddtoCart(taskk){
     cartData.push(taskk)
+    GetCartData(dispatch)
+    disabelCart()
+    // CARTMENU()
     localStorage.setItem('CartData',JSON.stringify(cartData));
     toaster('success','Item Added To Cart Successfully !')
-  // return  console.log(taskk);
-  //   try {
-  //  let x =    await fetch('https://dead-gold-binturong-kilt.cyclic.app/cart',{
-  //       method:"POST",
-  //       headers :{
-  //         "Content-Type":"application/json",
-  //       },
-  //       body: JSON.stringify(taskk),
-  //     })
-  //   //  let data = await x.json() 
-  //     console.log(x);
-  //   } catch (error) {
-  //     console.log(error);
-  //   } 
+
   }
   const disabelCart = ()=>{
     for(let i = 0;i<cartData.length;i++){
