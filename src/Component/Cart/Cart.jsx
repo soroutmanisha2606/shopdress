@@ -17,7 +17,8 @@ export default function Cart() {
 
   useEffect(()=>{
     GetCartData(dispatch);
- 
+  //  let Action= bindActionCreators(GetCartData,)
+  //  Action();
   },[])
    Data=0;  
   Array.map((el)=>{
