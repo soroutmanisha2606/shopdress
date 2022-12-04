@@ -4,15 +4,17 @@ import "./ProductPages.css"
 
 import Plist from './Plist';
 import Sidebar from './Sidebar/Sidebar';
+import { useRef } from 'react';
 
 export default function ProductPages() {
   const [state,setState] = useState([]);
   const [fixed , setFixed] = useState([]);
   const [price,setPrice] = useState([0,500]);
 useEffect(()=>{
-  fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data`).then((res)=>res.json()).then((data)=>{
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data`).then((res)=>res.json()).then((data)=>{
     // console.log(data);
     setFixed(data);
+    setState(data);
   })
 },[])
 
@@ -20,10 +22,6 @@ useEffect(()=>{
 
   function filterCheckbox2(e){
     // console.log(check);
-    let newData = [];
-  
-    const {name,checked} = e.target;
-  
     let inp1 = document.getElementById("inp1");
     let inp2 = document.getElementById("inp2");
     if(inp1.checked==true && inp2.checked==true){
@@ -31,12 +29,12 @@ useEffect(()=>{
     } // console.log(checked)
     
     else if(e.target.checked==true){
-      fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?stock=false`).then((res)=>res.json()).then((data)=>{
+      fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=false`).then((res)=>res.json()).then((data)=>{
         console.log(data);
         setState(data);
       })
     }else{
-      fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data`)
+      fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data`)
       .then((res)=>res.json())
       .then((data)=>{
         // console.log(data);
@@ -55,7 +53,7 @@ useEffect(()=>{
       }
 
      else if(e.target.checked==true){
-        fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?stock=true`).then((res)=>res.json()).then((data)=>{
+        fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=true`).then((res)=>res.json()).then((data)=>{
           console.log(data);
           setState(data);
         })
@@ -152,7 +150,7 @@ function sold(){
   // console.log("select")
  if(select==="za"){
   select = "name";
-  fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=desc`)
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
   .then((res)=>res.json())
   .then((data)=>{
     // console.log(data);
@@ -162,7 +160,7 @@ function sold(){
  }else if(select==="no"){
   select = "manufacture_date";
 
-  fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=desc`)
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
 .then((res)=>res.json())
 .then((data)=>{
   // console.log(data);
@@ -174,7 +172,7 @@ function sold(){
  }else if(select==="hl"){
   select = "price";
 
-  fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=desc`)
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
 .then((res)=>res.json())
 .then((data)=>{
   // console.log(data);
@@ -182,7 +180,7 @@ function sold(){
   // Display(state);
 })
  }else{
-  fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?_sort=${select}&_order=asc`)
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=asc`)
 .then((res)=>res.json())
 .then((data)=>{
   // console.log(data);
@@ -199,7 +197,7 @@ function sold(){
 
 function handlePriceRange(val){
 // console.log(val);
-fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?price_gte=${val[0]}&price_lte=${val[1]}`).then((res)=>res.json()).then((data)=>{
+fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?price_gte=${val[0]}&price_lte=${val[1]}`).then((res)=>res.json()).then((data)=>{
   // console.log(data);
   setState(data);
 })
@@ -215,6 +213,45 @@ function reset(){
   document.getElementById("lsize").checked = false;
   
 }
+
+
+function red(){
+    fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=red`).then((res)=>res.json()).then((data)=>{
+      console.log(data);
+      setState(data);
+    })
+}
+
+// let greencolor = useRef(false);
+function green(){
+    fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=green`).then((res)=>res.json()).then((data)=>{
+      console.log(data);
+      setState(data);
+    })
+}
+
+function gray(){
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=gray`).then((res)=>res.json()).then((data)=>{
+    console.log(data);
+    setState(data);
+  })
+}
+function black(){
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=black`).then((res)=>res.json()).then((data)=>{
+    console.log(data);
+    setState(data);
+  })
+}
+
+function white(){
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=white`).then((res)=>res.json()).then((data)=>{
+    console.log(data);
+    setState(data);
+  })
+}
+
+
+  
   
   return (
     <>
@@ -223,7 +260,7 @@ function reset(){
           {/* </div> */}
     <div className='a-Main-Box'>
           
-      <div  className='a-side-nav'> <Sidebar filterCheckbox={filterCheckbox} filterCheckbox2={filterCheckbox2} SizeL={SizeL} SizeM={SizeM} SizeS={SizeS} handlePriceRange={handlePriceRange} reset={reset}/></div>      
+      <div  className='a-side-nav'> <Sidebar filterCheckbox={filterCheckbox} filterCheckbox2={filterCheckbox2} SizeL={SizeL} SizeM={SizeM} SizeS={SizeS} handlePriceRange={handlePriceRange} reset={reset} red={red} green={green} gray={gray} black={black} white={white} /></div>      
       <div className="a-list-items"><Plist sold={sold} array={state} setState={setState} /></div>
      
     </div>

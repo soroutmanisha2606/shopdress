@@ -33,15 +33,6 @@ export function Display(state){
 const Plist = ({array,sold,setState}) => {
 
 // const [state,setState] = useState([]);
-useEffect(()=>{
-fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data')
-.then((res)=>res.json())
-.then((data)=>{
-  // console.log(data);
-  setState(data);
-})
-
-},[])
 
 
 
@@ -70,8 +61,7 @@ fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data')
 
  <div className='list-item'>
   {array.map((e)=>{
-    return <>
-    <div key={e.id}>
+    return <div key={e.id}>
   <div  className="image-box">
     <div className="imageshow">
     <img src={e.image_1} alt="" />
@@ -89,7 +79,7 @@ fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data')
   </div>
 
     </div>
-    </>
+    
   })}
 
   </div>

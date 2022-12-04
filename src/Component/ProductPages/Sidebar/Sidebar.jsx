@@ -19,7 +19,7 @@ import { useState  } from 'react';
 import { Display } from '../Plist';
 
 
-const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRange,reset}) => {
+const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRange,reset,red,green,gray,black,white}) => {
   // let [state,setState] =useState([]);
   const [sliderVal1, setSliderVal1] = useState([0, 500])
 
@@ -122,14 +122,15 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
     </h2>
     <AccordionPanel pb={4}>
       <div className='color-div'>
-        <div style={{backgroundColor:"red"}}></div>
+        <div style={{backgroundColor:"red"}} onClick={red} ></div>
+        <div style={{backgroundColor:"green"}} onClick={green} ></div>
+        <div  style={{backgroundColor:"gray"}} onClick={gray}  ></div>
+        <div style={{backgroundColor:"black"}} onClick={black} ></div>
+        <div style={{backgroundColor:"whiteSmoke"}} onClick={white} ></div>
         <div style={{backgroundColor:"blue"}}></div>
         <div  style={{backgroundColor:"yellow"}}></div>
-        <div  style={{backgroundColor:"gray"}}></div>
         <div style={{backgroundColor:"pink"}}></div>
         <div  style={{backgroundColor:"purple"}}></div>
-        <div style={{backgroundColor:"green"}}></div>
-        <div style={{backgroundColor:"whiteSmoke"}}></div>
       </div>
     </AccordionPanel>
   </AccordionItem>
