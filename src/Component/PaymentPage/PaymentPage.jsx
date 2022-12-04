@@ -80,7 +80,9 @@ const Formik=useFormik({
     onOpen()
   }
 })
-
+useEffect(()=>{
+  CARTMENU() 
+},[])
 
   return (
     <div className='payment_div'>
