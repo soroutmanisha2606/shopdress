@@ -77,10 +77,10 @@ const signupInit = {
     // gapi.load('client:auth2', initClient);
   },[])
   store.subscribe(()=>{
-    console.log(Array);
+    // console.log(Array);
     setTemp((value)=>value+1)
   })
-console.log(Array);
+// console.log(Array);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2, } = useDisclosure();
   const initialRef = React.useRef(null)

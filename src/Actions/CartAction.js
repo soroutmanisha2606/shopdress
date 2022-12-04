@@ -1,3 +1,4 @@
+import { json } from "react-router-dom";
 
 export  const GetCartData = (dispatch)=>{
 
@@ -36,10 +37,10 @@ export const GetDeleteData = async (id,index,Array,dispatch)=>{
              type:"GETCARTDATA",
              payload:temp
       })
-      await fetch(`https://dead-gold-binturong-kilt.cyclic.app/cart/${id}`,{
-         method:'DELETE'
-      });
-      
+    //   await fetch(`https://dead-gold-binturong-kilt.cyclic.app/cart/${id}`,{
+    //      method:'DELETE'
+    //   });
+    localStorage.setItem('CartData',JSON.stringify(temp));
       
       
 }     

@@ -37,7 +37,7 @@ export const DecreaseQTY=(id,dispatch)=>{
         if(el.id==id){
            if(Number(el.Qty)>1){
              el.Qty= Number(el.Qty)-1; 
-              GetPatchData(el, el.id);
+            //   GetPatchData(el, el.id);
            }else{
              GetDeleteData(el.id,index,Array,dispatch);
            }
@@ -48,6 +48,7 @@ export const DecreaseQTY=(id,dispatch)=>{
         type:"GETCARTDATA",
         payload:temp
     })
+    localStorage.setItem('CartData',JSON.stringify(temp));
     
 }
 
@@ -61,7 +62,7 @@ export const IncreaseQTY=(id,dispatch, Array)=>{
             el.Qty= Number(el.Qty)+1;
             
             
-            GetPatchData(el,id);
+            // GetPatchData(el,id);
         }
      })
 
@@ -70,6 +71,8 @@ export const IncreaseQTY=(id,dispatch, Array)=>{
             type:"GETCARTDATA",
             payload:temp
         })
+
+        localStorage.setItem('CartData',JSON.stringify(temp));
 }
 
 

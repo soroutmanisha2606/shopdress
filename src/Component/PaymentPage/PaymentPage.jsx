@@ -81,7 +81,7 @@ const Formik=useFormik({
   }
 })
 useEffect(()=>{
-  CARTMENU() 
+  // CARTMENU() 
 },[])
 
   return (
