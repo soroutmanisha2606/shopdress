@@ -30,7 +30,7 @@ export function Display(state){
   </div>
 }
 
-const Plist = ({array,sold,setState}) => {
+const Plist = ({array,sorting,setState,sold}) => {
 
 // const [state,setState] = useState([]);
 
@@ -48,7 +48,7 @@ const Plist = ({array,sold,setState}) => {
 <p>{array.length} Products</p>
 
       <select id='select' onClick={sold}> 
-        <option >Sort</option>
+        <option value='sort' >Sort</option>
         <option value="sold">Best Selling</option>
         <option value="name">Alphabetically, A-Z</option>
         <option value="za">Alphabetically, Z-A</option>
