@@ -19,7 +19,7 @@ export default function Cart() {
     GetCartData(dispatch);
   //  let Action= bindActionCreators(GetCartData,)
   //  Action();
-  },[Array])
+  },[])
    Data=0;  
   Array.map((el)=>{
     Data+=(Number(el.Qty)* Number( el.price));
