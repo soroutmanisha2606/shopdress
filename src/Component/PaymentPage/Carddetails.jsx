@@ -30,7 +30,7 @@ const Carddetails = () => {
   useEffect(()=>{
     // let div= localStorage.getItem("Cartisopen")||"";
     // if(div=="true"){
-      CARTMENU();
+      // CARTMENU();
     // }
 
   },[])
