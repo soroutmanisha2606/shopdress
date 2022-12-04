@@ -14,13 +14,16 @@ import {
   Text,
   GridItem,
   Grid,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { BsInstagram } from "react-icons/bs";
 import CARTMENU, {SearchDiv,SearchBar}from "../Cart/Cartt"
 import { FaFacebookF, FaPinterestP, FaTwitter } from "react-icons/fa";
-import { NavLink, Link, useParams } from "react-router-dom";
+import { NavLink, Link, useParams, useNavigate } from "react-router-dom";
 import "./ProductDetails.css";
+import { useDispatch } from "react-redux";
+import { GetCartData } from "../../Actions/CartAction";
 const imgArray = [
   {
    
@@ -49,70 +52,71 @@ const imgArray = [
   },
   
 ];
-// {
-//   "id":"1",
-//   "name": "BHLDN Freya Satin Charmeuse Dress",
-//   "image_1":
-//     "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_ivory_merry_pullover_c040af8a-e267-41d4-8fd3-9c4c2fcae40d_540x.jpg?v=1669239241",
-//   "image_2":
-//     "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_ivory_merry_pullover_c040af8a-e267-41d4-8fd3-9c4c2fcae40d_540x.jpg?v=1669239241",
-//   "image_3": "image.png",
-//   "price": "220.0",
-//   "size" : "M",
-//   "Qty":1
-// }
+
 const otherImg = [
-  // {
-  //   id: 0,
-  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_plaid_flannel-4_5f8b1040-5264-4d0f-a184-842f29fdf706_360x.jpg?v=1669395019'
-  // },
-  // {
-  //   id: 1,
-  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_cami_tank-5_fdcadb62-33ef-4cd2-af95-052959bf6593_360x.jpg?v=1660337503'
-  // },
-  // {
-  //   id: 2,
-  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_black_tiered_romper-2_360x.jpg?v=1659639517'
-  // },
-  // {
-  //   id: 3,
-  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_smaocked_maxi_dress-2_360x.jpg?v=1659639754'
-  // },
-  // {
-  //   id: 4,
-  //   img: 'https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_tiered_tie_tank-3_360x.jpg?v=1656605911'
-  // }
+  
 ]
 
 function ProductDetails(props) {
+   const dispatch=useDispatch();
   const [prodData, setprodData] = useState({});
+  const [disable, setDisable] = useState(false);
   const [sideImg, setsideImage] = useState([]);
   const [extraImg, setextraImage] = useState([]);
   const [lgImg, setlgImg] = useState("");
   const params = useParams()
+  const toast = useToast()
+  const navigate = useNavigate()
+  const toaster = (type,msg)=>{
+    toast({
+      title: msg,
+      status: type,
+      isClosable: true,
+      position:'top-right'
+    })
+  }
+
+  var cartData = JSON.parse(localStorage.getItem('CartData'))||[]
   useEffect(() => {
     let d=localStorage.getItem("Searchisopen") ||"kk"
     if(d=="true"){
-      SearchDiv();
+      SearchDiv(dispatch);
     }
     getDetails(params.id)
     setextraImage(otherImg)
+    disabelCart()
+    scrollToTop();
   }, []);
-
+  
+  const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, c - c / 8);
+    }
+  };
+  scrollToTop();
   const handleImg = (img) => {
     setlgImg(img);
   };
   async function AddtoCart(taskk){
-    await fetch('https://cartikkg-shop-dress-up-new.onrender.com/cart',{
-      method:"POST",
-      body: JSON.stringify(taskk),
-      headers :{
-        "Content-Type":"application/json",
-      },
-    });
+    cartData.push(taskk)
+    localStorage.setItem('CartData',JSON.stringify(cartData));
+    GetCartData(dispatch)
+    toaster('success','Item Added To Cart Successfully !')
+    disabelCart()
+
   }
+  const disabelCart = ()=>{
+    for(let i = 0;i<cartData.length;i++){
+      if(cartData[i].id==params.id){
+        setDisable(true);
+        break;
+      }
+    }
+   }
   const getDetails=(id)=>{
-    fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data/'+id)
+    fetch('https://dead-gold-binturong-kilt.cyclic.app/Product_Data/'+id)
     .then(res=>res.json())
     .then((data)=>{
       
@@ -126,6 +130,7 @@ function ProductDetails(props) {
     imgArray[2].imgLg = data.image_3.replace("120", "720")
     imgArray[3].imgLg = data.image_4.replace("120", "720")
     imgArray[4].imgLg = data.image_5.replace("120", "720")
+    data.Qty = 1
       setprodData(data)
       setsideImage(imgArray);
       setlgImg(imgArray[0].imgLg);
@@ -154,7 +159,7 @@ function ProductDetails(props) {
           </Stack>
         </Box>
         <Box className="innerBox" w="43%">
-          <Image height={720}  src={lgImg} alt="NA" />
+          <Image height={720} className='lgImage'  src={lgImg} alt="NA" />
         </Box>
         <Box className="innerBox scroolDiv" w="40%">
           <Stack spacing={6}>
@@ -164,7 +169,7 @@ function ProductDetails(props) {
             <Box>
               <Flex mb={2}>
                 <Text fontSize={"sm"}>COLOR —</Text>
-                <Text fontSize={"xs"}>Light Grey</Text>
+                <Text fontSize={"xs"}>{prodData.color}</Text>
               </Flex>
               <Flex>
                 <Box
@@ -186,7 +191,7 @@ function ProductDetails(props) {
                   p={"4px"}
                   textAlign="center"
                 >
-                  <Box w="35px" h="35px" rounded={"50%"} bg={"brown"}></Box>
+                  <Box w="35px" h="35px" rounded={"50%"} bg={prodData.color}></Box>
                 </Box>
               </Flex>
             </Box>
@@ -234,7 +239,7 @@ function ProductDetails(props) {
               
             </Box>
             <Box textAlign={"center"} border={"1px"}>
-              <Button w="100%"  >Add To Cart</Button>
+              <Button disabled={disable} w="100%" onClick={()=>{AddtoCart(prodData)}} >{disable?'Already Added':'Add To Cart'}</Button>
             </Box>
             <Box textAlign={"center"} border={"1px"} bgColor={"#5a31f4"}>
               <Flex justifyContent={"center"} alignItems={"center"} py={1.5}>
@@ -249,7 +254,7 @@ function ProductDetails(props) {
                 >
                   Shop
                 </Text>
-                <Button size={"xs"}>Pay</Button>
+                <Button onClick={()=>{navigate('/payment')}} size={"xs"}>Pay</Button>
               </Flex>
             </Box>
             <Box textAlign={"center"}>

@@ -3,8 +3,10 @@ import { GetCartData,GetPatchData,GetDeleteData } from '../../Actions/CartAction
 export default function CARTMENU (){
     if(document.getElementById("CARTDI")){
         document.getElementById("CARTDI").id="CARTDIV"
+        localStorage.setItem("Cartisopen","true")
     }else{
         document.getElementById("CARTDIV").id="CARTDI";
+        localStorage.setItem("Cartisopen","false")
     }
     
 }
@@ -35,7 +37,7 @@ export const DecreaseQTY=(id,dispatch)=>{
         if(el.id==id){
            if(Number(el.Qty)>1){
              el.Qty= Number(el.Qty)-1; 
-              GetPatchData(el, el.id);
+            //   GetPatchData(el, el.id);
            }else{
              GetDeleteData(el.id,index,Array,dispatch);
            }
@@ -46,6 +48,7 @@ export const DecreaseQTY=(id,dispatch)=>{
         type:"GETCARTDATA",
         payload:temp
     })
+    localStorage.setItem('CartData',JSON.stringify(temp));
     
 }
 
@@ -59,7 +62,7 @@ export const IncreaseQTY=(id,dispatch, Array)=>{
             el.Qty= Number(el.Qty)+1;
             
             
-            GetPatchData(el,id);
+            // GetPatchData(el,id);
         }
      })
 
@@ -68,6 +71,8 @@ export const IncreaseQTY=(id,dispatch, Array)=>{
             type:"GETCARTDATA",
             payload:temp
         })
+
+        localStorage.setItem('CartData',JSON.stringify(temp));
 }
 
 
@@ -90,7 +95,7 @@ function debounced(fn, delay, dispatch) {
 } 
 async function FetchSearhData(dispatch){
     let qure=document.getElementById('inputSearch').value;
-    let res = await fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?q=${qure}`);
+    let res = await fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?q=${qure}`);
     let ans= await res.json();
     // console.log(ans)
     dispatch({

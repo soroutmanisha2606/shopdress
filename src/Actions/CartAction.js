@@ -1,10 +1,11 @@
+import { json } from "react-router-dom";
 
 export  const GetCartData = (dispatch)=>{
 
-    // return(dispatch,getState)=>{
+   
        async function GetData(){
-        let res = await fetch('https://cartikkg-shop-dress-up-new.onrender.com/cart');
-        let data= await res.json();
+        // let res = await fetch('https://dead-gold-binturong-kilt.cyclic.app/cart');
+        let data= JSON.parse(localStorage.getItem('CartData'))||[];
     
         dispatch({
             type:"GETCARTDATA",
@@ -15,7 +16,7 @@ export  const GetCartData = (dispatch)=>{
        GetData()
 }
 export  const GetPatchData = async (Data,id,dispatch)=>{
-    await fetch(`https://cartikkg-shop-dress-up-new.onrender.com/cart/${id}`,{
+    await fetch(`https://dead-gold-binturong-kilt.cyclic.app/cart/${id}`,{
       method:"PATCH",
       body: JSON.stringify(Data),
       headers :{
@@ -36,10 +37,10 @@ export const GetDeleteData = async (id,index,Array,dispatch)=>{
              type:"GETCARTDATA",
              payload:temp
       })
-      await fetch(`https://cartikkg-shop-dress-up-new.onrender.com/cart/${id}`,{
-         method:'DELETE'
-      });
-      
+    //   await fetch(`https://dead-gold-binturong-kilt.cyclic.app/cart/${id}`,{
+    //      method:'DELETE'
+    //   });
+    localStorage.setItem('CartData',JSON.stringify(temp));
       
       
 }     

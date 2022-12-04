@@ -1,15 +1,24 @@
 import { Box, Button, Center, Heading } from '@chakra-ui/react'
 import React from 'react'
-import Chatbot from './Chatbot'
+import { useEffect } from 'react'
+// import Chatbot from './Chatbot'
 import "./PaymentPage.css"
 //https://cdn.dribbble.com/users/614270/screenshots/14575431/media/4907a0869e9ed2ac4e2d1c2beaf9f012.gif
 const PaymetSuccess = () => {
+  useEffect(()=>{scrollToTop();},[])
+  const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, c - c / 8);
+    }
+  };
   return (
-    <div style={{textAlign:"center",display:"flex",gap:"50px"}} className="success">
-        <Box style={{marginLeft:"100px"}}>
+    <div style={{textAlign:"center",gap:"50px"}} className="success">
+        {/* <Box style={{marginLeft:"100px"}}> */}
         {/* <img src='https://i.pinimg.com/originals/69/94/87/699487bb246152a16ccedd1a18814b4e.gif'/> */}
-        <Chatbot width="500px"/>
-        </Box>
+        {/* <Chatbot width="500px"/> */}
+        {/* </Box> */}
         <Center>
         <Box>
         {/* <img style={{width:"600px",height:"360px"}} src='https://www.dynodesoft.com/assets/img/Ecommerce-gif-1.gif'/> */}

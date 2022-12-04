@@ -26,11 +26,11 @@ function App() {
   return (
     <div className="App">
 
-   <Navbar/>
+    <Navbar/>
    {/* <Home /> */}
     <Cart/>
-   <Allroutes/>
-  <BasicUsage/>
+    <Allroutes/>
+    <BasicUsage/>
     <Footer/>
 
     </div>
