@@ -14,12 +14,13 @@ import {
   Text,
   GridItem,
   Grid,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { BsInstagram } from "react-icons/bs";
 import CARTMENU, {SearchDiv,SearchBar}from "../Cart/Cartt"
 import { FaFacebookF, FaPinterestP, FaTwitter } from "react-icons/fa";
-import { NavLink, Link, useParams } from "react-router-dom";
+import { NavLink, Link, useParams, useNavigate } from "react-router-dom";
 import "./ProductDetails.css";
 import { useDispatch } from "react-redux";
 const imgArray = [
@@ -88,10 +89,23 @@ const otherImg = [
 function ProductDetails(props) {
    const dispatch=useDispatch();
   const [prodData, setprodData] = useState({});
+  const [disable, setDisable] = useState(false);
   const [sideImg, setsideImage] = useState([]);
   const [extraImg, setextraImage] = useState([]);
   const [lgImg, setlgImg] = useState("");
   const params = useParams()
+  const toast = useToast()
+  const navigate = useNavigate()
+  const toaster = (type,msg)=>{
+    toast({
+      title: msg,
+      status: type,
+      isClosable: true,
+      position:'top-right'
+    })
+  }
+
+  var cartData = JSON.parse(localStorage.getItem('CartData'))||[]
   useEffect(() => {
     let d=localStorage.getItem("Searchisopen") ||"kk"
     if(d=="true"){
@@ -99,20 +113,39 @@ function ProductDetails(props) {
     }
     getDetails(params.id)
     setextraImage(otherImg)
+    disabelCart()
   }, []);
 
   const handleImg = (img) => {
     setlgImg(img);
   };
   async function AddtoCart(taskk){
-    await fetch('https://dead-gold-binturong-kilt.cyclic.app/cart',{
-      method:"POST",
-      body: JSON.stringify(taskk),
-      headers :{
-        "Content-Type":"application/json",
-      },
-    });
+    cartData.push(taskk)
+    localStorage.setItem('CartData',JSON.stringify(cartData));
+    toaster('success','Item Added To Cart Successfully !')
+  // return  console.log(taskk);
+  //   try {
+  //  let x =    await fetch('https://dead-gold-binturong-kilt.cyclic.app/cart',{
+  //       method:"POST",
+  //       headers :{
+  //         "Content-Type":"application/json",
+  //       },
+  //       body: JSON.stringify(taskk),
+  //     })
+  //   //  let data = await x.json() 
+  //     console.log(x);
+  //   } catch (error) {
+  //     console.log(error);
+  //   } 
   }
+  const disabelCart = ()=>{
+    for(let i = 0;i<cartData.length;i++){
+      if(cartData[i].id==params.id){
+        setDisable(true);
+        break;
+      }
+    }
+   }
   const getDetails=(id)=>{
     fetch('https://dead-gold-binturong-kilt.cyclic.app/Product_Data/'+id)
     .then(res=>res.json())
@@ -128,6 +161,7 @@ function ProductDetails(props) {
     imgArray[2].imgLg = data.image_3.replace("120", "720")
     imgArray[3].imgLg = data.image_4.replace("120", "720")
     imgArray[4].imgLg = data.image_5.replace("120", "720")
+    data.Qty = 1
       setprodData(data)
       setsideImage(imgArray);
       setlgImg(imgArray[0].imgLg);
@@ -236,7 +270,7 @@ function ProductDetails(props) {
               
             </Box>
             <Box textAlign={"center"} border={"1px"}>
-              <Button w="100%" onClick={()=>{AddtoCart(prodData)}} >Add To Cart</Button>
+              <Button disabled={disable} w="100%" onClick={()=>{AddtoCart(prodData)}} >{disable?'Already Added':'Add To Cart'}</Button>
             </Box>
             <Box textAlign={"center"} border={"1px"} bgColor={"#5a31f4"}>
               <Flex justifyContent={"center"} alignItems={"center"} py={1.5}>
@@ -251,7 +285,7 @@ function ProductDetails(props) {
                 >
                   Shop
                 </Text>
-                <Button size={"xs"}>Pay</Button>
+                <Button onClick={()=>{navigate('/payment')}} size={"xs"}>Pay</Button>
               </Flex>
             </Box>
             <Box textAlign={"center"}>

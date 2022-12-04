@@ -3,8 +3,8 @@ export  const GetCartData = (dispatch)=>{
 
    
        async function GetData(){
-        let res = await fetch('https://dead-gold-binturong-kilt.cyclic.app/cart');
-        let data= await res.json();
+        // let res = await fetch('https://dead-gold-binturong-kilt.cyclic.app/cart');
+        let data= JSON.parse(localStorage.getItem('CartData'))||[];
     
         dispatch({
             type:"GETCARTDATA",

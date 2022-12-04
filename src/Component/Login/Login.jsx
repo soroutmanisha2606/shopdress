@@ -35,13 +35,16 @@ import { GoogleLogin  } from 'react-google-login';
 import { gapi } from 'gapi-script';
 import { useFormik } from 'formik';
 import { SignUpSchema } from './Schema';
+import store from '../../Store/Store';
 
 
 export default function Login() {
   const clientId = "500852971355-6upomadqd80rkj5hdbqf8j7pl07q8kpq.apps.googleusercontent.com"
+  const Array =useSelector((state)=> {return state.ShopDressReducer.User})
   const toast = useToast()
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
+  const [temp,setTemp]=useState(1)
   const [loginData, setLoginData] = useState({
     email:"",
     password:""
@@ -63,7 +66,6 @@ const signupInit = {
   
   let dispatch=useDispatch();
   
-  const Array =useSelector((state)=>{ return state.ShopDressReducer.User})
   useEffect(()=>{
     UserData(dispatch)
     const initClient = () => {
@@ -73,8 +75,12 @@ const signupInit = {
       });
     };
     // gapi.load('client:auth2', initClient);
-  },[Array])
-
+  },[])
+  store.subscribe(()=>{
+    console.log(Array);
+    setTemp((value)=>value+1)
+  })
+console.log(Array);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2, } = useDisclosure();
   const initialRef = React.useRef(null)
@@ -118,11 +124,11 @@ const onFailure = (err) => {
       
   }
   const signUp = (data)=>{
-    fetch("https://cartikkg-shop-dress-up-new.onrender.com/users",{
+    fetch("https://dead-gold-binturong-kilt.cyclic.app/users",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(data)
-    }).then( toaster('success','Account Created Successfully') ,onClose2(),onOpen())
+    }).then( toaster('success','Account Created Successfully') ,onClose2(),onOpen(),UserData(dispatch))
   }
 
   const toaster = (type,msg)=>{
@@ -133,6 +139,8 @@ const onFailure = (err) => {
       position:'top-right'
     })
   }
+
+
   return (
     <>
       <Button  className="loginbtn" w={'90%'} borderRadius={'none'} py={'2px'} bgGradient='linear(to-r, green.200, green.500)'  onClick={onOpen} border="none" bg="white" paddingBottom="6px" >LOGIN</Button>
