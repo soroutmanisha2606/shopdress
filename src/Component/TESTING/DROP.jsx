@@ -184,7 +184,7 @@ export default function Navbar() {
             fontSize="32px"
             color="white"
             cursor="pointer"
-            onClick={SearchDiv}
+            onClick={()=>{SearchDiv(dispatch)}}
           />
         </Box>
         <Box
@@ -264,7 +264,7 @@ export default function Navbar() {
         id="LOGODIV"
       >
         {isLargerThan1144 ? "" : <FiMenu cursor="pointer" onClick={LINEMENU} />}
-        <BiSearch cursor="pointer" onClick={SearchDiv} />
+        <BiSearch cursor="pointer" onClick={()=>{SearchDiv(dispatch)}} />
         <img
           src="https://cdn.shopify.com/s/files/1/0339/0901/files/Peach-Black-DU-Logo_160x.png?v=1631144136"
           alt=""

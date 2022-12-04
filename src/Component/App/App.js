@@ -29,8 +29,8 @@ function App() {
    <Navbar/>
    {/* <Home /> */}
     <Cart/>
-   <Allroutes/>
-  <BasicUsage/>
+    <Allroutes/>
+    <BasicUsage/>
     <Footer/>
 
     </div>

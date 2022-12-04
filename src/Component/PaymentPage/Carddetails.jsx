@@ -1,8 +1,9 @@
 import { Box, Button, Center, Heading, Input } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./PaymentPage.css"
 import {useFormik} from "formik";
 import { paymenpageSchema, signUpSchema } from './schemas';
+import CARTMENU from "../Cart/Cartt"
 import { Navigate,useNavigate } from 'react-router-dom';
 // import { signUpSchema } from './schemas/index ';
 const Carddetails = () => {
@@ -26,7 +27,13 @@ const Carddetails = () => {
    
 
   })
-  
+  useEffect(()=>{
+    // let div= localStorage.getItem("Cartisopen")||"";
+    // if(div=="true"){
+      CARTMENU();
+    // }
+
+  },[])
   
   return (
     <div><div className='order_box'>
