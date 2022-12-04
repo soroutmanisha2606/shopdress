@@ -17,7 +17,7 @@ import image from "./images/chat_logo.png"
 export function BasicUsage() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   useEffect(()=>{
-    onOpen()
+    // onOpen()
   },[])
   return (
     <>

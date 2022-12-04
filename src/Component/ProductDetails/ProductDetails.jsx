@@ -21,6 +21,7 @@ import CARTMENU, {SearchDiv,SearchBar}from "../Cart/Cartt"
 import { FaFacebookF, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { NavLink, Link, useParams } from "react-router-dom";
 import "./ProductDetails.css";
+import { useDispatch } from "react-redux";
 const imgArray = [
   {
    
@@ -85,6 +86,7 @@ const otherImg = [
 ]
 
 function ProductDetails(props) {
+   const dispatch=useDispatch();
   const [prodData, setprodData] = useState({});
   const [sideImg, setsideImage] = useState([]);
   const [extraImg, setextraImage] = useState([]);
@@ -93,7 +95,7 @@ function ProductDetails(props) {
   useEffect(() => {
     let d=localStorage.getItem("Searchisopen") ||"kk"
     if(d=="true"){
-      SearchDiv();
+      SearchDiv(dispatch);
     }
     getDetails(params.id)
     setextraImage(otherImg)

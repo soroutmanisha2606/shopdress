@@ -8,6 +8,7 @@ import Sidebar from './Sidebar/Sidebar';
 export default function ProductPages() {
   const [state,setState] = useState([]);
   const [fixed , setFixed] = useState([]);
+  const [price,setPrice] = useState([0,500]);
 useEffect(()=>{
   fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data`).then((res)=>res.json()).then((data)=>{
     // console.log(data);
@@ -15,7 +16,7 @@ useEffect(()=>{
   })
 },[])
 
-console.log(document.getElementById("slide"))
+
 
   function filterCheckbox2(e){
     // console.log(check);
@@ -66,6 +67,15 @@ console.log(document.getElementById("slide"))
 
 
   function SizeL(e){
+    let s= document.getElementById("ssize");
+   let m=document.getElementById("msize");
+let l = document.getElementById("lsize");
+if(s.checked===true && m.checked ===true && l.checked===true){
+  setState(fixed);
+}
+ if(s.checked===true && m.checked){
+  setState(fixed);
+}
     console.log(e.target.checked);
   let temp =[];
    if(e.target.checked==true){
@@ -84,6 +94,16 @@ console.log(document.getElementById("slide"))
 
   
   function SizeM(e){
+
+    let s= document.getElementById("ssize");
+   let m=document.getElementById("msize");
+let l = document.getElementById("lsize");
+if(s.checked===true && m.checked ===true && l.checked===true){
+  setState(fixed);
+}
+ if(s.checked===true && m.checked){
+  setState(fixed);
+}
     console.log(e.target.checked);
   let temp =[];
    if(e.target.checked==true){
@@ -102,7 +122,16 @@ console.log(document.getElementById("slide"))
 
     
   function SizeS(e){
-    console.log(e.target.checked);
+let s= document.getElementById("ssize");
+   let m=document.getElementById("msize");
+let l = document.getElementById("lsize");
+if(s.checked===true && m.checked ===true && l.checked===true){
+  setState(fixed);
+}
+ if(s.checked===true && m.checked){
+  setState(fixed);
+}
+    // console.log(e.target.checked);
   let temp =[];
    if(e.target.checked==true){
     state.map((ele)=>{
@@ -166,6 +195,26 @@ function sold(){
 
 }
 
+
+
+function handlePriceRange(val){
+// console.log(val);
+fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?price_gte=${val[0]}&price_lte=${val[1]}`).then((res)=>res.json()).then((data)=>{
+  // console.log(data);
+  setState(data);
+})
+}
+
+
+function reset(){
+  setState(fixed);
+  document.getElementById("inp2").checked = false;
+  document.getElementById("inp1").checked = false;
+  document.getElementById("ssize").checked = false;
+  document.getElementById("msize").checked = false;
+  document.getElementById("lsize").checked = false;
+  
+}
   
   return (
     <>
@@ -174,7 +223,7 @@ function sold(){
           {/* </div> */}
     <div className='a-Main-Box'>
           
-      <div  className='a-side-nav'> <Sidebar filterCheckbox={filterCheckbox} filterCheckbox2={filterCheckbox2} SizeL={SizeL} SizeM={SizeM} SizeS={SizeS}/></div>      
+      <div  className='a-side-nav'> <Sidebar filterCheckbox={filterCheckbox} filterCheckbox2={filterCheckbox2} SizeL={SizeL} SizeM={SizeM} SizeS={SizeS} handlePriceRange={handlePriceRange} reset={reset}/></div>      
       <div className="a-list-items"><Plist sold={sold} array={state} setState={setState} /></div>
      
     </div>

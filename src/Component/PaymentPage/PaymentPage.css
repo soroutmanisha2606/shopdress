@@ -5,14 +5,13 @@
 }
 .left_box{
     width: 65%;
-    /* height: 300px; */
     box-shadow: 0 0 1px;
-    /* border: 2px solid black; */
+    
 }
 .right_box{
     width: 45%;
     box-shadow: 0 0 1px;
-    /* border: 2px solid red; */
+    
 }
 .dressup_img_main_logo{
     width: 290px;
@@ -22,7 +21,7 @@
     margin-top: 20px
 }
 .PaymentPage_options{
-    /* border: 1px solid grey; */
+    
     width: 90%;
     margin-left: 180px;
     text-align: center;
@@ -35,11 +34,10 @@
 .paymet_img{
     display: flex;
     gap: 10px;
-    /* width: 1000px; */
+  
     margin: auto;
     padding: 30px;
-    /* margin-right: 35px; */
-    /* padding-right: 70px; */
+    
 
 }
 p{
@@ -150,14 +148,13 @@ p{
     }
     .right_box{
        display: none;
-        /* border: 2px solid red; */
+        
     }
     .paymet_img{
         display: flex;
         gap: 10px;
         width: 450px;
         justify-content: space-around;
-        /* border: 10px solid green; */
         margin: auto;
         position: relative;
         padding: 10px;
@@ -168,7 +165,6 @@ p{
         display: flex;
         gap: 10px;
         width: 290px;
-        /* border: 10px solid green; */
         margin: auto;
         position: relative;
         padding: 10px;
@@ -197,7 +193,6 @@ p{
 }
 .order_box{
     padding: 10px;
-    /* width: 100%; */
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }

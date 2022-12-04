@@ -184,7 +184,7 @@ export default function Navbar() {
             fontSize="32px"
             color="white"
             cursor="pointer"
-            onClick={SearchDiv}
+            onClick={()=>{SearchDiv(dispatch)}}
           />
         </Box>
         <Box
@@ -264,7 +264,7 @@ export default function Navbar() {
         id="LOGODIV"
       >
         {isLargerThan1144 ? "" : <FiMenu cursor="pointer" onClick={LINEMENU} />}
-        <BiSearch cursor="pointer" onClick={SearchDiv} />
+        <BiSearch cursor="pointer" onClick={()=>{SearchDiv(dispatch)}} />
         <img
           src="https://cdn.shopify.com/s/files/1/0339/0901/files/Peach-Black-DU-Logo_160x.png?v=1631144136"
           alt=""
@@ -282,13 +282,16 @@ export default function Navbar() {
               <Text fontSize={'lg'} color={'green.500'}>Hi ,{userName}</Text>
               
               {/* {userName != 'User !' ? <Button className="logoutbtn" color={'white'} w={'90%'} borderRadius={'none'} py={'2px'} bg={'red'} onClick={onOpenLogout}>LOGOUT</Button> : <Login />} */}
-              {userName != 'User !' ?  <GoogleLogout className="google__btn"  
+              {userName != 'User !' ?  
+              <GoogleLogout className="google__btn"  
                 buttonText="Logout"
                 onLogoutSuccess={onOpenLogout}
               clientId="500852971355-6upomadqd80rkj5hdbqf8j7pl07q8kpq.apps.googleusercontent.com"
               disabled={false}
               >
-              </GoogleLogout> : <Login />}
+              </GoogleLogout> 
+              
+              : <Login />}
             </Box>
           </div>
 

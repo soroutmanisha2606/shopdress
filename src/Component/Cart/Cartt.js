@@ -3,13 +3,15 @@ import { GetCartData,GetPatchData,GetDeleteData } from '../../Actions/CartAction
 export default function CARTMENU (){
     if(document.getElementById("CARTDI")){
         document.getElementById("CARTDI").id="CARTDIV"
+        localStorage.setItem("Cartisopen","true")
     }else{
-        document.getElementById("CARTDIV").id="CARTDI"
+        document.getElementById("CARTDIV").id="CARTDI";
+        localStorage.setItem("Cartisopen","false")
     }
     
 }
 
-export const SearchDiv=()=>{
+export const SearchDiv=(dispatch)=>{
 
    
     if(document.getElementById("SearchDi")){
@@ -17,6 +19,10 @@ export const SearchDiv=()=>{
     
          localStorage.setItem("Searchisopen","true")
     }else{
+        dispatch({
+            type:"GETCARTDATA",
+            payload:[]
+        })
         document.getElementById("SearchDiv").id="SearchDi"
         localStorage.setItem("Searchisopen","false")
     }
@@ -86,7 +92,7 @@ function debounced(fn, delay, dispatch) {
 } 
 async function FetchSearhData(dispatch){
     let qure=document.getElementById('inputSearch').value;
-    let res = await fetch(`https://cartikkg-shop-dress-up-new.onrender.com/Product_Data?q=${qure}`);
+    let res = await fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?q=${qure}`);
     let ans= await res.json();
     // console.log(ans)
     dispatch({

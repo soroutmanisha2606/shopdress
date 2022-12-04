@@ -18,47 +18,22 @@ import ProductPages from "../ProductPages/ProductPages"
 
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from "../TESTING/DROP";
-import Chatbot from "../PaymentPage/Chatbot";
 import Allroutes from "../AllRoutes/Allroutes";
 import Home from "../Home/Home";
 
 function App() {
  
   return (
-   <div className="App">
+    <div className="App">
 
    <Navbar/>
    {/* <Home /> */}
-   {/* <Cart/> */}
-
-   <Allroutes/>
-
-
-   {/* <Login/>
-    <br/>
-   <br/>
-   <BasicUsage/>
-   <br/>
-   <br/>
-
-
-
-  
-   
-   <br/>
-   <br/>
-  //  <PaymetSuccess/>  */}
-  {/* //  <ProductPages/> */}
-  {/* <ProductDetails/> */}
-  
-  {/* {payment===true?<Carddetails/>:<PaymentPage setpayment={setpayment} payment={payment}/>} */}
-  {/* {complete===true?<Successfull/>:<Carddetails complete={complete} setcomplete={setcomplete}/>} */}
-    
-    {/* <PaymentPage/> */}
+    <Cart/>
+    <Allroutes/>
+    <BasicUsage/>
     <Footer/>
 
     </div>
-   
   );
 }
 

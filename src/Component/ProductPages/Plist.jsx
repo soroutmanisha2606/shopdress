@@ -6,7 +6,7 @@ export function Display(state){
   return  <div className='list-item'>
   {state.map((e)=>{
     return <>
-    <div>
+    <div key={e.id}>
   <div  className="image-box">
     <div className="imageshow">
     <img src={e.image_1} alt="" />
@@ -68,14 +68,10 @@ fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data')
         </select>
     </div>
 
-   {/* <Display /> */}
- {/* {Display(state)} */}
-
- {/* array. */}
  <div className='list-item'>
   {array.map((e)=>{
     return <>
-    <div>
+    <div key={e.id}>
   <div  className="image-box">
     <div className="imageshow">
     <img src={e.image_1} alt="" />
