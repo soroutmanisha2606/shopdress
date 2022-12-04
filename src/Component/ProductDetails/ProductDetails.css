@@ -1,34 +1,35 @@
-.hr{
+.hr {
     border-top: 2px solid black;
 }
-.sizeBtn{
+
+.sizeBtn {
     border: 1px solid black;
     background-color: antiquewhite;
     border-radius: none;
 }
-.cartBtn{
-    
-}
-.scroolDiv{
+
+.scroolDiv {
     height: 820px;
     overflow-y: scroll;
 }
+
 .scroolDiv::-webkit-scrollbar {
     display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+
 .scroolDiv {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-.img__width
-{
+
+.img__width {
     transition: 0.7s all;
     cursor: pointer;
     width: 100%;
 }
-.img__btn{
+
+.img__btn {
     position: absolute;
     right: 0;
     left: 0;
@@ -41,12 +42,13 @@
     font-weight: 500;
 }
 
-.grid__box{
+.grid__box {
     overflow: hidden;
     position: relative;
     transition: 0.7s all;
 }
-.grid__box:hover .img__width{
+
+.grid__box:hover .img__width {
     background-color: #111;
     width: 110%;
     transform: scale(1.04);
@@ -55,27 +57,48 @@
 
 @media (max-width:1000px) {
     .makeColumn {
-       flex-direction: column;
+        flex-direction: column;
     }
-    .makeColumn> .innerBox{
+
+    .makeColumn>.innerBox {
         width: 100%;
         margin-top: 20px;
     }
-    .css-egoftb{
+
+    .css-egoftb {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
         align-items: center;
 
     }
-   
+
 }
+
 @media (max-width:500px) {
-    .css-egoftb{
-        flex-wrap: wrap;
-    }
-    .css-egoftb a{
+    .css-egoftb a {
         flex: 50%;
     }
-   
+
+    .revflex>.chakra-stack {
+        flex-direction: row !important;
+          width: 440px;
+
+    }
+
+    .makeColumn>.innerBox {
+        margin-top: 20px;
+        overflow-x: scroll;
+    }
+    .makeColumn>.innerBox::-webkit-scrollbar{
+        background: #008000;
+        border-radius: 27px;
+        line-height: 5px;
+        scrollbar-width: 2px;
+    }
+    /* .makeColumn>.innerBox::-webkit-scrollbar-track{
+        box-shadow: none;
+        background-color: #fff;
+    } */
+  
 }
