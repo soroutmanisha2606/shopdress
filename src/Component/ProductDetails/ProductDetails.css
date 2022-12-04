@@ -63,14 +63,36 @@
     .makeColumn>.innerBox {
         width: 100%;
         margin-top: 20px;
+        justify-content: center;
     }
-
-    .css-egoftb {
-        display: flex;
+.lgImage{
+    width: 540px;
+    margin: 20px auto;
+}
+    /* .css-egoftb {
         justify-content: space-between;
         flex-direction: row;
+        
+    } */
+    .revflex>.chakra-stack {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-around;
         align-items: center;
 
+    }
+
+    .makeColumn>.innerBox:first-child {
+        margin-top: 20px;
+        overflow-x: scroll;
+    }
+ .makeColumn>.innerBox::-webkit-scrollbar{
+        height: 4px !important;
+        background: rgb(30, 221, 30);
+        scrollbar-width: 20px;
+    }
+    .chakra-stack>a:first-child{
+        margin-top: 16px;
     }
 
 }
@@ -86,19 +108,25 @@
 
     }
 
-    .makeColumn>.innerBox {
+    .makeColumn>.innerBox:first-child {
         margin-top: 20px;
         overflow-x: scroll;
     }
-    .makeColumn>.innerBox::-webkit-scrollbar{
-        background: #008000;
-        border-radius: 27px;
+ .makeColumn>.innerBox::-webkit-scrollbar{
         line-height: 5px;
-        scrollbar-width: 2px;
+        height: 4px !important;
+        background: rgb(30, 221, 30);
     }
-    /* .makeColumn>.innerBox::-webkit-scrollbar-track{
+    .chakra-stack>a:first-child{
+        margin-top: 16px;
+    }
+    /*.makeColumn>.innerBox::-webkit-scrollbar-track{
         box-shadow: none;
         background-color: #fff;
     } */
-  
+    /* ::-webkit-scrollbar-thumb {
+        scrollbar-width: thin !important;
+    }
+    ::-webkit-scrollbar {
+      } */
 }
