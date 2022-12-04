@@ -33,6 +33,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import  {UserData}  from '../../Actions/UserData.js';
 import { GoogleLogin  } from 'react-google-login';
 import { gapi } from 'gapi-script';
+import { useFormik } from 'formik';
+import { SignUpSchema } from './Schema';
 
 
 export default function Login() {
@@ -44,25 +46,35 @@ export default function Login() {
     email:"",
     password:""
   });
-  const [signUpData, setsignUpData] = useState({
-    fname:"",
-    lname:"",
-    email:"",
-    password:""
-  });
-  let Array=useSelector((state)=>{ return state.ShopDressReducer.User})||[]
+const signupInit = {
+  fname:"",
+  lname:"",
+  email:"",
+  password:""
+}
+ const {values,errors,touched, handleBlur,handleChange,handleSubmit} =  useFormik({
+    initialValues:signupInit,
+    validationSchema:SignUpSchema,
+    onSubmit:(values,action)=>{
+      signUp(values)
+      action.resetForm()
+    }
+  })
   
   let dispatch=useDispatch();
+  
+  const Array =useSelector((state)=>{ return state.ShopDressReducer.User})
   useEffect(()=>{
     UserData(dispatch)
     const initClient = () => {
       gapi.client.init({
-      clientId: clientId,
-      scope: ''
-    });
- };
- gapi.load('client:auth2', initClient);
-  },[])
+        clientId: clientId,
+        scope: ''
+      });
+    };
+    // gapi.load('client:auth2', initClient);
+  },[Array])
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2, } = useDisclosure();
   const initialRef = React.useRef(null)
@@ -77,22 +89,21 @@ const onFailure = (err) => {
     console.log('failed:', err);
 };
   const handleOnchange = (e)=>{
-   const {name,value} = e
+   const {name,value} = e.target
    setLoginData({
     ...loginData,
     [name]:value
    })
   }
-  const handleOnchange1 = (e)=>{
-   const {name,value} = e
-   setsignUpData({
-    ...signUpData,
-    [name]:value
-   })
-  }
+  // const handleOnchange1 = (e)=>{
+  //  const {name,value} = e
+  //  setsignUpData({
+  //   ...signUpData,
+  //   [name]:value
+  //  })
+  // }
 
   const login = async ()=>{
-    console.log(loginData);
     const match = await Array.filter((ele)=>{
       return ele.email==loginData.email && ele.password==loginData.password
     })
@@ -106,11 +117,11 @@ const onFailure = (err) => {
     }
       
   }
-  const signUp = ()=>{
+  const signUp = (data)=>{
     fetch("https://cartikkg-shop-dress-up-new.onrender.com/users",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
-        body:JSON.stringify(signUpData)
+        body:JSON.stringify(data)
     }).then( toaster('success','Account Created Successfully') ,onClose2(),onOpen())
   }
 
@@ -122,7 +133,6 @@ const onFailure = (err) => {
       position:'top-right'
     })
   }
-
   return (
     <>
       <Button  className="loginbtn" w={'90%'} borderRadius={'none'} py={'2px'} bgGradient='linear(to-r, green.200, green.500)'  onClick={onOpen} border="none" bg="white" paddingBottom="6px" >LOGIN</Button>
@@ -148,7 +158,7 @@ const onFailure = (err) => {
               <Stack spacing={4}>
                 <FormControl id="email">
                   <FormLabel >Email address</FormLabel>
-                  <Input className='inputbdr' type="email" name='email'  onChange={(event)=>{handleOnchange(event.target)}}/>
+                  <Input className='inputbdr' type="email" name='email' value={loginData.email}  onChange={handleOnchange}/>
                 </FormControl>
                 {/* <FormControl id="password">
                   <FormLabel>Password</FormLabel>
@@ -157,7 +167,7 @@ const onFailure = (err) => {
                 <FormControl id="password" isRequired>
                   <FormLabel>Password</FormLabel>
                   <InputGroup>
-                    <Input className='inputbdr' name='password' onChange={(event)=>{handleOnchange(event.target)}} type={showPassword1 ? 'text' : 'password'} />
+                    <Input className='inputbdr' name='password' value={loginData.password} onChange={handleOnchange} />
                     <InputRightElement h={'full'}>
                       <Button
                         variant={'ghost'}
@@ -237,29 +247,33 @@ const onFailure = (err) => {
               </Box>
             <Box rounded={20} w={450} p={4}
             >
+              <form onSubmit={handleSubmit}>
               <Stack spacing={4}>
                 <HStack>
                   <Box>
-                    <FormControl id="firstName" isRequired>
+                    <FormControl id="firstName" >
                       <FormLabel>First Name</FormLabel>
-                      <Input className='inputbdr' type="text" name='fname' onChange={(event)=>{handleOnchange1(event.target)}} />
+                      <Input className='inputbdr' type="text" name='fname' value={values.fname} onChange={handleChange} onBlur={handleBlur} />
                     </FormControl>
+                      {touched.fname&&errors.fname?<Text fontSize={'sm'} color="red">{errors.fname}</Text>:null}
                   </Box>
                   <Box>
                     <FormControl id="lastName">
                       <FormLabel>Last Name</FormLabel>
-                      <Input className='inputbdr' type="text" name='lname' onChange={(event)=>{handleOnchange1(event.target)}}/>
+                      <Input className='inputbdr' type="text" name='lname' value={values.lname} onChange={handleChange} onBlur={handleBlur}/>
+                      {touched.lname&&errors.lname?<Text fontSize={'sm'} color="red">{errors.lname}</Text>:null}
                     </FormControl>
                   </Box>
                 </HStack>
-                <FormControl id="email" isRequired>
+                <FormControl id="email" >
                   <FormLabel>Email address</FormLabel>
-                  <Input className='inputbdr' type="email" name='email' onChange={(event)=>{handleOnchange1(event.target)}} />
+                  <Input className='inputbdr' type="email" name='email' value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                  {touched.email&&errors.email?<Text fontSize={'sm'} color="red">{errors.email}</Text>:null}
                 </FormControl>
-                <FormControl id="password" isRequired>
+                <FormControl id="password" >
                   <FormLabel>Password</FormLabel>
                   <InputGroup>
-                    <Input className='inputbdr' name='password' onChange={(event)=>{handleOnchange1(event.target)}} type={showPassword ? 'text' : 'password'} />
+                    <Input className='inputbdr' name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} type={showPassword ? 'text' : 'password'} />
                     <InputRightElement h={'full'}>
                       <Button
                         variant={'ghost'}
@@ -270,10 +284,12 @@ const onFailure = (err) => {
                       </Button>
                     </InputRightElement>
                   </InputGroup>
+                  {touched.password&&errors.password?<Text fontSize={'sm'} color="red">{errors.password}</Text>:null}
                 </FormControl>
                 <Stack spacing={10} pt={2}>
-                  <Button
-                  onClick={signUp}
+                  <Button type='submit'
+                  // onClick={handleSubmit}
+                  // onClick={signUp}
                     loadingText="Submitting"
                     size="lg"
                     bgGradient='linear(to-r, green.200, green.500)'
@@ -294,6 +310,7 @@ const onFailure = (err) => {
                   </Text>
                 </Stack>
               </Stack>
+              </form>
             </Box>
             </Flex>
           </ModalBody>

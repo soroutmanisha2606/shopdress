@@ -105,7 +105,7 @@ function ProductDetails(props) {
     setlgImg(img);
   };
   async function AddtoCart(taskk){
-    await fetch('https://cartikkg-shop-dress-up-new.onrender.com/cart',{
+    await fetch('https://dead-gold-binturong-kilt.cyclic.app/cart',{
       method:"POST",
       body: JSON.stringify(taskk),
       headers :{
@@ -114,7 +114,7 @@ function ProductDetails(props) {
     });
   }
   const getDetails=(id)=>{
-    fetch('https://cartikkg-shop-dress-up-new.onrender.com/Product_Data/'+id)
+    fetch('https://dead-gold-binturong-kilt.cyclic.app/Product_Data/'+id)
     .then(res=>res.json())
     .then((data)=>{
       
@@ -156,7 +156,7 @@ function ProductDetails(props) {
           </Stack>
         </Box>
         <Box className="innerBox" w="43%">
-          <Image height={720}  src={lgImg} alt="NA" />
+          <Image height={720} className='lgImage'  src={lgImg} alt="NA" />
         </Box>
         <Box className="innerBox scroolDiv" w="40%">
           <Stack spacing={6}>
@@ -166,7 +166,7 @@ function ProductDetails(props) {
             <Box>
               <Flex mb={2}>
                 <Text fontSize={"sm"}>COLOR —</Text>
-                <Text fontSize={"xs"}>Light Grey</Text>
+                <Text fontSize={"xs"}>{prodData.color}</Text>
               </Flex>
               <Flex>
                 <Box
@@ -188,7 +188,7 @@ function ProductDetails(props) {
                   p={"4px"}
                   textAlign="center"
                 >
-                  <Box w="35px" h="35px" rounded={"50%"} bg={"brown"}></Box>
+                  <Box w="35px" h="35px" rounded={"50%"} bg={prodData.color}></Box>
                 </Box>
               </Flex>
             </Box>
@@ -236,7 +236,7 @@ function ProductDetails(props) {
               
             </Box>
             <Box textAlign={"center"} border={"1px"}>
-              <Button w="100%"  >Add To Cart</Button>
+              <Button w="100%" onClick={()=>{AddtoCart(prodData)}} >Add To Cart</Button>
             </Box>
             <Box textAlign={"center"} border={"1px"} bgColor={"#5a31f4"}>
               <Flex justifyContent={"center"} alignItems={"center"} py={1.5}>
