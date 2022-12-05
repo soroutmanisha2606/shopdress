@@ -25,13 +25,16 @@ export default function Cart() {
     Data+=(Number(el.Qty)* Number( el.price));
   })
   localStorage.setItem('Total_Price', Data);
+  // if()
   return (
     <div >
       {/* {console.log(Array)} */}
     <Box id="CARTDI">
         <Box id="CARTDIV_INNER"> <Box bg="rgb(214 247 228);" display="flex" justifyContent="space-around" h="40px" fontSize="25px" alignItems="center"> CART <FaArrowCircleRight      onClick={CARTMENU} cursor="pointer" fontSize="25px"/>
         </Box>
+        {Array.length==0? <div style={{paddingTop:"10px", paddingLeft:"10px", color:"grey"}}> Your cart is currently empty.</div> : <>
         <Box id="cartItems" >
+          
           <ul>
            {
             Array.map((el,index)=>{
@@ -60,7 +63,7 @@ export default function Cart() {
             <span style={{  display:"flex", justifyContent:"flex-end", textAlign:"center",fontSize:"15px", paddingLeft:"14px", paddingRight:"14px", color:"black",paddingTop:"10px", paddingBottom:"10px", fontWeight:"600"}} > <span id="ApplyCopounText">No Coupon Applied </span>  </span>
            <Link  to="/payment" className='CartCPNYImg'  style={{background:"#2a7e06",color:"white", fontSize:"18px"}} bg="" color="white" fontSize="" >Proceed</Link> 
             
-        </Box> 
+        </Box></>} 
        </Box>
     </Box>
 

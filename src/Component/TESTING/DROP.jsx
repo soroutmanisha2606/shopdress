@@ -146,7 +146,8 @@ export default function Navbar() {
     navigate('/')
   }
   return (
-    <Box position="sticky" bg="white" top="0%" zIndex="1">
+    <>
+    {/* <Box zIndex="1" > */}
       <Box id="SearchDi">
         <Box
           bg="white"
@@ -256,6 +257,8 @@ export default function Navbar() {
       <Box bg="green" h="35px">
         <h1 id="Nav_heading"> 30% OFF EVERYTING WITH CODE : CYBER30 </h1>
       </Box>
+      <Box  zIndex="1"
+        position="sticky" bg="white" top="0%" >
       <Box
         display="flex"
         justifyContent="space-around"
@@ -264,6 +267,8 @@ export default function Navbar() {
         pb="15px"
         fontSize="31px"
         id="LOGODIV"
+        // border="3px solid black"
+       
       >
         {isLargerThan1144 ? "" : <FiMenu cursor="pointer" onClick={LINEMENU} />}
         <BiSearch cursor="pointer" onClick={()=>{SearchDiv(dispatch)}} />
@@ -278,7 +283,7 @@ export default function Navbar() {
           {/* <Login cursor="pointer" />  */}
           <div className="dropdown">
             <Button onClick={myFunction} className="dropbtn">
-              <FaUser  size={22} cursor="pointer" />
+              <FaUser onClick={myFunction} size={22} cursor="pointer"   />
             </Button>
             <Box p={'10px'} textAlign={'center'} id="myDropdown" className="dropdown-content">
               <Text fontSize={'lg'} color={'green.500'}>Hi ,{userName}</Text>
@@ -983,7 +988,7 @@ export default function Navbar() {
                 width="580%"
                 h="360px"
                 m="auto"
-                mt="160px"
+                mt="128px"
                 zIndex="1"
                 ml="28px"
                 border="none"
@@ -1146,8 +1151,9 @@ export default function Navbar() {
           </Box>
         )}
       </Box>
-
-      {/* <Box ></Box> */}
-    </Box>
+      </Box>
+    
+     </>
+  
   );
 }
