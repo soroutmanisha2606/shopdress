@@ -181,7 +181,7 @@ function ProductDetails(props) {
                   p={"4px"}
                   textAlign="center"
                 >
-                  <Box w="35px" h="35px" rounded={"50%"} bg={"grey"}></Box>
+                  <Box w="35px" h="35px" rounded={"50%"} bg={"blue"}></Box>
                 </Box>
                 <Box
                   w="45px"
