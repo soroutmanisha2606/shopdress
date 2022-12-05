@@ -1,11 +1,19 @@
 import { Box, Button, Center, Heading } from '@chakra-ui/react'
 import React from 'react'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 // import Chatbot from './Chatbot'
 import "./PaymentPage.css"
 //https://cdn.dribbble.com/users/614270/screenshots/14575431/media/4907a0869e9ed2ac4e2d1c2beaf9f012.gif
 const PaymetSuccess = () => {
-  useEffect(()=>{scrollToTop();},[])
+  const navigation = useNavigate()
+  useEffect(()=>{
+    scrollToTop();
+    setTimeout(() => {
+      navigation('/')
+    }, 5000);
+    
+  },[])
   const scrollToTop = () => {
     const c = document.documentElement.scrollTop || document.body.scrollTop;
     if (c > 0) {
