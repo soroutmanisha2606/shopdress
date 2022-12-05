@@ -30,7 +30,7 @@ export function Display(state){
   </div>
 }
 
-const Plist = ({array,sold,setState}) => {
+const Plist = ({array,sorting,setState,sold}) => {
 
 // const [state,setState] = useState([]);
 
@@ -48,7 +48,7 @@ const Plist = ({array,sold,setState}) => {
 <p>{array.length} Products</p>
 
       <select id='select' onClick={sold}> 
-        <option >Sort</option>
+        <option value='sort' >Sort</option>
         <option value="sold">Best Selling</option>
         <option value="name">Alphabetically, A-Z</option>
         <option value="za">Alphabetically, Z-A</option>
@@ -59,8 +59,8 @@ const Plist = ({array,sold,setState}) => {
         </select>
     </div>
 
- <div className='list-item'>
-  {array.map((e)=>{
+ <div className='list-item' style={array.length==0 ? {display:"flex", justifyContent:"center",alignItems:"center"} : {left:"0"}}>
+  {array.length==0 ? <img src = "https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" width="35%" /> :  <> {array.map((e)=>{
     return <div key={e.id}>
   <div  className="image-box">
     <div className="imageshow">
@@ -81,6 +81,8 @@ const Plist = ({array,sold,setState}) => {
     </div>
     
   })}
+  </>
+}
 
   </div>
 

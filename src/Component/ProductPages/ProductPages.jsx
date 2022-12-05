@@ -5,6 +5,7 @@ import "./ProductPages.css"
 import Plist from './Plist';
 import Sidebar from './Sidebar/Sidebar';
 import { useRef } from 'react';
+import { data } from 'jquery';
 
 export default function ProductPages() {
   const [state,setState] = useState([]);
@@ -73,16 +74,16 @@ const scrollToTop = () => {
 
 
   function SizeL(e){
-    let s= document.getElementById("ssize");
-   let m=document.getElementById("msize");
-let l = document.getElementById("lsize");
-if(s.checked===true && m.checked ===true && l.checked===true){
-  setState(fixed);
-}
- if(s.checked===true && m.checked){
-  setState(fixed);
-}
-    console.log(e.target.checked);
+    // let s= document.getElementById("ssize");
+  document.getElementById("msize").checked = false;
+ document.getElementById("ssize").checked = false;
+// if(s.checked===true && m.checked ===true && l.checked===true){
+//   setState(fixed);
+// }
+//  if(s.checked===true && m.checked){
+//   setState(fixed);
+// }
+    // console.log(e.target.checked);
   let temp =[];
    if(e.target.checked==true){
     state.map((ele)=>{
@@ -101,16 +102,8 @@ if(s.checked===true && m.checked ===true && l.checked===true){
   
   function SizeM(e){
 
-    let s= document.getElementById("ssize");
-   let m=document.getElementById("msize");
-let l = document.getElementById("lsize");
-if(s.checked===true && m.checked ===true && l.checked===true){
-  setState(fixed);
-}
- if(s.checked===true && m.checked){
-  setState(fixed);
-}
-    console.log(e.target.checked);
+    document.getElementById("ssize").checked = false;
+ document.getElementById("lsize").checked = false;
   let temp =[];
    if(e.target.checked==true){
     state.map((ele)=>{
@@ -128,15 +121,8 @@ if(s.checked===true && m.checked ===true && l.checked===true){
 
     
   function SizeS(e){
-let s= document.getElementById("ssize");
-   let m=document.getElementById("msize");
-let l = document.getElementById("lsize");
-if(s.checked===true && m.checked ===true && l.checked===true){
-  setState(fixed);
-}
- if(s.checked===true && m.checked){
-  setState(fixed);
-}
+    document.getElementById("msize").checked = false;
+    document.getElementById("lsize").checked = false;
     // console.log(e.target.checked);
   let temp =[];
    if(e.target.checked==true){
@@ -153,53 +139,7 @@ if(s.checked===true && m.checked ===true && l.checked===true){
     }
   }
   
-function sold(){
-  let select = document.getElementById("select").value;
-  // console.log("select")
- if(select==="za"){
-  select = "name";
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
-  .then((res)=>res.json())
-  .then((data)=>{
-    // console.log(data);
-    setState(data);
-    // Display(state);
-  })
- }else if(select==="no"){
-  select = "manufacture_date";
 
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
-.then((res)=>res.json())
-.then((data)=>{
-  // console.log(data);
-  setState(data);
-  // Display(state);
-})
-
-  
- }else if(select==="hl"){
-  select = "price";
-
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
-.then((res)=>res.json())
-.then((data)=>{
-  // console.log(data);
-  setState(data);
-  // Display(state);
-})
- }else{
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=asc`)
-.then((res)=>res.json())
-.then((data)=>{
-  // console.log(data);
-  setState(data);
-  // Display(state);
-})
-
-
- }
-
-}
 
 
 
@@ -258,7 +198,132 @@ function white(){
   })
 }
 
+function sold(){
+  let select = document.getElementById("select").value;
 
+
+  let inp1 = document.getElementById("inp1");
+  let inp2 = document.getElementById("inp2");
+  if(inp1.checked==true ){
+    // setState(fixed);
+  }
+  // https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=true
+  
+ if(select==="za"){
+  select = "name";
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
+  .then((res)=>res.json())
+  .then((data)=>{
+    // console.log(data);
+    setState(data);
+    // Display(state);
+  })
+ }else if(select==="no"){
+  select = "manufacture_date";
+
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
+.then((res)=>res.json())
+.then((data)=>{
+  // console.log(data);
+  setState(data);
+  // Display(state);
+})
+
+  
+ }else if(select==="hl"){
+  select = "price";
+
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
+.then((res)=>res.json())
+.then((data)=>{
+  // console.log(data);
+  setState(data);
+  // Display(state);
+})
+ }else{
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=asc`)
+.then((res)=>res.json())
+.then((data)=>{
+  // console.log(data);
+  setState(data);
+  // Display(state);
+})
+
+
+ }
+
+}
+
+function sorting() {
+  let selected = document.getElementById("select").value;
+
+  // console.log("sorting" + selected);
+  // console.log("sorting" + veg);
+  // if (selected === "sort") {
+  //   setState(data);
+  // }
+  if (selected === "price") {
+    state.sort(function (a, b) {
+      // let aa = Number(a.price.replace("₹", ""));
+      // let bb = Number(b.price.replace("₹", ""));
+      if (a.price > b.price) return 1;
+      if (a.price < b.price) return -1;
+      return 0;
+    });
+    setState(state);
+  }
+  if (selected === "hl") {
+    state.sort(function (a, b) {
+      // let aa = Number(a.price.replace("₹", ""));
+      // let bb = Number(b.price.replace("₹", ""));
+      if (a.price > b.price) return -1;
+      if (a.price < b.price) return 1;
+      return 0;
+    });
+    setState(state);
+  }
+  if (selected === "sold") {
+    state.sort(function (a, b) {
+      if (a.sold > b.sold) return -1;
+      if (a.sold< b.sold) return 1;
+      return 0;
+    });
+    setState(state);
+  }
+  if (selected === "name") {
+    state.sort(function (a, b) {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+    setState(state);
+  }
+  if (selected === "za") {
+    state.sort(function (a, b) {
+      if (a.name > b.name) return -1;
+      if (a.name < b.name) return 1;
+      return 0;
+    });
+    setState(state);
+  }
+
+  if (selected === "manufacture_date") {
+    state.sort(function (a, b) {
+      if (a.manufacture_date > b.manufacture_date) return 1;
+      if (a.manufacture_date < b.manufacture_date) return -1;
+      return 0;
+    });
+    setState(state);
+  }
+  if (selected === "no") {
+    state.sort(function (a, b) {
+      if (a.manufacture_date < b.manufacture_date) return 1;
+      if (a.manufacture_date > b.manufacture_date) return -1;
+      return 0;
+    });
+    setState(state);
+  }
+}
   
   
   return (
@@ -269,7 +334,7 @@ function white(){
     <div className='a-Main-Box'>
           
       <div  className='a-side-nav'> <Sidebar filterCheckbox={filterCheckbox} filterCheckbox2={filterCheckbox2} SizeL={SizeL} SizeM={SizeM} SizeS={SizeS} handlePriceRange={handlePriceRange} reset={reset} red={red} green={green} gray={gray} black={black} white={white} /></div>      
-      <div className="a-list-items"><Plist sold={sold} array={state} setState={setState} /></div>
+      <div className="a-list-items"><Plist sorting={sorting} sold={sold} array={state} setState={setState} /></div>
      
     </div>
     </>
