@@ -59,16 +59,16 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
     </AccordionPanel>
   </AccordionItem>
 
-  <AccordionItem  className='accord'>
+  <AccordionItem  className='accord' >
     <h2>
-      <AccordionButton>
-        <Box flex='1' textAlign='left'>
+      <AccordionButton >
+        <Box flex='1' textAlign='left' >
           P R I C E
         </Box>
         <AccordionIcon />
       </AccordionButton>
     </h2>
-    <AccordionPanel pb={4}>
+    <AccordionPanel pb={4} >
 
   {/* <div className='priceFlex'><p>$ 0</p> <p>$ 500</p></div> */}
   
@@ -80,7 +80,7 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
   <RangeSliderThumb boxSize={4} index={1} bg="black" />
 </RangeSlider> */}
 {/* <Box fontSize="18px" fontWeight={700} letterSpacing="0.25px" color={"#151b39"} pl="20px">Price</Box> */}
-            { <RangeSlider
+            { <RangeSlider  
                 defaultValue={[0, 500]}
                 w="85%"
                 ml="25px"
@@ -93,15 +93,15 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
                 min={0}
                 max={500}
             >
-                <RangeSliderTrack h="5px">
-                    <RangeSliderFilledTrack bgColor="black" />
+                <RangeSliderTrack h="5px" >
+                    <RangeSliderFilledTrack bgColor="black"  />
                 </RangeSliderTrack>
                 <RangeSliderThumb index={0} boxSize="23px"  >
-                    <Box position="absolute" bottom="5px"  fontSize={"14px"}>{sliderVal1[0]}</Box>
-                    <Box w="23px" h="21px" bgColor="black" borderRadius={"50%"} ></Box>
+                    <Box position="absolute" bottom="5px" mr={"35px"}  fontSize={"18px"}>{sliderVal1[0]}</Box>
+                    <Box w="23px" h="21px" bgColor="black"  borderRadius={"50%"} ></Box>
                 </RangeSliderThumb>
                 <RangeSliderThumb index={1} boxSize="23px"  >
-                    <Box position="absolute" bottom="5px" fontSize={"14px"}>{sliderVal1[1]}</Box>
+                    <Box position="absolute" bottom="5px" ml={"35px"} fontSize={"18px"}>{sliderVal1[1]}</Box>
                     <Box w="23px" h="21px" bgColor="black" borderRadius={"50%"}  ></Box>
                 </RangeSliderThumb>
             </RangeSlider>}

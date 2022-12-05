@@ -59,8 +59,8 @@ const Plist = ({array,sorting,setState,sold}) => {
         </select>
     </div>
 
- <div className='list-item'>
-  {array.map((e)=>{
+ <div className='list-item' style={array.length==0 ? {display:"flex", justifyContent:"center",alignItems:"center"} : {left:"0"}}>
+  {array.length==0 ? <img src = "https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" width="35%" /> :  <> {array.map((e)=>{
     return <div key={e.id}>
   <div  className="image-box">
     <div className="imageshow">
@@ -81,6 +81,8 @@ const Plist = ({array,sorting,setState,sold}) => {
     </div>
     
   })}
+  </>
+}
 
   </div>
 
