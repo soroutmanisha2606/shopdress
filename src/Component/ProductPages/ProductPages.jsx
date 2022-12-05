@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
-import "./ProductPages.css"
+import "./ProductPages.css";
+import { useToast } from '@chakra-ui/react'
 // import
 
 import Plist from './Plist';
@@ -12,16 +13,17 @@ export default function ProductPages() {
   const [state,setState] = useState([]);
   const [fixed , setFixed] = useState([]);
   const [price,setPrice] = useState([0,500]);
-  let [checkBox, setCheckBox] = useState(false);
-useEffect(()=>{
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data`).then((res)=>res.json()).then((data)=>{
-    // console.log(data);
-    setFixed(data);
-    setState(data);
-    scrollToTop();
-  })
-},[])
+  let [checkBox, setCheckBox] = useState("");
+  useEffect(()=>{
+    fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data`).then((res)=>res.json()).then((data)=>{
+      // console.log(data);
+      setFixed(data);
+      setState(data);
+      scrollToTop();
+    })
+  },[])
 
+  let toast = useToast();
 const scrollToTop = () => {
   const c = document.documentElement.scrollTop || document.body.scrollTop;
   if (c > 0) {
@@ -43,6 +45,12 @@ const scrollToTop = () => {
       fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=false`).then((res)=>res.json()).then((data)=>{
         console.log(data);
         setState(data);
+      })
+      toast({
+        title: `Filtered`,
+        position: 'top',
+        isClosable: true,
+        
       })
     }else{
       fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data`)
@@ -68,6 +76,11 @@ const scrollToTop = () => {
           console.log(data);
           setState(data);
         })
+        toast({
+          title: `Filtered`,
+          position: 'top',
+          isClosable: true,
+        })
         setCheckBox(true)
       }else{
         setState(fixed);
@@ -91,6 +104,11 @@ const scrollToTop = () => {
     console.log(temp)
   })
   setState(temp);
+  toast({
+    title: `Filtered`,
+    position: 'top',
+    isClosable: true,
+  })
     }else{
     setState(fixed);
     }
@@ -111,6 +129,11 @@ const scrollToTop = () => {
     console.log(temp)
   })
   setState(temp);
+  toast({
+    title: `Filtered`,
+    position: 'top',
+    isClosable: true,
+  })
     }else{
     setState(fixed);
     }
@@ -131,6 +154,11 @@ const scrollToTop = () => {
     console.log(temp)
   })
   setState(temp);
+  toast({
+    title: `Filtered`,
+    position: 'top',
+    isClosable: true,
+  })
     }else{
     setState(fixed);
     }
@@ -142,7 +170,7 @@ const scrollToTop = () => {
 
 function handlePriceRange(val){
 // console.log(val);
-fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox }&price_gte=${val[0]}&price_lte=${val[1]}`).then((res)=>res.json()).then((data)=>{
+fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?price_gte=${val[0]}&price_lte=${val[1]}`).then((res)=>res.json()).then((data)=>{
   // console.log(data);
   setState(data);
 })
@@ -157,47 +185,77 @@ function reset(){
   document.getElementById("msize").checked = false;
   document.getElementById("lsize").checked = false;
   
+  toast({
+    title: `Reset Done`,
+    position: 'top',
+    isClosable: true,
+  })
 }
 
 
 function red(){
-    fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox }&color=red`).then((res)=>res.json()).then((data)=>{
+    fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=red`).then((res)=>res.json()).then((data)=>{
       console.log(data);
       setState(data);
+    })
+    toast({
+      title: `Filtered`,
+      position: 'top',
+      isClosable: true,
     })
 }
 
 // let greencolor = useRef(false);
 function green(){
-    fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox }&color=green`).then((res)=>res.json()).then((data)=>{
+    fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=green`).then((res)=>res.json()).then((data)=>{
       console.log(data);
       setState(data);
+    })
+    toast({
+      title: `Filtered`,
+      position: 'top',
+      isClosable: true,
     })
 }
 
 function gray(){
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox}&color=gray`).then((res)=>res.json()).then((data)=>{
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=gray`).then((res)=>res.json()).then((data)=>{
     console.log(data);
     setState(data);
   })
+  toast({
+    title: `Filtered`,
+    position: 'top',
+    isClosable: true,
+  })
 }
 function black(){
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox }&color=black`).then((res)=>res.json()).then((data)=>{
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=black`).then((res)=>res.json()).then((data)=>{
     console.log(data);
     setState(data);
+  })
+  toast({
+    title: `Filtered`,
+    position: 'top',
+    isClosable: true,
   })
 }
 
 function white(){
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox}&color=white`).then((res)=>res.json()).then((data)=>{
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?color=white`).then((res)=>res.json()).then((data)=>{
     console.log(data);
     setState(data);
+  })
+  toast({
+    title: `Filtered`,
+    position: 'top',
+    isClosable: true,
   })
 }
 
 function sold(){
   let select = document.getElementById("select").value;
-
+  // let url=
 
   let inp1 = document.getElementById("inp1");
   let inp2 = document.getElementById("inp2");
@@ -208,119 +266,137 @@ function sold(){
   
  if(select==="za"){
   select = "name";
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox }&_sort=${select}&_order=desc`)
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
   .then((res)=>res.json())
   .then((data)=>{
-    // console.log(data);
     setState(data);
-    // Display(state);
+  })
+  toast({
+    title: `Z to A`,
+    position: 'top',
+    isClosable: true,
   })
  }else if(select==="no"){
   select = "manufacture_date";
 
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox}&_sort=${select}&_order=desc`)
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
 .then((res)=>res.json())
 .then((data)=>{
   // console.log(data);
   setState(data);
+
+   
   // Display(state);
 })
-
+toast({
+  title: `New to Old`,
+  position: 'top',
+  isClosable: true,
+})
   
- }else if(select==="hl"){
+ }
+ 
+ else if(select==="name"){
+  select = "name";
+
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
+.then((res)=>res.json())
+.then((data)=>{
+  // console.log(data);
+  setState(data);
+
+   
+  // Display(state);
+})
+toast({
+  title: `A to Z`,
+  position: 'top',
+  isClosable: true,
+})
+  
+ }
+
+ else if(select==="price"){
   select = "price";
 
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox}&_sort=${select}&_order=desc`)
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
 .then((res)=>res.json())
 .then((data)=>{
   // console.log(data);
   setState(data);
-  // Display(state);
-})
- }else{
-  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=${ checkBox}&_sort=${select}&_order=asc`)
-.then((res)=>res.json())
-.then((data)=>{
-  // console.log(data);
-  setState(data);
-  // Display(state);
-})
 
+  // setState(data);
+  
+  // Display(state);
+})
+toast({
+  title: `Price Low to High`,
+  position: 'top',
+  isClosable: true,
+})
+ }
+
+
+ else if(select==="manufacture_date"){
+  select = "manufacture_date";
+
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
+.then((res)=>res.json())
+.then((data)=>{
+  // console.log(data);
+  setState(data);
+
+  // setState(data);
+  
+  // Display(state);
+})
+toast({
+  title: `Old to New`,
+  position: 'top',
+  isClosable: true,
+})
+ }
+
+ else if(select==="hl"){
+  select = "price";
+
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
+.then((res)=>res.json())
+.then((data)=>{
+  // console.log(data);
+  setState(data);
+
+  // setState(data);
+  
+  // Display(state);
+})
+toast({
+  title: `Price High to Low`,
+  position: 'top',
+  isClosable: true,
+})
+ }else if(select==='sold'){
+  select = "sold";
+
+  fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
+.then((res)=>res.json())
+.then((data)=>{
+  // console.log(data);
+  setState(data);
+
+  
+  // Display(state);
+})
+toast({
+  title: `Best Sold product`,
+  position: 'top',
+  isClosable: true,
+})
 
  }
 
 }
 
-function sorting() {
-  let selected = document.getElementById("select").value;
-
-  // console.log("sorting" + selected);
-  // console.log("sorting" + veg);
-  // if (selected === "sort") {
-  //   setState(data);
-  // }
-  if (selected === "price") {
-    state.sort(function (a, b) {
-      // let aa = Number(a.price.replace("₹", ""));
-      // let bb = Number(b.price.replace("₹", ""));
-      if (a.price > b.price) return 1;
-      if (a.price < b.price) return -1;
-      return 0;
-    });
-    setState(state);
-  }
-  if (selected === "hl") {
-    state.sort(function (a, b) {
-      // let aa = Number(a.price.replace("₹", ""));
-      // let bb = Number(b.price.replace("₹", ""));
-      if (a.price > b.price) return -1;
-      if (a.price < b.price) return 1;
-      return 0;
-    });
-    setState(state);
-  }
-  if (selected === "sold") {
-    state.sort(function (a, b) {
-      if (a.sold > b.sold) return -1;
-      if (a.sold< b.sold) return 1;
-      return 0;
-    });
-    setState(state);
-  }
-  if (selected === "name") {
-    state.sort(function (a, b) {
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
-      return 0;
-    });
-    setState(state);
-  }
-  if (selected === "za") {
-    state.sort(function (a, b) {
-      if (a.name > b.name) return -1;
-      if (a.name < b.name) return 1;
-      return 0;
-    });
-    setState(state);
-  }
-
-  if (selected === "manufacture_date") {
-    state.sort(function (a, b) {
-      if (a.manufacture_date > b.manufacture_date) return 1;
-      if (a.manufacture_date < b.manufacture_date) return -1;
-      return 0;
-    });
-    setState(state);
-  }
-  if (selected === "no") {
-    state.sort(function (a, b) {
-      if (a.manufacture_date < b.manufacture_date) return 1;
-      if (a.manufacture_date > b.manufacture_date) return -1;
-      return 0;
-    });
-    setState(state);
-  }
-}
   
   
   return (
@@ -331,7 +407,7 @@ function sorting() {
     <div className='a-Main-Box'>
           
       <div  className='a-side-nav'> <Sidebar filterCheckbox={filterCheckbox} filterCheckbox2={filterCheckbox2} SizeL={SizeL} SizeM={SizeM} SizeS={SizeS} handlePriceRange={handlePriceRange} reset={reset} red={red} green={green} gray={gray} black={black} white={white} /></div>      
-      <div className="a-list-items"><Plist sorting={sorting} sold={sold} array={state} setState={setState} /></div>
+      <div className="a-list-items"><Plist  sold={sold} array={state} setState={setState} /></div>
      
     </div>
     </>

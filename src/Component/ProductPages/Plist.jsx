@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 
 
+
 export function Display(state){
   return  <div className='list-item'>
   {state.map((e)=>{
@@ -48,7 +49,7 @@ const Plist = ({array,sorting,setState,sold}) => {
 <p>{array.length} Products</p>
 
       <select id='select' onClick={sold}> 
-        <option value='sort' >Sort</option>
+        <option  >Sort</option>
         <option value="sold">Best Selling</option>
         <option value="name">Alphabetically, A-Z</option>
         <option value="za">Alphabetically, Z-A</option>
