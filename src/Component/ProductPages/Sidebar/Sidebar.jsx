@@ -80,6 +80,9 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
   <RangeSliderThumb boxSize={4} index={1} bg="black" />
 </RangeSlider> */}
 {/* <Box fontSize="18px" fontWeight={700} letterSpacing="0.25px" color={"#151b39"} pl="20px">Price</Box> */}
+<div style={{paddingTop:"7px"}}>
+
+
             { <RangeSlider  
                 defaultValue={[0, 500]}
                 w="85%"
@@ -106,7 +109,7 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
                 </RangeSliderThumb>
             </RangeSlider>}
       
-
+            </div>
 
     </AccordionPanel>
   </AccordionItem>
