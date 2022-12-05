@@ -200,7 +200,15 @@ function white(){
 
 function sold(){
   let select = document.getElementById("select").value;
-  // console.log("select")
+
+
+  let inp1 = document.getElementById("inp1");
+  let inp2 = document.getElementById("inp2");
+  if(inp1.checked==true ){
+    // setState(fixed);
+  }
+  // https://dead-gold-binturong-kilt.cyclic.app/Product_Data?stock=true
+  
  if(select==="za"){
   select = "name";
   fetch(`https://dead-gold-binturong-kilt.cyclic.app/Product_Data?_sort=${select}&_order=desc`)
