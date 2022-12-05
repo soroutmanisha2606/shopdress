@@ -127,7 +127,6 @@ export default function Login() {
       onClose2()
       onOpen()
       UserData(dispatch)
-      alert('sadda')
     })
   }
 
