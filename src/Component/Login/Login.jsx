@@ -154,7 +154,7 @@ return (
       <ModalOverlay />
       <ModalContent>
         <Box >
-          <ModalHeader className='modalHeader' fontSize={'4xl'}>Login to dressUp</ModalHeader>
+          <ModalHeader className='modalHeader' bg="white"  fontSize={'4xl'}>  Login to dressUp</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <Flex justifyContent='space-between'>

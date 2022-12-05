@@ -9,7 +9,9 @@
 .modalHeader{
     text-align: center;
     text-transform: uppercase;
-	-webkit-text-fill-color:#38a169
+    color:"black";
+	background: linear-gradient(to right, #385944 0%, #38a169 100%);
+	/* -webkit-text-fill-color: transparent; */
 }
 .loginbtn:hover{
     background: linear-gradient(to right, #9ae6b4 , #38a169) !important;

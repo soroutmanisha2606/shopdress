@@ -97,11 +97,11 @@ const Sidebar = ({filterCheckbox,filterCheckbox2,SizeL,SizeM,SizeS,handlePriceRa
                     <RangeSliderFilledTrack bgColor="black"  />
                 </RangeSliderTrack>
                 <RangeSliderThumb index={0} boxSize="23px"  >
-                    <Box position="absolute" bottom="5px" mr={"35px"}  fontSize={"18px"}>{sliderVal1[0]}</Box>
+                    <Box position="absolute" bottom="5px" mr={"35px"}  fontSize={"18px"} mt="-80px">{sliderVal1[0]}</Box>
                     <Box w="23px" h="21px" bgColor="black"  borderRadius={"50%"} ></Box>
                 </RangeSliderThumb>
                 <RangeSliderThumb index={1} boxSize="23px"  >
-                    <Box position="absolute" bottom="5px" ml={"35px"} fontSize={"18px"}>{sliderVal1[1]}</Box>
+                    <Box position="absolute" bottom="5px" ml={"35px"} fontSize={"18px"} >{sliderVal1[1]}</Box>
                     <Box w="23px" h="21px" bgColor="black" borderRadius={"50%"}  ></Box>
                 </RangeSliderThumb>
             </RangeSlider>}

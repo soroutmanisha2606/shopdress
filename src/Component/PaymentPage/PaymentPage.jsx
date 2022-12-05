@@ -235,7 +235,7 @@ const scrollToTop = () => {
   <p style={{fontSize:"20px",fontWeight:"bolder"}}>$46</p>
 </Box>
 </Box> */}
-
+ {Array.length==0? <div style={{paddingTop:"10px", paddingLeft:"10px", color:"grey"}}> Your cart is currently empty.</div> : <>
    <ul style={{ overflowY:"scroll", height:"82%"}} >
            {
             Array.map((el,index)=>{
@@ -263,7 +263,7 @@ const scrollToTop = () => {
             {/* <span style={{  display:"flex", justifyContent:"flex-end", textAlign:"center",fontSize:"15px", paddingLeft:"14px", paddingRight:"14px", color:"black",paddingTop:"10px", paddingBottom:"10px", fontWeight:"600"}} > <span id="ApplyCopounText">No Coupon Applied </span>  </span> */}
            {/* <Box className='CartCPNYImg' bg="#2a7e06" color="white" fontSize="18px" >Proceed</Box>  */}
             
-        </Box> 
+        </Box> </>}
        {/* </Box> */}
   </Box>
     </div>
