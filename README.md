@@ -43,7 +43,7 @@ Our team of 4 members worked together and completed the project within **5 days*
 
 # 🚀 DEPLOY LINK  
 
-[Live Project]([https://your-live-link-here.com](https://shopdressup.netlify.app/))  
+[Live Project](https://shopdressup.netlify.app/)  
 
 ---
 
