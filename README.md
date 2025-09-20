@@ -11,7 +11,7 @@ ShopDressUp is an American fashion retail brand known for its trendy clothing, a
 
 I am a student of the **Full Stack Web Development** course at **Masai School, Bangalore**. As part of the course, we have "Construct Week" projects after each unit. For this Construct Week, we were assigned the **ShopDressUp clone** as a collaboration project.  
 
-Our team of 5 members worked together and completed the project within **5 days**. With proper planning and discussions, we implemented all the core features of an e-commerce platform.  
+Our team of 4 members worked together and completed the project within **5 days**. With proper planning and discussions, we implemented all the core features of an e-commerce platform.  
 
 **Team Members:**  
 1. Kartik Gupta  
@@ -44,22 +44,6 @@ Our team of 5 members worked together and completed the project within **5 days*
 # 🚀 DEPLOY LINK  
 
 [Live Project]([https://your-live-link-here.com](https://shopdressup.netlify.app/))  
-
----
-
-# 📸 SCREENSHOTS
-
-### Landing Page  
-![Landing Page](<img width="1872" height="981" alt="image" src="https://github.com/user-attachments/assets/66d4ca4e-ce1c-442b-8a03-3c5da6142ee2" />
-)  
-
-### Product Page with Filters  
-![Product Page](https://your-screenshot-link.com)  
-
-
-### Chatbot Integration  
-![Chatbot](<img width="498" height="756" alt="image" src="https://github.com/user-attachments/assets/3d4a672f-e2e5-47ff-864c-4c9f220c1165" />
-)  
 
 ---
 
